@@ -92,7 +92,7 @@ document.querySelectorAll('.tab-label').forEach((label) => {
         content.style.maxHeight = content.scrollHeight + "px";
       }
     });
-  });
+});
   
   
 

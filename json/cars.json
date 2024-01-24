@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Toyota",
+        "powerKW": 75
+    },
+    {
+        "name": "Nissan",
+        "powerKW": 100
+    },
+    {
+        "name": "Mazda",
+        "powerKW": 85
+    }
+]
