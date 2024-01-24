@@ -300,12 +300,13 @@ a {
 
   .mobile-nav ul {
     position: fixed;
-    top: 40px;
+    bottom: 0;
+    margin: 0;
     left: -100%;
     width: 100%;
     background-color: #333;
     transition: left 0.3s;
-    padding: 1em;
+    padding: 0.6em;
     z-index: 999;
   }
 
@@ -323,9 +324,9 @@ a {
     display: block;
     color: white;
     text-decoration: none;
-    font-size: 2.5em;
-    padding-right: 10px;
-    padding-left: 10px;
+    font-size: 2em;
+    padding-right: 5px;
+    padding-left: 5px;
   }
 
   header {
@@ -376,6 +377,7 @@ a {
 
   .buttons-group {
     flex-direction: column; 
+    padding-right: 10px;
   }
 }
 
@@ -717,8 +719,8 @@ tbody tr:nth-child(odd) {
   max-width: 500px;
   margin: 0 auto; 
   padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -884,7 +886,11 @@ tbody tr:nth-child(odd) {
   font-family: 'Poppins', sans-serif;
 }
 
-#add-car, #load-sample-cars:hover {
+#load-sample-cars:hover {
+  background-color: #45a049;
+}
+
+#add-car:hover{
   background-color: #45a049;
 }
 

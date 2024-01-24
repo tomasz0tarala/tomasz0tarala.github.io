@@ -7,7 +7,7 @@ function addCarToList() {
     const carName = document.getElementById('car-name').value.trim();
     const carPowerKW = document.getElementById('car-power-kw').value.trim();
     if (!carName || !carPowerKW || isNaN(carPowerKW) || Number(carPowerKW) <= 0) {
-        alert('Please enter a valid car name and a positive number for car power.');
+        alert('Podaj poprawny format nazwy smaochodu oraz dodatnią liczbę mocy.');
         return;
     }
 
