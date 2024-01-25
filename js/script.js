@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Pokazuje pop up po załadowaniu strony
     setTimeout(function() {
       popup.style.display = "block";
-    }, 2000); // 2000ms = 2s
+    }, 1000); // 1000ms = 1s
   
     // Zamyka pop up po kliknięciu w X
     closeBtn.onclick = function() {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
       alert("Dziękujemy za zapisanie się do newslettera: " + email);
       popup.style.display = "none";
     };
-  });
+});
   
 
 // hamburger menu
