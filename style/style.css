@@ -1,13 +1,33 @@
+/* @font-face
+//
+// Definiuje niestandardowy font 'Poppins' załadowany z lokalnego pliku.
+// Używany w całym dokumencie jako główny font.
+//
+// Styleguide 1.0.0
+*/
 @font-face {
   font-family: 'Poppins';
   src: url(font/Poppins-Medium.ttf);
 }
 
-/* Ogólne */
+/* Ogólne
+//
+// Ustawienie box-sizing na border-box dla wszystkich elementów.
+// Zapewnia lepszą kontrolę nad rozmiarami elementów.
+//
+// Styleguide 2.0.0
+*/
 * {
   box-sizing: border-box;
 }
 
+/* Body i HTML
+//
+// Resetowanie domyślnych marginesów i paddingów.
+// Ustawienie font-family na 'Poppins', sans-serif dla całego dokumentu.
+//
+// Styleguide 2.1.0
+*/
 body, html {
   margin: 0;
   padding: 0;
@@ -15,6 +35,13 @@ body, html {
   box-sizing: border-box;
 }
 
+/* Nagłówek
+//
+// Stylizacja nagłówka strony. Ustawienie koloru tła, koloru tekstu, wyśrodkowania tekstu i paddingu.
+// Pozycja względna z z-indexem dla lepszego ułożenia elementów.
+//
+// Styleguide 3.0.0
+*/
 header {
   background-color: #333;
   color: white;
@@ -24,6 +51,13 @@ header {
   z-index: 10; 
 }
 
+/* Nawigacja
+//
+// Stylizacja paska nawigacji. Ustawienie pozycji, szerokości, box-sizing, paddingu i koloru tła.
+// Z-index ustawiony na wysoką wartość, aby był zawsze na wierzchu.
+//
+// Styleguide 4.0.0
+*/
 nav {
   position: fixed;
   top: 0;
@@ -35,17 +69,36 @@ nav {
   z-index: 1000;
 }
 
+/* Lista nawigacyjna
+//
+// Stylizacja listy w nawigacji. Usunięcie stylu listy, resetowanie paddingu.
+//
+// Styleguide 4.1.0
+*/
 nav ul {
   list-style: none;
   padding: 0;
 }
 
+/* Elementy listy nawigacyjnej
+//
+// Stylizacja elementów listy nawigacyjnej. Wyświetlanie w linii, ustawienie marginesów i paddingu.
+//
+// Styleguide 4.2.0
+*/
 nav ul li {
   display: inline;
   margin-right: 20px;
   padding: 10px; 
 }
 
+/* Linki w nawigacji
+//
+// Stylizacja linków w pasku nawigacji. Ustawienie koloru, brak dekoracji tekstu.
+// Zmiana koloru przy najechaniu dla lepszej widoczności.
+//
+// Styleguide 4.3.0
+*/
 nav ul li a {
   color: white;
   text-decoration: none;
@@ -55,11 +108,24 @@ nav ul li a:hover {
   color: #ccc;
 }
 
+/* Główna zawartość
+//
+// Stylizacja głównego kontenera treści. Ustawienie minimalnej wysokości i paddingu.
+// Zapewnia spójny wygląd dla głównej treści strony.
+//
+// Styleguide 5.0.0
+*/
 main {
   min-height: calc(100vh - 4em);
   padding: 60px;
 }
 
+/* Stopka
+//
+// Stylizacja stopki strony. Ustawienie koloru tła, tekstu, wyśrodkowanie tekstu, paddingu i szerokości.
+//
+// Styleguide 6.0.0
+*/
 footer {
   background-color: #333;
   color: white;
@@ -69,10 +135,22 @@ footer {
   box-sizing: border-box;
 }
 
+/* Paragraf w stopce
+//
+// Stylizacja paragrafów w stopce. Ustawienie marginesów.
+//
+// Styleguide 6.1.0
+*/
 footer p {
   margin: 10px 0;
 }
 
+/* Sekcja mediów społecznościowych w stopce
+//
+// Stylizacja sekcji mediów społecznościowych. Użycie flexboxa dla lepszego rozmieszczenia.
+//
+// Styleguide 6.2.0
+*/
 footer .social-media {
   display: flex;
   justify-content: center;
@@ -82,21 +160,45 @@ footer .social-media {
   padding: 10px 0;
 }
 
+/* Linki mediów społecznościowych
+//
+// Stylizacja linków w sekcji mediów społecznościowych. Ustawienie wyświetlania na blokowe.
+//
+// Styleguide 6.3.0
+*/
 footer .social-media a {
   display: block;
 }
 
+/* Obrazy w mediach społecznościowych
+//
+// Stylizacja obrazów w linkach mediów społecznościowych. Ustawienie maksymalnej szerokości i auto wysokości.
+//
+// Styleguide 6.4.0
+*/
 footer .social-media a img {
   max-width: 100%;
   height: auto;
 }
 
+/* Linki
+//
+// Globalne stylizacje linków. Ustawienie koloru tekstu i brak dekoracji.
+//
+// Styleguide 7.0.0
+*/
 a {
   color: black;
   text-decoration: none;
 }
 
-/* Popup */
+/* Popup
+//
+// Stylizacja kontenera modalnego popup. Ustawienie na niewidoczny domyślnie (display: none).
+// Pozycjonowanie stałe z pełnym rozmiarem ekranu, tło półprzezroczyste.
+//
+// Styleguide 8.0.0
+*/
 .popup {
   display: none;
   position: fixed;
@@ -110,6 +212,13 @@ a {
   padding-top: auto;
 }
 
+/* Popup Content
+//
+// Stylizacja wewnętrznej zawartości popup. Tło białe, marginesy, padding,
+// obramowanie i szerokość ustawione dla odpowiedniego wyglądu.
+//
+// Styleguide 8.1.0
+*/
 .popup-content {
   background-color: #fefefe;
   margin: 15% auto;
@@ -119,6 +228,13 @@ a {
   height: auto;
 }
 
+/* Przycisk Zamknięcia Popup
+//
+// Stylizacja przycisku zamknięcia popup. Kolor, rozmieszczenie, rozmiar fontu i waga.
+// Interakcja z myszką dla lepszej użyteczności.
+//
+// Styleguide 8.2.0
+*/
 .close {
   color: #aaa;
   float: right;
@@ -133,7 +249,13 @@ a {
   cursor: pointer;
 }
 
-/* Popup form */
+/* Formularz Newsletter
+//
+// Stylizacja formularza newslettera. Użycie siatki (grid) dla lepszego rozmieszczenia elementów.
+// Ustawienie szerokości, paddingu, marginesów i fontu dla pól formularza.
+//
+// Styleguide 8.3.0
+*/
 #newsletter-form .form-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -160,7 +282,13 @@ a {
 }
 
 
-/* Hamburger*/
+/* Hamburger Menu
+//
+// Stylizacja przycisku menu typu hamburger (dla urządzeń mobilnych).
+// Ustawienie wyświetlania, kursora i marginesów.
+//
+// Styleguide 9.0.0
+*/
 .hamburger-menu {
   display: none;
   cursor: pointer;
@@ -175,13 +303,25 @@ a {
   background-color: white;
 }
 
+/* Padding
+//
+// Dodatkowy styl dla paddingu.
+// Ustawienie paddingu górnego i dolnego.
+//
+// Styleguide 9.1.0
+*/
 .padding {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-/* Nawigacja */
-
+/* Nawigacja
+//
+// Stylizacja głównego paska nawigacji. Użycie flexboxa dla wyśrodkowania elementów.
+// Ustawienie wysokości, pozycji, szerokości, paddingu i koloru tła.
+//
+// Styleguide 10.0.0
+*/
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -197,6 +337,12 @@ a {
   z-index: 1000;
 }
 
+/* Logo Nawigacji
+//
+// Stylizacja logo w pasku nawigacji. Ustawienie wysokości i szerokości.
+//
+// Styleguide 10.1.0
+*/
 .navbar-logo {
   height: 100%;
 }
@@ -206,8 +352,12 @@ a {
   width: auto;
 }
 
-/* Social media */
-
+/* Media Społecznościowe
+//
+// Stylizacja linków do mediów społecznościowych. Ustawienie marginesów i wyświetlania.
+//
+// Styleguide 11.0.0
+*/
 .social-media a {
   margin: 0 10px;
   display: inline-block;
@@ -219,7 +369,13 @@ a {
 }
 
 
-/* Galeria */
+/* Galeria
+//
+// Stylizacja głównego kontenera galerii. Użycie grid layout do dynamicznego rozmieszczenia elementów.
+// Ustawienie kolumn, przerw między elementami i paddingu.
+//
+// Styleguide 12.0.0
+*/
 
 .gallery {
   display: grid;
@@ -228,6 +384,13 @@ a {
   padding: 10px;
 }
 
+/* Element Galerii
+//
+// Stylizacja poszczególnych elementów galerii. Ustawienie pozycji, overflow i cienia.
+// Efekt transformacji przy najechaniu na obraz.
+//
+// Styleguide 12.1.0
+*/
 .gallery-item {
   position: relative;
   overflow: hidden;
@@ -255,8 +418,13 @@ a {
   transform: scale(1.05);
 }
 
-/* Popup content */
-
+/* Popup Content
+//
+// Stylizacja zawartości wewnętrznej popup. Użycie flexbox do centrowania i zarządzania układem.
+// Ustawienie kierunku, wyrównania, justowania i wielkości fontu.
+//
+// Styleguide 12.2.0
+*/
 .content {
   display: flex;
   flex-direction: column;
@@ -266,8 +434,13 @@ a {
   font-size: x-large;
 }
 
-/* Obrazki-rząd */
-
+/* Wiersz Obrazów
+//
+// Stylizacja rzędu obrazów. Użycie flexbox dla zarządzania rozmieszczeniem elementów.
+// Ustawienie justowania, wyrównania i przerw.
+//
+// Styleguide 12.3.0
+*/
 .image-row {
   display: flex;
   justify-content: space-between;
@@ -306,7 +479,12 @@ a {
   opacity: 1;
 }
 
-/* Slider */
+/* Karuzela (Slider)
+//
+// Stylizacja głównego kontenera slidera. Ustawienie pozycji, maksymalnej szerokości, marginesu i ukrycia nadmiaru.
+//
+// Styleguide 13.0.0
+*/
 .slider {
   position: relative;
   max-width: 600px;
@@ -314,10 +492,23 @@ a {
   overflow: hidden;
 }
 
+/* Slides
+//
+// Stylizacja kontenera dla slajdów. Użycie flexbox do wyświetlania slajdów obok siebie.
+//
+// Styleguide 13.1.0
+*/
 .slides {
   display: flex;
 }
 
+/* Slide
+//
+// Stylizacja poszczególnych slajdów. Ustawienie minimalnej szerokości, przejścia.
+// Efekt transformacji przy najechaniu na obraz.
+//
+// Styleguide 13.2.0
+*/
 .slide {
   min-width: 100%;
   transition: ease 0.5s;
@@ -342,6 +533,12 @@ a {
   padding: 5px;
 }
 
+/* Przyciski Nawigacji
+//
+// Stylizacja przycisków nawigacji 'poprzedni' i 'następny'. Ustawienie pozycji, koloru, tła.
+//
+// Styleguide 13.3.0
+*/
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -366,6 +563,12 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* Dots
+//
+// Stylizacja punktów nawigacyjnych. Ustawienie kursora, rozmiaru, marginesu, koloru tła, zaokrąglenia i cienia.
+//
+// Styleguide 13.4.0
+*/
 .dots-container {
   text-align: center;
 }
@@ -386,17 +589,34 @@ a {
   background-color: #717171;
 }
 
-/* Zakładki */
+/* Zakładki (Accordion)
+//
+// Stylizacja kontenera dla zakładek. Ustawienie paddingu i szerokości.
+//
+// Styleguide 14.0.0
+*/
 .accordion {
   padding-top: 90px;
   padding-bottom: 40px;
   width: 100%;
 }
 
+/* Tab
+//
+// Stylizacja poszczególnych zakładek. Ustawienie marginesu.
+//
+// Styleguide 14.1.0
+*/
 .tab {
   margin-bottom: 1px;
 }
 
+/* Tab Label
+//
+// Stylizacja etykiet zakładek. Ustawienie wyświetlania, paddingu, wagi fontu, wielkości, rodziny fontu.
+//
+// Styleguide 14.2.0
+*/
 .tab-label {
   display: block;
   padding-top: 10px;
@@ -422,6 +642,12 @@ a {
   z-index: -1;
 }
 
+/* Tab Content
+//
+// Stylizacja zawartości zakładek. Ustawienie maksymalnej wysokości, overflow, tła, przejścia, paddingu i cienia.
+//
+// Styleguide 14.3.0
+*/
 .tab-content {
   max-height: 0;
   overflow: hidden;
@@ -432,6 +658,12 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Tab Button
+//
+// Stylizacja przycisków wewnątrz zakładek. Ustawienie szerokości, paddingu, tła, granic, wyrównania tekstu.
+//
+// Styleguide 14.4.0
+*/
 .tab button {
   width: 100%;
   padding-top:30px;
@@ -447,8 +679,12 @@ a {
   background: #ddd;
 }
 
-/* Tabela */
-
+/* Tabela
+//
+// Stylizacja responsywnej tabeli. Ustawienie szerokości, nadmiaru i auto przewijania.
+//
+// Styleguide 15.0.0
+*/
 #responsive-table {
   width: 100%;
   overflow-x: auto;
@@ -467,24 +703,29 @@ table {
 th, td {
   text-align: left;
   padding: 8px;
-  border: 1px solid #ddd; /* Light grey border */
+  border: 1px solid #ddd; 
 }
 
 th {
-  background-color: #4CAF50; /* Green background for headers */
+  background-color: #4CAF50; 
   color: white;
 }
 
 td {
-  background-color: #f2f2f2; /* Light grey background for data */
+  background-color: #f2f2f2; 
 }
 
 tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-/* Tytuł */
-
+/* Centrowanie Tytułu
+//
+// Stylizacja kontenera dla tytułu. Użycie flexbox do centrowania elementów.
+// Ustawienie wysokości, wyrównania, marginesu.
+//
+// Styleguide 15.1.0
+*/
 .center {
   display: flex;
   justify-content: center;
@@ -494,8 +735,13 @@ tbody tr:nth-child(odd) {
   margin: 0 auto;
 }
 
-/* Formularz contact us*/
-
+/* Podstrona - Formularz Kontaktowy
+//
+// Stylizacja kontenera formularza kontaktowego. Użycie flexbox do centrowania i organizacji kierunku.
+// Ustawienie minimalnej wysokości, paddingu i innych właściwości formularza.
+//
+// Styleguide 16.0.0
+*/
 .contact-form-container {
   display: flex;
   flex-direction: column;
@@ -536,8 +782,13 @@ tbody tr:nth-child(odd) {
   height: 100px;
 }
 
-/* Checkbox */
-
+/* Checkbox
+//
+// Stylizacja niestandardowego checkboxa. Użycie flexbox do organizacji elementów.
+// Ustawienie marginesu, wyrównania i układu.
+//
+// Styleguide 16.1.0
+*/
 .checkbox-custom {
   display: flex;
   align-items: center;
@@ -569,19 +820,36 @@ tbody tr:nth-child(odd) {
   background-color: #45a049;
 }
 
-/* O nas */
-
+/* Nagłówek Podstrony
+//
+// Stylizacja nagłówka na podstronie 'O nas'. Ustawienie wyrównania tekstu i marginesu dolnego.
+//
+// Styleguide 17.0.0
+*/
 .heading {
   text-align: center;
   margin-bottom: 2rem;
 }
 
+/* Zespół
+//
+// Stylizacja sekcji zespołu. Użycie flexboxa do organizacji wyświetlania członków zespołu.
+// Ustawienie owijania, wyrównania i justowania.
+//
+// Styleguide 17.1.0
+*/
 .team {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+/* Członek Zespołu
+//
+// Stylizacja kart członków zespołu. Ustawienie kierunku flex, wyrównania, cienia, tła i paddingu.
+//
+// Styleguide 17.2.0
+*/
 .team-member {
   flex-basis: 100%;
   max-width: 100%;
@@ -607,6 +875,12 @@ tbody tr:nth-child(odd) {
   margin: 0.5rem 0;
 }
 
+/* Cel
+//
+// Stylizacja sekcji z celami firmy. Ustawienie tła, paddingu, marginesu i cienia.
+//
+// Styleguide 17.3.0
+*/
 .purpose {
   background: #ddd;
   padding: 40px;
@@ -614,21 +888,37 @@ tbody tr:nth-child(odd) {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Kontener Box
+//
+// Stylizacja ogólnego kontenera box. Ustawienie tła, paddingu i cienia.
+//
+// Styleguide 17.4.0
+*/
 .box {
   background-color: white;
   padding: 20px 30px 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Ikony */
-
+/* Ikony
+//
+// Stylizacja ikon. Domyślnie ukryte (display: none).
+//
+// Styleguide 17.5.0
+*/
 .icon {
   display: none;
 }
 
-/* Media Query*/
+/* Media Query - Max Width 600px
+//
+// Stylizacja komponentów dla urządzeń o maksymalnej szerokości ekranu 600px.
+// Zawiera style dla stopki, tabeli, nawigacji, karuzeli, rzędów obrazów, zakładek, galerii, menu hamburgera i innych.
+//
+// Styleguide 18.0.0
+*/
 @media only screen and (max-width: 600px) {
-
+  /* Stylizacja stopki, tabeli, karuzeli, rzędów obrazów, zakładek, galerii, menu hamburgera, nawigacji i innych. */
   /* Stopka */
   footer {
     padding: 15px 10px;
@@ -665,7 +955,7 @@ tbody tr:nth-child(odd) {
     border-bottom: 1px dotted #ddd;
   }
 
-  /* Data labels */
+  /* Data labels - tabela */
   td:before {
     content: attr(data-label);
     display: block;
@@ -678,12 +968,12 @@ tbody tr:nth-child(odd) {
     display: none;
   }
 
-  /* Slider */
+  /* Carousel */
   .slide-text {
     display: none;
   }
 
-  /* Obrazki-rząd */
+  /* Image-row */
   .image-row {
     flex-direction: column;
   }
@@ -712,7 +1002,7 @@ tbody tr:nth-child(odd) {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Galeria */
+  /* Podstrona - Galeria */
   .gallery-item-text {
     font-size: 12px;
   }
@@ -722,7 +1012,7 @@ tbody tr:nth-child(odd) {
     position: relative;
   }
 
-  /* Hamburger */
+  /* Hamburger menu */
   .hamburger-menu {
     display: inline-block;
     position: fixed;
@@ -795,7 +1085,7 @@ tbody tr:nth-child(odd) {
     z-index: 999;
   }
 
-  /* Formularz */
+  /* Podstrona - contact us */
   .contact-form-container {
     padding: 20px 0;
   }
@@ -810,14 +1100,14 @@ tbody tr:nth-child(odd) {
     padding-top: 120px;
   }
 
-  /* Ikona */
+  /* Ikony */
   .mobile-nav .icon {
     display: inline-block;
     align-items: center;
     justify-content: space-between;
   }
 
-  /* Lista */
+  /* Podstrona - lista samochodów */
   .form-container input[type="text"],
   .form-container input[type="number"],
   #add-car, #load-sample-cars {
@@ -835,6 +1125,13 @@ tbody tr:nth-child(odd) {
   }
 }
 
+/* Media Query - Min Width 600px
+//
+// Stylizacja komponentów dla urządzeń o minimalnej szerokości ekranu 600px.
+// Zmiana układu dla członków zespołu na dwie kolumny.
+//
+// Styleguide 19.0.0
+*/
 @media (min-width: 600px) {
   .team-member {
     flex-basis: calc(50% - 2rem);
@@ -842,6 +1139,13 @@ tbody tr:nth-child(odd) {
   }
 }
 
+/* Media Query - Min Width 900px
+//
+// Stylizacja komponentów dla urządzeń o minimalnej szerokości ekranu 900px.
+// Zmiana układu dla członków zespołu na trzy kolumny.
+//
+// Styleguide 20.0.0
+*/
 @media (min-width: 900px) {
   .team-member {
     flex-basis: calc(33.333% - 2rem);
@@ -849,12 +1153,24 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/* Lista Samochodów */
+/* Podstrona - Lista Samochodów
+//
+// Stylizacja listy samochodów. Ustawienie szerokości, brak stylu listy, paddingu, marginesu.
+//
+// Styleguide 21.0.0
+*/
 
 .color {
   background-color: #f7f7f7;
 }
 
+/* Form Box
+//
+// Stylizacja kontenera formularza. Użycie flexboxa do centrowania i organizacji elementów.
+// Ustawienie koloru tła, marginesu i kierunku.
+//
+// Styleguide 21.1.0
+*/
 .form-box {
   margin: 0;
   background-color: #f7f7f7;
@@ -864,6 +1180,13 @@ tbody tr:nth-child(odd) {
   justify-content: center;
 }
 
+/* Form Container
+//
+// Stylizacja kontenera formularza. Ustawienie szerokości, cienia, paddingu, tła, zaokrąglenia.
+// Użycie flexboxa do organizacji elementów wewnątrz.
+//
+// Styleguide 21.2.0
+*/
 .form-container {
   width: 100%;
   max-width: 600px;
@@ -897,6 +1220,13 @@ tbody tr:nth-child(odd) {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Przyciski Formularza
+//
+// Stylizacja przycisków w formularzu. Ustawienie paddingu, koloru tła, koloru tekstu, brak granic.
+// Zaokrąglenie, kursor, przejście i wyrównanie tekstu.
+//
+// Styleguide 21.3.0
+*/
 #add-car, #load-sample-cars {
   padding: 10px;
   background-color: #4CAF50;
@@ -913,6 +1243,13 @@ tbody tr:nth-child(odd) {
   background-color: #45a049;
 }
 
+/* Lista Samochodów
+//
+// Stylizacja listy samochodów. Ustawienie szerokości, brak stylu listy, paddingu, marginesu.
+// Stylizacja poszczególnych elementów listy i przycisku usuwania.
+//
+// Styleguide 21.4.0
+*/
 #car-list {
   width: 100%;
   max-width: 600px;
@@ -946,6 +1283,12 @@ tbody tr:nth-child(odd) {
   color: rgba(255, 255, 255, 0.586);
 }
 
+/* Grupa Przycisków
+//
+// Stylizacja grupy przycisków. Ustawienie wyświetlania flex, szerokości, przerw i paddingu.
+//
+// Styleguide 21.5.0
+*/
 .buttons-group {
   display: flex;
   width: 100%;
