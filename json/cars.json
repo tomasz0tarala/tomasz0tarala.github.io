@@ -1,14 +1,20 @@
 [
     {
-        "name": "Toyota",
-        "powerKW": 75
+        "brand": "Audi",
+        "model": "A4",
+        "year": "2020",
+        "powerKW": 140
     },
     {
-        "name": "Nissan",
-        "powerKW": 100
+        "brand": "BMW",
+        "model": "320i",
+        "year": "2019",
+        "powerKW": 135
     },
     {
-        "name": "Mazda",
-        "powerKW": 85
+        "brand": "Audi",
+        "model": "A8",
+        "year": "2017",
+        "powerKW": 160
     }
 ]

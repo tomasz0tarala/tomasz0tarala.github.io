@@ -1,38 +1,40 @@
-/*
-Font-Face - Poppins
-
-Importowanie czcionki 'Poppins'. Używana głównie w projekcie jako podstawowa czcionka. Zawiera odnośnik do lokalnego pliku czcionki w formacie TTF.
-
-Example:
-CSS: font-family: 'Poppins', sans-serif;
-
-Style guide: 1.1.0 - Czcionki
+/* Czcionka
+// Font-Face - Poppins
+//
+// Importowanie czcionki 'Poppins'. Używana głównie w projekcie jako podstawowa czcionka. 
+// Zawiera odnośnik do lokalnego pliku czcionki w formacie TTF.
+//
+// Example:
+// <p class="poppins">Przykładowy tekst</p>
+//
+// Styleguide 1.0.0 - Font-Face
 */
- @font-face {
+@font-face {
   font-family: 'Poppins';
   src: url(font/Poppins-Medium.ttf);
 }
 
-/*
-Globalne Ustawienia Box
-
-Ustawienie globalne box-sizing na border-box, które zmienia domyślne zachowanie box modelu w CSS. Dzięki temu szerokość i wysokość elementów zawiera padding i border.
-
-Style guide: 2.1.0 - Ustawienia Globalne
+/* Ogólne
+// Globalne Ustawienia Box
+//
+// Ustawienie globalne box-sizing na border-box, które zmienia domyślne zachowanie box modelu w CSS. 
+// Dzięki temu szerokość i wysokość elementów zawiera padding i border.
+//
+// Styleguide 2.0.0 - Ustawienia Globalne
 */
 * {
   box-sizing: border-box;
 }
 
-/*
-Podstawowe Style dla Body i HTML
-
-Resetuje domyślne marginesy i paddingi. Ustawia Poppins jako domyślną czcionkę dla całej strony z zapasową sans-serif.
-
-Example:
-HTML: <body>...</body>
-
-Style guide: 2.2.0 - Resetowanie CSS
+/* Body i html
+// Podstawowe Style dla Body i HTML
+//
+// Resetuje domyślne marginesy i paddingi. Ustawia Poppins jako domyślną czcionkę dla całej strony z zapasową sans-serif.
+//
+// Example:
+// HTML: <body>...</body>
+//
+// Styleguide 2.1.0 - Resetowanie CSS
 */
 body, html {
   margin: 0;
@@ -41,15 +43,15 @@ body, html {
   box-sizing: border-box;
 }
 
-/*
-Nagłówek
-
-Styl dla elementu <header>. Ustawia tło, kolor tekstu, wyrównanie tekstu, padding i pozycjonowanie.
-
-Example:
-HTML: <header>...</header>
-
-Style guide: 3.1.1 - Nagłówek
+/* Header
+// Nagłówek
+//
+// Styl dla elementu <header>. Ustawia tło, kolor tekstu, wyrównanie tekstu, padding i pozycjonowanie.
+//
+// Example:
+// HTML: <header>...</header>
+//
+// Styleguide 3.0.0 - Nagłówek
 */
 header {
   background-color: #333;
@@ -60,15 +62,16 @@ header {
   z-index: 10;
 }
 
-/*
-Nawigacja
-
-Styl dla elementu <nav>. Ustawia nawigację jako element stały na górze strony. Zawiera podstawowe właściwości stylu i pozycjonowania.
-
-Example:
-HTML: <nav>...</nav>
-
-Style guide: 3.2.1 - Nawigacja
+/* Nawiagacja
+// Nawigacja
+//
+// Styl dla elementu <nav>. Ustawia nawigację jako element stały na górze strony. 
+// Zawiera podstawowe właściwości stylu i pozycjonowania.
+//
+// Example:
+// HTML: <nav>...</nav>
+//
+// Styleguide 3.1.0 - Nawigacja
 */
 nav {
   position: fixed;
@@ -106,15 +109,15 @@ main {
   padding: 60px;
 }
 
-/*
-Stopka
-
-Styl dla elementu <footer>. Definiuje tło, kolor tekstu, wyrównanie tekstu, padding oraz szerokość.
-
-Example:
-HTML: <footer>...</footer>
-
-Style guide: 3.3.1 - Stopka
+/* Stopka
+// Stopka
+//
+// Styl dla elementu <footer>. Definiuje tło, kolor tekstu, wyrównanie tekstu, padding oraz szerokość.
+//
+// Example:
+// HTML: <footer>...</footer>
+//
+// Styleguide 3.2.0 - Stopka
 */
 footer {
   background-color: #333;
@@ -152,15 +155,15 @@ a {
   text-decoration: none;
 }
 
-/*
-Popup
-
-Styl dla modalnego okna typu 'popup'. Okno jest domyślnie ukryte (display: none) i pojawia się w pełnym oknie przeglądarki z ciemnym, półprzezroczystym tłem. Zawiera ustawienia pozycjonowania, rozmiaru oraz tła.
-
-Example:
-HTML: <div class="popup">...</div>
-
-Style guide: 4.1.1 - Popup
+/* Pop-up
+// Pop-up
+//
+// Styl dla modalnego okna typu 'popup'. Okno jest domyślnie ukryte (display: none) i pojawia się w pełnym oknie przeglądarki z ciemnym, półprzezroczystym tłem. Zawiera ustawienia pozycjonowania, rozmiaru oraz tła.
+//
+// Example:
+// HTML: <div class="popup">...</div>
+//
+// Styleguide 4.0.0 - Popup
 */
 .popup {
   display: none;
@@ -175,15 +178,15 @@ Style guide: 4.1.1 - Popup
   padding-top: auto;
 }
 
-/*
-Popup Content
-
-Styl dla zawartości okna popup. Ustawia tło, marginesy, padding, obramowanie oraz szerokość i wysokość. Zawartość jest wyśrodkowana w oknie popup.
-
-Example:
-HTML: <div class="popup-content">...</div>
-
-Style guide: 4.1.2 - Popup Content
+/* Pop-up - Content
+// Pop-up Content
+//
+// Styl dla zawartości okna popup. Ustawia tło, marginesy, padding, obramowanie oraz szerokość i wysokość. Zawartość jest wyśrodkowana w oknie popup.
+//
+// Example:
+// HTML: <div class="popup-content">...</div>
+//
+// Styleguide 4.1.0 - Popup Content
 */
 .popup-content {
   background-color: #fefefe;
@@ -194,15 +197,15 @@ Style guide: 4.1.2 - Popup Content
   height: auto;
 }
 
-/*
-Close Button
-
-Styl dla przycisku zamykającego okno popup. Ustawia kolor, pozycjonowanie, rozmiar czcionki i wagi. Zawiera też style dla stanów :hover i :focus, zmieniając kolor tekstu i kursor na wskaźnik.
-
-Example:
-HTML: <span class="close">&times;</span>
-
-Style guide: 4.1.3 - Close Button
+/* Pop-up - Close Button
+// Close Button
+//
+// Styl dla przycisku zamykającego okno popup. Ustawia kolor, pozycjonowanie, rozmiar czcionki i wagi. Zawiera też styledla sanów :hover i :focus, zmieniając kolor tekstu i kursor na wskaźnik.
+//
+// Example:
+// HTML: <span class="close">&times;</span>
+//
+// Styleguide 4.2.0 - Close Button
 */
 .close {
   color: #aaa;
@@ -218,15 +221,15 @@ Style guide: 4.1.3 - Close Button
   cursor: pointer;
 }
 
-/*
-Newsletter Form - Grid Layout
-
-Styl dla siatki formularza newslettera. Używa display: grid do stworzenia układu siatki. Zawiera definicję kolumn oraz odstępy między nimi.
-
-Example:
-HTML: <div id="newsletter-form" class="form-grid">...</div>
-
-Style guide: 5.1.1 - Newsletter Form Grid
+/* Newsletter Form
+// Newsletter Form - Grid Layout
+//
+// Styl dla siatki formularza newslettera. Używa display: grid do stworzenia układu siatki. Zawiera definicję kolumn oraz odstępy między nimi.
+//
+// Example:
+// HTML: <div id="newsletter-form" class="form-grid">...</div>
+//
+// Styleguide 5.0.0 - Newsletter Form Grid
 */
 #newsletter-form .form-grid {
   display: grid;
@@ -234,15 +237,15 @@ Style guide: 5.1.1 - Newsletter Form Grid
   gap: 10px;
 }
 
-/*
-Newsletter Form - Input Fields
-
-Styl dla pól wprowadzania e-maila i przycisku submit w formularzu newslettera. Ustawia szerokość na 100%, padding, margines oraz czcionkę Poppins.
-
-Example:
-HTML: <input type="email">, <input type="submit">
-
-Style guide: 5.1.2 - Input Fields
+/* Newsletter Form - Input Fields
+// Newsletter Form - Input Fields
+//
+// Styl dla pól wprowadzania e-maila i przycisku submit w formularzu newslettera. Ustawia szerokość na 100%, padding, margines oraz czcionkę Poppins.
+//
+// Example:
+// HTML: <input type="email">, <input type="submit">
+//
+// Styleguide 5.1.0 - Input Fields
 */
 #newsletter-form input[type=email],
 #newsletter-form input[type=submit] {
@@ -252,15 +255,15 @@ Style guide: 5.1.2 - Input Fields
   font-family: 'Poppins', sans-serif;
 }
 
-/*
-Newsletter Form - Submit Button
-
-Styl dla przycisku submit w formularzu newslettera. Ustawia kolor tła, kolor tekstu, usuwa obramowanie i zmienia kursor na wskaźnik. Zawiera także styl dla stanu :hover, zmieniając odcień koloru tła.
-
-Example:
-HTML: <input type="submit">
-
-Style guide: 5.1.3 - Submit Button
+/* Newsletter Form - Submit Button
+// Newsletter Form - Submit Button
+//
+// Styl dla przycisku submit w formularzu newslettera. Ustawia kolor tła, kolor tekstu, usuwa obramowanie i zmienia kursor na wskaźnik. Zawiera także styl dla stanu :hover, zmieniając odcień koloru tła.
+//
+// Example:
+// HTML: <input type="submit">
+//
+// Styleguide 5.2.0 - Submit Button
 */
 #newsletter-form input[type=submit] {
   background-color: #4CAF50;
@@ -273,15 +276,15 @@ Style guide: 5.1.3 - Submit Button
   background-color: #45a049;
 }
 
-/*
-Hamburger Menu
-
-Styl dla przycisku menu hamburgerowego. Domyślnie ukryty (display: none). Zmienia kursor na wskaźnik, aby wskazać interaktywność. Ustawia również margines. Zazwyczaj używany w responsywnym designie, widoczny tylko na urządzeniach mobilnych.
-
-Example:
-HTML: <div class="hamburger-menu">...</div>
-
-Style guide: 6.1.1 - Hamburger Menu
+/* Hamburger Menu
+// Hamburger Menu
+//
+// Styl dla przycisku menu hamburgerowego. Domyślnie ukryty (display: none). Zmienia kursor na wskaźnik, aby wskazać interaktywność. Ustawia również margines. Zazwyczaj używany w responsywnym designie, widoczny tylko na urządzeniach mobilnych.
+//
+// Example:
+// HTML: <div class="hamburger-menu">...</div>
+//
+//Styleguide 6.0.0 - Hamburger Menu
 */
 .hamburger-menu {
   display: none;
@@ -289,15 +292,15 @@ Style guide: 6.1.1 - Hamburger Menu
   margin: 1em;
 }
 
-/*
-Hamburger Menu - Bar
-
-Styl dla poszczególnych pasków w przycisku menu hamburgerowego. Ustawia szerokość, wysokość, margines dolny oraz kolor tła każdego paska.
-
-Example:
-HTML: <span></span> (wewnątrz .hamburger-menu)
-
-Style guide: 6.1.2 - Hamburger Bar
+/* Hamburger Menu - Bar
+// Hamburger Menu - Bar
+//
+// Styl dla poszczególnych pasków w przycisku menu hamburgerowego. Ustawia szerokość, wysokość, margines dolny oraz kolor tła każdego paska.
+//
+// Example:
+// HTML: <span></span> (wewnątrz .hamburger-menu)
+// 
+// Styleguide 6.1.0 - Hamburger Bar
 */
 .hamburger-menu span {
   display: block;
@@ -312,15 +315,15 @@ Style guide: 6.1.2 - Hamburger Bar
   padding-bottom: 20px;
 }
 
-/*
-Navbar
-
-Styl dla głównego paska nawigacji (#navbar). Ustawia pasek jako stały na górze strony, z szerokością 100%. Wykorzystuje flexbox do rozmieszczenia elementów, wyrównuje je do środka i rozkłada równomiernie. Ustawia również wysokość, tło, padding i inne właściwości.
-
-Example:
-HTML: <div id="navbar">...</div>
-
-Style guide: 7.1.1 - Navbar
+/* Navbar
+// Navbar
+//
+// Styl dla głównego paska nawigacji (#navbar). Ustawia pasek jako stały na górze strony, z szerokością 100%. Wykorzystuje flexbox do rozmieszczenia elementów, wyrównuje je do środka i rozkłada równomiernie. Ustawia również wysokość, tło, padding i inne właściwości.
+//
+// Example:
+// HTML: <div id="navbar">...</div>
+// 
+// Styleguide 7.0.0 - Navbar
 */
 #navbar {
   display: flex;
@@ -337,29 +340,29 @@ Style guide: 7.1.1 - Navbar
   z-index: 1000;
 }
 
-/*
-Navbar Logo
-
-Styl dla logo wewnątrz navbara. Ustawia wysokość na 100% paska nawigacji, aby logo było w pełni widoczne i dobrze wyśrodkowane.
-
-Example:
-HTML: <div class="navbar-logo"><img src="logo.png"></div>
-
-Style guide: 7.1.2 - Navbar Logo
+/* Navbar Logo
+// Navbar Logo
+// 
+// Styl dla logo wewnątrz navbara. Ustawia wysokość na 100% paska nawigacji, aby logo było w pełni widoczne i dobrze wyśrodkowane.
+//
+// Example:
+// HTML: <div class="navbar-logo"><img src="logo.png"></div>
+//
+// Styleguide 7.1.0 - Navbar Logo
 */
 .navbar-logo {
   height: 100%;
 }
 
-/*
-Navbar Logo Image
-
-Styl dla obrazka logo w navbarze. Ustawia wysokość na 100% kontenera logo, a szerokość na auto, aby zachować proporcje obrazka.
-
-Example:
-HTML: <img src="logo.png">
-
-Style guide: 7.1.3 - Navbar Logo Image
+/* Navbar Logo Image
+// Navbar Logo Image
+//
+// Styl dla obrazka logo w navbarze. Ustawia wysokość na 100% kontenera logo, a szerokość na auto, aby zachować proporcje obrazka.
+//
+// Example:
+// HTML: <img src="logo.png">
+//
+// Styleguide 7.2.0 - Navbar Logo Image
 */
 .navbar-logo img {
   height: 100%;
@@ -376,15 +379,15 @@ Style guide: 7.1.3 - Navbar Logo Image
   height: auto;
 }
 
-/*
-Gallery
-
-Styl dla kontenera galerii. Wykorzystuje grid do tworzenia responsywnego układu obrazów. Definiuje kolumny z dynamiczną szerokością, które dopasowują się do dostępnej przestrzeni, oraz ustawia odstępy między elementami i padding.
-
-Example:
-HTML: <div class="gallery">...</div>
-
-Style guide: 8.1.1 - Gallery Container
+/* Gallery
+// Gallery
+//
+// Styl dla kontenera galerii. Wykorzystuje grid do tworzenia responsywnego układu obrazów. Definiuje kolumny z dynamiczną szerokością, które dopasowują się do dostępnej przestrzeni, oraz ustawia odstępy między elementami i padding.
+//
+// Example:
+// HTML: <div class="gallery">...</div>
+//
+// Styleguide 8.0.0 - Gallery Container
 */
 .gallery {
   display: grid;
@@ -393,15 +396,15 @@ Style guide: 8.1.1 - Gallery Container
   padding: 10px;
 }
 
-/*
-Gallery Item
-
-Styl dla poszczególnych elementów galerii. Ustawia pozycję elementu, ukrywa nadmiar treści i dodaje cień dookoła. Pozwala na tworzenie spójnego i atrakcyjnego wyglądu dla każdego obrazu.
-
-Example:
-HTML: <div class="gallery-item">...</div>
-
-Style guide: 8.1.2 - Gallery Item
+/* Gallery Item
+// Gallery Item
+//
+// Styl dla poszczególnych elementów galerii. Ustawia pozycję elementu, ukrywa nadmiar treści i dodaje cień dookoła. Pozwala na tworzenie spójnego i atrakcyjnego wyglądu dla każdego obrazu.
+//
+// Example:
+// HTML: <div class="gallery-item">...</div>
+//
+// Styleguide 8.1.0 - Gallery Item
 */
 .gallery-item {
   position: relative;
@@ -409,15 +412,15 @@ Style guide: 8.1.2 - Gallery Item
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
 }
 
-/*
-Gallery Item Image
-
-Styl dla obrazów wewnątrz elementów galerii. Ustawia szerokość na 100%, wysokość na auto oraz dodaje płynną transformację dla efektu powiększenia przy najechaniu.
-
-Example:
-HTML: <img src="image.jpg">
-
-Styleguide: 8.1.3 - Gallery Item Image
+/* Gallery Item Image
+// Gallery Item Image
+//
+// Styl dla obrazów wewnątrz elementów galerii. Ustawia szerokość na 100%, wysokość na auto oraz dodaje płynną transformację dla efektu powiększenia przy najechaniu.
+//
+// Example:
+// HTML: <img src="image.jpg">
+//
+// Styleguide 8.2.0 - Gallery Item Image
 */
 .gallery-item img {
   width: 100%;
@@ -426,15 +429,15 @@ Styleguide: 8.1.3 - Gallery Item Image
   display: block;
 }
 
-/*
-Gallery Item Text
-
-Styl dla tekstu wyświetlanego na obrazach w galerii. Ustawia pozycję absolutną tekstu, dodaje tło i stylizuje tekst. Zapewnia czytelność tekstu na zróżnicowanym tle obrazów.
-
-Example:
-HTML: <div class="gallery-item-text">...</div>
-
-Styleguide: 8.1.4 - Gallery Item Text
+/* Gallery Item Text
+// Gallery Item Text
+//
+// Styl dla tekstu wyświetlanego na obrazach w galerii. Ustawia pozycję absolutną tekstu, dodaje tło i stylizuje tekst. Zapewnia czytelność tekstu na zróżnicowanym tle obrazów.
+//
+// Example:
+// HTML: <div class="gallery-item-text">...</div>
+//
+// Styleguide 8.3.0 - Gallery Item Text
 */
 .gallery-item-text {
   position: absolute;
@@ -446,29 +449,29 @@ Styleguide: 8.1.4 - Gallery Item Text
   font-size: 14px;
 }
 
-/*
-Gallery Item Hover Effect
-
-Styl dla efektu najechania na element galerii. Powiększa obraz wewnątrz elementu galerii, tworząc efekt wizualnego wyróżnienia wybranego obrazu.
-
-Example:
-HTML: <div class="gallery-item">...</div>:hover
-
-Styleguide: 8.1.5 - Gallery Item Hover
+/* Gallery Item Hover Effect
+// Gallery Item Hover Effect
+// 
+// Styl dla efektu najechania na element galerii. Powiększa obraz wewnątrz elementu galerii, tworząc efekt wizualnego wyróżnienia wybranego obrazu.
+//
+// Example:
+// HTML: <div class="gallery-item">...</div>:hover
+//
+// Styleguide 8.4.0 - Gallery Item Hover
 */
 .gallery-item:hover img {
   transform: scale(1.05);
 }
 
-/*
-Image Row
-
-Styl dla rzędu obrazów. Używa Flexbox do rozmieszczenia obrazów równomiernie. Obejmuje właściwości justowania i wyrównania, a także określa odstępy między elementami.
-
-Example:
-HTML: <div class="image-row">...</div>
-
-Styleguide: 9.1.1 - Image Row
+/* Image Row
+// Image Row
+//
+// Styl dla rzędu obrazów. Używa Flexbox do rozmieszczenia obrazów równomiernie. Obejmuje właściwości justowania i wyrównania, a także określa odstępy między elementami.
+//
+// Example:
+// HTML: <div class="image-row">...</div>
+//
+// Styleguide 9.0.0 - Image Row
 */
 .image-row {
   display: flex;
@@ -477,30 +480,30 @@ Styleguide: 9.1.1 - Image Row
   gap: 10px;
 }
 
-/*
-Image Container
-
-Styl dla kontenera obrazu w rzędzie obrazów. Ustawia pozycję elementu oraz szerokość. Jest podstawą do umieszczania obrazów i tekstu w obrębie kontenera.
-
-Example:
-HTML: <div class="image-container">...</div>
-
-Styleguide: 9.1.2 - Image Container
+/* Image Container
+// Image Container
+//
+// Styl dla kontenera obrazu w rzędzie obrazów. Ustawia pozycję elementu oraz szerokość. Jest podstawą do umieszczania obrazów i tekstu w obrębie kontenera.
+//
+// Example:
+// HTML: <div class="image-container">...</div>
+//
+// Styleguide 9.1.0 - Image Container
 */
 .image-container {
   position: relative;
   width: 100%;
 }
 
-/*
-Image Row Item
-
-Styl dla poszczególnych obrazów w rzędzie obrazów. Ustawia szerokość, wysokość, dopasowanie obiektu i dodaje płynną transformację dla efektu powiększenia.
-
-Example:
-HTML: <img class="image-row-item" src="image.jpg">
-
-Styleguide: 9.1.3 - Image Row Item
+/* Image Row Item
+// Image Row Item
+//
+// Styl dla poszczególnych obrazów w rzędzie obrazów. Ustawia szerokość, wysokość, dopasowanie obiektu i dodaje płynną transformację dla efektu powiększenia.
+//
+// Example:
+// HTML: <img class="image-row-item" src="image.jpg">
+//
+// Styleguide 9.2.0 - Image Row Item
 */
 .image-row-item {
   width: 100%;
@@ -513,15 +516,15 @@ Styleguide: 9.1.3 - Image Row Item
   transform: scale(1.05);
 }
 
-/*
-Image Text
-
-Styl dla tekstu wyświetlanego na obrazach w rzędzie obrazów. Ustawia pozycję absolutną tekstu, dodaje tło, stylizuje tekst oraz dodaje płynną zmianę przezroczystości przy najechaniu.
-
-Example:
-HTML: <div class="image-text">...</div>
-
-Styleguide: 9.1.4 - Image Text
+/* Image Text
+// Image Text
+// 
+// Styl dla tekstu wyświetlanego na obrazach w rzędzie obrazów. Ustawia pozycję absolutną tekstu, dodaje tło, stylizuje tekst oraz dodaje płynną zmianę przezroczystości przy najechaniu.
+//
+// Example:
+// HTML: <div class="image-text">...</div>
+//
+// Styleguide 9.3.0 - Image Text
 */
 .image-text {
   position: absolute;
@@ -538,15 +541,15 @@ Styleguide: 9.1.4 - Image Text
   opacity: 1;
 }
 
-/*
-Slider
-
-Styl dla głównego kontenera slidera. Ustawia pozycję, maksymalną szerokość, automatyczne marginesy i ukrywa nadmiar treści. Jest podstawą dla prezentacji slajdów.
-
-Example:
-HTML: <div class="slider">...</div>
-
-Styleguide: 10.1.1 - Slider Container
+/* Slider
+// Slider
+// 
+// Styl dla głównego kontenera slidera. Ustawia pozycję, maksymalną szerokość, automatyczne marginesy i ukrywa nadmiar treści. Jest podstawą dla prezentacji slajdów.
+//
+// Example:
+// HTML: <div class="slider">...</div>
+//
+// Styleguide 10.0.0 - Slider Container
 */
 .slider {
   position: relative;
@@ -555,41 +558,45 @@ Styleguide: 10.1.1 - Slider Container
   overflow: hidden;
 }
 
-/**
- * @name Slides
- * @description Styl dla kontenera zawierającego slajdy. Używa Flexbox do liniowego rozmieszczenia slajdów.
- * @example
- * HTML: <div class="slides">...</div>
- *
- * Styleguide 10.1.2 - Slides Container
- */
+/* Slides
+// Slides
+//
+// Styl dla kontenera zawierającego slajdy. Używa Flexbox do liniowego rozmieszczenia slajdów.
+//
+// Example:
+// HTML: <div class="slides">...</div>
+//
+// Styleguide 10.1.0 - Slides Container
+*/
 .slides {
   display: flex;
 }
 
-/**
- * @name Slide
- * @description Styl dla pojedynczego slajdu wewnątrz slidera. Ustawia minimalną szerokość na 100%
- *              i dodaje płynną transformację dla animacji przejścia.
- * @example
- * HTML: <div class="slide">...</div>
- *
- * Styleguide 10.1.3 - Slide
- */
+/* Slide
+// Slide
+//
+// Styl dla pojedynczego slajdu wewnątrz slidera. Ustawia minimalną szerokość na 100% i dodaje płynną transformację dla animacji przejścia.
+//
+// Example:
+// HTML: <div class="slide">...</div>
+//
+// Styleguide 10.2.0 - Slide
+*/
 .slide {
   min-width: 100%;
   transition: ease 0.5s;
 }
 
-/**
- * @name Slide Image
- * @description Styl dla obrazu w slajdzie. Ustawia szerokość na 100%, wysokość na auto
- *              i dodaje płynną transformację dla efektu powiększenia obrazu.
- * @example
- * HTML: <img src="image.jpg">
- *
- * Styleguide 10.1.4 - Slide Image
- */
+/* Slide Image
+// Slide Image
+// 
+// Styl dla obrazu w slajdzie. Ustawia szerokość na 100%, wysokość na auto i dodaje płynną transformację dla efektu powiększenia obrazu.
+//
+// Example:
+// HTML: <img src="image.jpg">
+//
+// Styleguide 10.3.0 - Slide Image
+*/
 .slide img {
   width: 100%;
   height: auto;
@@ -601,14 +608,16 @@ Styleguide: 10.1.1 - Slider Container
 }
 
 
-/**
- * @name Slide Text
- * @description Styl dla tekstu na slajdzie. Ustawia pozycję absolutną, dodaje tło i stylizuje tekst.
- * @example
- * HTML: <div class="slide-text">...</div>
- *
- * Styleguide 10.1.5 - Slide Text
- */
+/* Slide Text
+// Slide Text
+//
+// Styl dla tekstu na slajdzie. Ustawia pozycję absolutną, dodaje tło i stylizuje tekst.
+//
+// Example:
+// HTML: <div class="slide-text">...</div>
+// 
+// Styleguide 10.4.0 - Slide Text
+*/
 .slide-text {
   position: absolute;
   bottom: 10px;
@@ -618,15 +627,16 @@ Styleguide: 10.1.1 - Slider Container
   padding: 5px;
 }
 
-/**
- * @name Navigation Buttons
- * @description Styl dla przycisków nawigacji (poprzedni/następny). Ustawia pozycję, stylizuje
- *              wygląd i dodaje efekty przejścia. Zawiera także stan :hover dla lepszej widoczności.
- * @example
- * HTML: <div class="prev">...</div>, <div class="next">...</div>
- *
- * Styleguide 10.1.6 - Navigation Buttons
- */
+/* Navigation Buttons
+// Navigation Buttons
+//
+// Styl dla przycisków nawigacji (poprzedni/następny). Ustawia pozycję, stylizuje wygląd i dodaje efekty przejścia. Zawiera także stan :hover dla lepszej widoczności.
+//
+// Example:
+// HTML: <div class="prev">...</div>, <div class="next">...</div>
+// 
+// Styleguide 10.5.0 - Navigation Buttons
+*/
 .prev, .next {
   cursor: pointer;
   position: absolute;
@@ -651,28 +661,30 @@ Styleguide: 10.1.1 - Slider Container
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/**
- * @name Dots Container
- * @description Styl dla kontenera z kropkami nawigacyjnymi. Ustawia wyrównanie tekstu na środek.
- * @example
- * HTML: <div class="dots-container">...</div>
- *
- * Styleguide 10.1.7 - Dots Container
- */
+/* Dots Container
+// Dots Container
+//
+// Styl dla kontenera z kropkami nawigacyjnymi. Ustawia wyrównanie tekstu na środek.
+//
+// Example:
+// HTML: <div class="dots-container">...</div>
+//
+// Styleguide 10.6.0 - Dots Container
+*/
 .dots-container {
   text-align: center;
 }
 
-/**
- * @name Dot
- * @description Styl dla poszczególnych kropek nawigacyjnych. Ustawia kursor, wymiary, marginesy,
- *              kolor tła, zaokrąglenie oraz dodaje cień i płynną zmianę koloru tła.
- *              Zawiera także stan :hover i .active dla lepszej interakcji użytkownika.
- * @example
- * HTML: <span class="dot">...</span>
- *
- * Styleguide 10.1.8 - Dot
- */
+/* Dot
+// Dot
+// 
+// Styl dla poszczególnych kropek nawigacyjnych. Ustawia kursor, wymiary, marginesy, kolor tła, zaokrąglenie oraz dodaje cień i płynną zmianę koloru tła. Zawiera także stan :hover i .active dla lepszej interakcji użytkownika.
+//
+// Example:
+// HTML: <span class="dot">...</span>
+//
+// Styleguide 10.7.0 - Dot
+*/
 .dot {
   cursor: pointer;
   height: 15px;
@@ -689,43 +701,46 @@ Styleguide: 10.1.1 - Slider Container
   background-color: #717171;
 }
 
-/**
- * @name Accordion
- * @description Styl główny dla komponentu akordeonu. Ustawia padding górny i dolny oraz szerokość.
- *              Jest to kontener główny, w którym będą umieszczone wszystkie elementy akordeonu.
- * @example
- * HTML: <div class="accordion">...</div>
- *
- * Styleguide 11.1.1 - Accordion Container
- */
+/* Accordion
+// Accordion
+// 
+// Styl główny dla komponentu akordeonu. Ustawia padding górny i dolny oraz szerokość. Jest to kontener główny, w którym będą umieszczone wszystkie elementy akordeonu.
+//
+// Example:
+// HTML: <div class="accordion">...</div>
+//
+// Styleguide 11.0.0 - Accordion Container
+*/
 .accordion {
   padding-top: 90px;
   padding-bottom: 40px;
   width: 100%;
 }
 
-/**
- * @name Tab
- * @description Styl dla pojedynczego tabu w akordeonie. Ustawia margines dolny, oddzielając
- *              poszczególne taby od siebie.
- * @example
- * HTML: <div class="tab">...</div>
- *
- * Styleguide 11.1.2 - Tab
- */
+/* Tab
+// Tab
+//
+// Styl dla pojedynczego tabu w akordeonie. Ustawia margines dolny, oddzielając poszczególne taby od siebie.
+//
+// Example:
+// HTML: <div class="tab">...</div>
+//
+// Styleguide 11.1.0 - Tab
+*/
 .tab {
   margin-bottom: 1px;
 }
 
-/**
- * @name Tab Label
- * @description Styl dla etykiety tabu w akordeonie. Jest klikalna (cursor: pointer) i ma
- *              wyróżnioną typografię. Zawiera także efekt :hover dla lepszej interakcji użytkownika.
- * @example
- * HTML: <label class="tab-label">...</label>
- *
- * Styleguide 11.1.3 - Tab Label
- */
+/* Tab Label
+// Tab Label
+//
+// Styl dla etykiety tabu w akordeonie. Jest klikalna (cursor: pointer) i ma wyróżnioną typografię. Zawiera także efekt :hover dla lepszej interakcji użytkownika.
+//
+// Example:
+// HTML: <label class="tab-label">...</label>
+//
+// Styleguide 11.2.0 - Tab Label
+*/
 .tab-label {
   display: block;
   padding-top: 10px;
@@ -740,43 +755,46 @@ Styleguide: 10.1.1 - Slider Container
 }
 
 
-/**
- * @name Tab Content (Visible when Checked)
- * @description Styl dla treści tabu, która jest widoczna tylko gdy przypisany checkbox jest zaznaczony.
- *              Używa maksymalnej wysokości i przejścia dla płynnego rozwijania treści.
- * @example
- * HTML: <input type="checkbox" checked> <div class="tab-content">...</div>
- *
- * Styleguide 11.1.4 - Tab Content
- */
+/* Tab Content (Visible when Checked)
+// Tab Content (Visible when Checked)
+//
+// Styl dla treści tabu, która jest widoczna tylko gdy przypisany checkbox jest zaznaczony. Używa maksymalnej wysokości i przejścia dla płynnego rozwijania treści.
+//
+// Example:
+// HTML: <input type="checkbox" checked> <div class="tab-content">...</div>
+// 
+// Styleguide 11.3.0 - Tab Content
+*/
 .tab input:checked ~ .tab-content {
   max-height: 100vh;
 }
 
-/**
- * @name Tab Checkbox
- * @description Styl dla ukrytego checkboxa sterującego widocznością treści tabu. Pozycjonowany absolutnie
- *              i niewidoczny, służy jako przełącznik dla zawartości tabu.
- * @example
- * HTML: <input type="checkbox">
- *
- * Styleguide 11.1.5 - Tab Checkbox
- */
+/* Tab Checkbox
+// Tab Checkbox
+//
+// Styl dla ukrytego checkboxa sterującego widocznością treści tabu. Pozycjonowany absolutnie i niewidoczny, służy jako przełącznik dla zawartości tabu.
+//
+// Example:
+// HTML: <input type="checkbox">
+//
+// Styleguide 11.4.0 - Tab Checkbox
+*/
 .tab input {
   position: absolute;
   opacity: 0;
   z-index: -1;
 }
 
-/**
- * @name Tab Content (Hidden)
- * @description Styl dla domyślnie ukrytej treści tabu. Ustawia maksymalną wysokość na 0, aby schować treść,
- *              i dodaje efekt przejścia.
- * @example
- * HTML: <div class="tab-content">...</div>
- *
- * Styleguide 11.1.6 - Tab Content Hidden
- */
+/* Tab Content (Hidden)
+// Tab Content (Hidden)
+//
+// Styl dla domyślnie ukrytej treści tabu. Ustawia maksymalną wysokość na 0, aby schować treść, i dodaje efekt przejścia.
+//
+// Example:
+// HTML: <div class="tab-content">...</div>
+//
+// Styleguide 11.5.0 - Tab Content Hidden
+*/
 .tab-content {
   max-height: 0;
   overflow: hidden;
@@ -787,15 +805,16 @@ Styleguide: 10.1.1 - Slider Container
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/**
- * @name Tab Button
- * @description Styl dla przycisku wewnątrz tabu. Ustawia szerokość, padding, tło, border oraz
- *              właściwości tekstowe. Zawiera także efekt :hover.
- * @example
- * HTML: <button>...</button>
- *
- * Styleguide 11.1.7 - Tab Button
- */
+/* Tab Button
+// Tab Button
+//
+// Styl dla przycisku wewnątrz tabu. Ustawia szerokość, padding, tło, border oraz właściwości tekstowe. Zawiera także efekt :hover.
+//
+// Example:
+// HTML: <button>...</button>
+// 
+// Styleguide 11.6.0 - Tab Button
+*/
 .tab button {
   width: 100%;
   padding-top: 30px;
@@ -811,98 +830,108 @@ Styleguide: 10.1.1 - Slider Container
   background: #ddd;
 }
 
-/**
- * @name Responsive Table
- * @description Styl główny dla kontenera responsywnej tabeli. Ustawia szerokość na 100%
- *              i pozwala na przewijanie poziome, gdy zawartość przekracza szerokość kontenera.
- * @example
- * HTML: <div id="responsive-table">...</div>
- *
- * Styleguide 12.1.1 - Responsive Table Container
- */
+/* Tab Button Active
+// Responsive Table
+//
+// Styl główny dla kontenera responsywnej tabeli. Ustawia szerokość na 100% i pozwala na przewijanie poziome, gdy zawartość przekracza szerokość kontenera.
+//
+// Example:
+// HTML: <div id="responsive-table">...</div>
+//
+// Styleguide 12.0.0 - Responsive Table Container
+*/
 #responsive-table {
   width: 100%;
   overflow-x: auto;
 }
 
-/**
- * @name Responsive Table Header
- * @description Styl dla nagłówka tabeli w kontenerze responsywnej tabeli. Ustawia wyrównanie tekstu,
- *              i margines dolny.
- * @example
- * HTML: <h4>...</h4> (wewnątrz #responsive-table)
- *
- * Styleguide 12.1.2 - Responsive Table Header
- */
+/* Responsive Table Header
+// Responsive Table Header
+//
+// Styl dla nagłówka tabeli w kontenerze responsywnej tabeli. Ustawia wyrównanie tekstu i margines dolny.
+//
+// Example:
+// HTML: <h4>...</h4> (wewnątrz #responsive-table)
+//
+// Styleguide 12.1.0 - Responsive Table Header
+*/
 #responsive-table h4 {
   text-align: center;
   margin-bottom: 1em;
 }
 
-/**
- * @name Table
- * @description Styl dla tabeli. Ustawia szerokość na 100% i stosuje styl 'border-collapse'
- *              do złączenia linii obramowania komórek.
- * @example
- * HTML: <table>...</table>
- *
- * Styleguide 12.1.3 - Table
- */
+/* Table
+// Table
+//
+// Styl dla tabeli. Ustawia szerokość na 100% i stosuje styl 'border-collapse' do złączenia linii obramowania komórek.
+// 
+// Example:
+// HTML: <table>...</table>
+//
+// Styleguide 12.2.0 - Table
+*/
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/**
- * @name Table Cells
- * @description Styl dla komórek tabeli (th i td). Ustawia wyrównanie tekstu, padding i obramowanie.
- * @example
- * HTML: <th>...</th>, <td>...</td>
- *
- * Styleguide 12.1.4 - Table Cells
- */
+/* Table Cells
+// Table Cells
+//
+// Styl dla komórek tabeli (th i td). Ustawia wyrównanie tekstu, padding i obramowanie.
+//
+// Example:
+// HTML: <th>...</th>, <td>...</td>
+//
+// Styleguide 12.3.0 - Table Cells
+*/
+
 th, td {
   text-align: left;
   padding: 8px;
   border: 1px solid #ddd;
 }
 
-/**
- * @name Table Header Cells
- * @description Styl dla komórek nagłówka tabeli (th). Ustawia kolor tła i tekstu, aby wyróżnić nagłówki.
- * @example
- * HTML: <th>...</th>
- *
- * Styleguide 12.1.5 - Table Header Cells
- */
+/* Table Header Cells
+// Table Header Cells
+//
+// Styl dla komórek nagłówka tabeli (th). Ustawia kolor tła i tekstu, aby wyróżnić nagłówki.
+//
+// Example:
+// HTML: <th>...</th>
+//
+// Styleguide 12.4.0 - Table Header Cells
+*/
 th {
   background-color: #4CAF50;
   color: white;
 }
 
-/**
- * @name Table Body Rows
- * @description Styl dla wierszy w ciele tabeli. Ustawia naprzemienne kolory tła dla wierszy,
- *              aby ułatwić czytanie danych.
- * @example
- * HTML: <tr>...</tr> (w tbody)
- *
- * Styleguide 12.1.6 - Table Body Rows
- */
+/* Table Body Rows
+// Table Body Rows
+//
+// Styl dla wierszy w ciele tabeli. Ustawia naprzemienne kolory tła dla wierszy, aby ułatwić czytanie danych.
+//
+// Example:
+// HTML: <tr>...</tr> (w tbody)
+//
+// Styleguide 12.5.0 - Table Body Rows
+*/
 tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-/**
- * @name Contact Form Container
- * @description Styl dla kontenera formularza kontaktowego. Ustawia flexbox z kierunkiem kolumnowym,
- *              centruje zawartość, dopasowuje elementy i ustawia minimalną wysokość na 100vh.
- *              Dodaje również padding górny i dolny.
- * @example
- * HTML: <div class="contact-form-container">...</div>
- *
- * Styleguide 13.1.1 - Contact Form Container
- */
+/* Contact Form Container
+// Contact Form Container
+//
+// Styl dla kontenera formularza kontaktowego. Ustawia flexbox z kierunkiem kolumnowym, centruje zawartość, dopasowuje elementy i ustawia minimalną wysokość na 100vh. Dodaje również padding górny i dolny.
+// 
+// Example:
+// HTML: <div class="contact-form-container">...</div>
+// 
+// Styleguide 13.0.0 - Contact Form Container
+*/
 .contact-form-container {
   display: flex;
   flex-direction: column;
@@ -912,15 +941,16 @@ tbody tr:nth-child(odd) {
   padding: 40px 0;
 }
 
-/**
- * @name Contact Form
- * @description Styl dla formularza kontaktowego. Ustawia szerokość, maksymalną szerokość,
- *              automatyczny margines, padding, cień, kolor tła oraz właściwości box-sizing.
- * @example
- * HTML: <form id="contactForm">...</form>
- *
- * Styleguide 13.1.2 - Contact Form
- */
+/* Contact Form
+// Contact Form
+//
+// Styl dla formularza kontaktowego. Ustawia szerokość, maksymalną szerokość, automatyczny margines, padding, cień, kolor tła oraz właściwości box-sizing.
+// 
+// Example:
+// HTML: <form id="contactForm">...</form>
+//
+// Styleguide 13.1.0 - Contact Form
+*/
 #contactForm {
   width: 100%;
   max-width: 550px;
@@ -932,28 +962,32 @@ tbody tr:nth-child(odd) {
   overflow: hidden;
 }
 
-/**
- * @name Input Group
- * @description Styl dla grupy elementów wejściowych w formularzu. Ustawia margines dolny.
- * @example
- * HTML: <div class="input-group">...</div>
- *
- * Styleguide 13.1.3 - Input Group
- */
+/* Input Group
+// Input Group
+//
+// Styl dla grupy elementów wejściowych w formularzu. Ustawia margines dolny.
+//
+// Example:
+// HTML: <div class="input-group">...</div>
+//
+// Styleguide 13.2.0 - Input Group
+*/
+
 .input-group {
   margin-bottom: 20px;
 }
 
-/**
- * @name Input Group Elements
- * @description Styl dla elementów wejściowych w grupie (input, textarea, select).
- *              Ustawia szerokość, padding, margines górny, obramowanie, zaokrąglenie rogów
- *              oraz rodzinę czcionek.
- * @example
- * HTML: <input>, <textarea>, <select>
- *
- * Styleguide 13.1.4 - Input Group Elements
- */
+/* Input Group Elements
+// Input Group Elements
+//
+// Styl dla elementów wejściowych w grupie (input, textarea, select). Ustawia szerokość, padding, margines górny, obramowanie, zaokrąglenie rogów oraz rodzinę czcionek.
+//
+// Example:
+// HTML: <input>, <textarea>, <select>
+//
+// Styleguide 13.3.0 - Input Group Elements
+*/
+
 .input-group input,
 .input-group textarea,
 .input-group select {
@@ -970,15 +1004,17 @@ tbody tr:nth-child(odd) {
   height: 100px;
 }
 
-/**
- * @name Checkbox Custom
- * @description Styl dla niestandardowego checkboxa w formularzu. Ustawia flexbox dla wyrównania
- *              elementów i określa margines dolny.
- * @example
- * HTML: <div class="checkbox-custom">...</div>
- *
- * Styleguide 13.1.5 - Checkbox Custom
- */
+/* Checkbox Custom
+// Checkbox Custom
+//
+// Styl dla niestandardowego checkboxa w formularzu. Ustawia flexbox dla wyrównania elementów i określa margines dolny.
+// 
+// Example:
+// HTML: <div class="checkbox-custom">...</div>
+// 
+// Styleguide 13.4.0 - Checkbox Custom
+*/
+
 .checkbox-custom {
   display: flex;
   align-items: center;
@@ -990,16 +1026,17 @@ tbody tr:nth-child(odd) {
   margin-right: 10px;
 }
 
-/**
- * @name Submit Button
- * @description Styl dla przycisku typu submit w formularzu. Ustawia szerokość, padding,
- *              kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor oraz margines górny.
- *              Zawiera także efekt :hover.
- * @example
- * HTML: <button type="submit">...</button>
- *
- * Styleguide 13.1.6 - Submit Button
- */
+/* Submit Button
+// Submit Button
+//
+// Styl dla przycisku typu submit w formularzu. Ustawia szerokość, padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor oraz margines górny. Zawiera także efekt :hover.
+//
+// Example:
+// HTML: <button type="submit">...</button>
+//
+// Styleguide 13.5.0 - Submit Button
+*/
+
 .input-group button[type="submit"] {
   width: 100%;
   padding: 10px 0;
@@ -1020,31 +1057,33 @@ tbody tr:nth-child(odd) {
   margin-bottom: 2rem;
 }
 
-/**
- * @name Team
- * @description Styl dla sekcji zespołu. Używa Flexbox do rozmieszczenia profili członków zespołu.
- *              Stosuje 'flex-wrap' do zawijania elementów i centruje je.
- * @example
- * HTML: <div class="team">...</div>
- *
- * Styleguide 14.1.1 - Team Section
- */
+/* Team
+// Team
+//
+// Styl dla sekcji zespołu. Używa Flexbox do rozmieszczenia profili członków zespołu. Stosuje 'flex-wrap' do zawijania elementów i centruje je.
+//
+// Example:
+HTML: <div class="team">...</div>
+//
+// Styleguide 14.0.0 - Team Section
+*/
+
 .team {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/**
- * @name Team Member
- * @description Styl dla poszczególnego członka zespołu. Ustawia bazę i maksymalną szerokość,
- *              używa Flexbox z kierunkiem kolumnowym, centruje zawartość i dodaje cień oraz tło.
- *              Zawiera także padding i margines.
- * @example
- * HTML: <div class="team-member">...</div>
- *
- * Styleguide 14.1.2 - Team Member
- */
+/* Team Member
+// Team Member
+//
+// Styl dla poszczególnego członka zespołu. Ustawia bazę i maksymalną szerokość, używa Flexbox z kierunkiem kolumnowym, centruje zawartość i dodaje cień oraz tło. Zawiera także padding i margines.
+//
+// Example:
+// HTML: <div class="team-member">...</div>
+//
+// Styleguide 14.1.0 - Team Member
+*/
 .team-member {
   flex-basis: 100%;
   max-width: 100%;
@@ -1057,15 +1096,16 @@ tbody tr:nth-child(odd) {
   margin: 1rem;
 }
 
-/**
- * @name Team Member Image
- * @description Styl dla zdjęcia członka zespołu. Ustawia szerokość, maksymalną szerokość,
- *              zaokrąglenie krawędzi i sposób dopasowania obrazu.
- * @example
- * HTML: <img> (wewnątrz .team-member)
- *
- * Styleguide 14.1.3 - Team Member Image
- */
+/* Team Member Image
+// Team Member Image
+//
+// Styl dla zdjęcia członka zespołu. Ustawia szerokość, maksymalną szerokość, zaokrąglenie krawędzi i sposób dopasowania obrazu.
+//
+// Example:
+// HTML: <img> (wewnątrz .team-member)
+// 
+// Styleguide 14.2.0 - Team Member Image
+*/
 .team-member img {
   width: 100%;
   max-width: 200px;
@@ -1075,27 +1115,30 @@ tbody tr:nth-child(odd) {
   object-fit: cover;
 }
 
-/**
- * @name Team Member Name
- * @description Styl dla nazwy członka zespołu. Ustawia margines.
- * @example
- * HTML: <h2>...</h2> (wewnątrz .team-member)
- *
- * Styleguide 14.1.4 - Team Member Name
- */
+/* Team Member Name
+// Team Member Name
+// 
+// Styl dla nazwy członka zespołu. Ustawia margines.
+// 
+// Example:
+// HTML: <h2>...</h2> (wewnątrz .team-member)
+// 
+// Styleguide 14.3.0 - Team Member Name
+*/
 .team-member h2 {
   margin: 0.5rem 0;
 }
 
-/**
- * @name Purpose Section
- * @description Styl dla sekcji celu, opisującej misję lub cele zespołu. Ustawia tło, padding,
- *              margines i cień.
- * @example
- * HTML: <div class="purpose">...</div>
- *
- * Styleguide 14.1.5 - Purpose Section
- */
+/* Purpose Section
+// Purpose Section
+//
+// Styl dla sekcji celu, opisującej misję lub cele zespołu. Ustawia tło, padding, margines i cień.
+//
+// Example:
+// HTML: <div class="purpose">...</div>
+//
+// Styleguide 14.4.0 - Purpose Section
+*/
 .purpose {
   background: #ddd;
   padding: 30px;
@@ -1103,63 +1146,68 @@ tbody tr:nth-child(odd) {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/**
- * @name Box
- * @description Styl dla ogólnego kontenera typu box. Może być użyty w różnych sekcjach. Ustawia tło,
- *              padding i cień.
- * @example
- * HTML: <div class="box">...</div>
- *
- * Styleguide 14.1.6 - Box
- */
+/* Box
+// Box
+//
+// Styl dla ogólnego kontenera typu box. Może być użyty w różnych sekcjach. Ustawia tło, padding i cień.
+//
+// Example:
+// HTML: <div class="box">...</div>
+//
+// Styleguide 14.5.0 - Box
+*/
 .box {
   background-color: white;
   padding: 20px 30px 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/**
- * @name Icon
- * @description Styl dla ikony. Domyślnie ukrywa ikonę poprzez ustawienie 'display: none'.
- * @example
- * HTML: <div class="icon">...</div>
- *
- * Styleguide 15.1.1 - Icon
- */
+/* Icon
+// Icon
+//
+// Styl dla ikony. Domyślnie ukrywa ikonę poprzez ustawienie 'display: none'.
+//
+// Example:
+// HTML: <div class="icon">...</div>
+//
+// Styleguide 15.0.0 - Icon
+*/
 .icon {
   display: none;
 }
 
-/**
- * @media only screen and (max-width: 600px)
- * @description Styl dla urządzeń o maksymalnej szerokości ekranu 600px. W tym zapytaniu medialnym
- *              znajdują się różne reguły CSS służące do dostosowania wyglądu i układu elementów strony
- *              dla urządzeń mobilnych i mniejszych ekranów.
- *
- * Styleguide 16.1.1 - Media Queries for Max-Width 600px
- */
+/* Media Queries
+// @media only screen and (max-width: 600px)
+//
+// Styl dla urządzeń o maksymalnej szerokości ekranu 600px. W tym zapytaniu medialnym znajdują się różne reguły CSS służące do dostosowania wyglądu i układu elementów strony dla urządzeń mobilnych i mniejszych ekranów.
+//
+// Styleguide 16.0.0 - Media Queries for Max-Width 600px
+*/
 @media only screen and (max-width: 600px) {
 
-  /**
-  * @name Footer Social Media Links - Mobile
-  * @description Dostosowuje margines dolny linków mediów społecznościowych w stopce na urządzeniach mobilnych.
-  * @example
-  * HTML: <footer .social-media a>...</footer>
-  *
-  * Styleguide 16.1.2 - Footer Social Media Links
+  /* Footer Social Media Links - Mobile
+  // Footer Social Media Links - Mobile
+  //
+  // Dostosowuje margines dolny linków mediów społecznościowych w stopce na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <footer .social-media a>...</footer>
+  //
+  // Styleguide 16.1.0 - Footer Social Media Links
   */
   footer .social-media a {
     margin-bottom: 5px;
   }
 
-  /**
-  * @name Responsive Table - Mobile
-  * @description Dostosowuje tabelę dla ekranów o szerokości do 600px. Ukrywa wiersze nagłówka tabeli (thead),
-  *              zmienia wyświetlanie wierszy ciała tabeli (tbody) na blokowe i dodaje margines oraz obramowanie.
-  * @example
-  * HTML: <table>...</table>
-  *
-  * Styleguide 16.1.3 - Responsive Table
+  /* Responsive Table - Mobile
+  // Responsive Table - Mobile
+  //
+  // Dostosowuje tabelę dla ekranów o szerokości do 600px. Ukrywa wiersze nagłówka tabeli (thead), zmienia wyświetlanie wierszy ciała tabeli (tbody) na blokowe i dodaje margines oraz obramowanie.
+  //
+  // Example:
+  // HTML: <table>...</table>
+  //
+  // Styleguide 16.2.0 - Responsive Table
   */
   thead tr {
     display: none;
@@ -1187,38 +1235,43 @@ tbody tr:nth-child(odd) {
     font-weight: bold;
   }
 
-  /**
-  * @name Navbar Logo - Mobile
-  * @description Ukrywa logo w nawigacji na urządzeniach mobilnych.
-  * @example
-  * HTML: <.navbar-logo img>...</.navbar-logo>
-  *
-  * Styleguide 16.1.4 - Navbar Logo
+  /* Navbar Logo - Mobile
+  // Navbar Logo - Mobile
+  //
+  // Ukrywa logo w nawigacji na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <.navbar-logo img>...</.navbar-logo>
+  //
+  // Styleguide 16.3.0 - Navbar Logo
   */
   .navbar-logo img {
     display: none;
   }
 
-  /**
-  * @name Carousel Text - Mobile
-   * @description Ukrywa tekst w slajdach karuzeli na urządzeniach mobilnych.
-  * @example
-  * HTML: <.slide-text>...</.slide-text>
-  *
-  * Styleguide 16.1.5 - Carousel Text
+  /* Carousel Text - Mobile
+  // Carousel Text - Mobile
+  //
+  // Ukrywa tekst w slajdach karuzeli na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <.slide-text>...</.slide-text>
+  // 
+  // Styleguide 16.4.0 - Carousel Text
   */
   .slide-text {
     display: none;
   }
 
-  /**
-  * @name Image Row - Mobile
-  * @description Dostosowuje układ rzędu obrazów na urządzeniach mobilnych. Zmienia kierunek Flexbox na kolumnowy,
-  *              co sprawia, że obrazy są wyświetlane jeden pod drugim.
-  * @example
-  * HTML: <div class="image-row">...</div>
-  *
-  * Styleguide 16.2.1 - Image Row
+  /* Image Row - Mobile
+  // Image Row - Mobile
+  // 
+  // Dostosowuje układ rzędu obrazów na urządzeniach mobilnych. Zmienia kierunek Flexbox na kolumnowy, co sprawia, że obrazy są wyświetlane jeden pod drugim.
+  //
+  // Example:
+  // HTML: <div class="image-row">...</div>
+  // 
+  // Styleguide 16.5.0 - Image Row
   */
   .image-row {
     flex-direction: column;
@@ -1242,27 +1295,30 @@ tbody tr:nth-child(odd) {
     opacity: 1;
   }
 
-  /**
-  * @name Tabs - Mobile
-  * @description Dostosowuje zakładki na urządzeniach mobilnych, zmieniając tło i dodając cień,
-  *              by ułatwić rozróżnienie poszczególnych zakładek.
-  * @example
-  * HTML: <div class="color .tab-label">...</div>
-  *
-  * Styleguide 16.2.2 - Tabs
+  /* Tabs - Mobile
+  // Tabs - Mobile
+  // 
+  // Dostosowuje zakładki na urządzeniach mobilnych, zmieniając tło i dodając cień, by ułatwić rozróżnienie poszczególnych zakładek.
+  //
+  // Example:
+  // HTML: <div class="color .tab-label">...</div>
+  //
+  // Styleguide 16.6.0 - Tabs
   */
   .color .tab-label {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /**
-  * @name Gallery Item Text - Mobile
-  * @description Dostosowuje rozmiar czcionki tekstu w elemencie galerii na urządzeniach mobilnych.
-  * @example
-  * HTML: <div class="gallery-item-text">...</div>
-  *
-  * Styleguide 16.2.3 - Gallery Item Text
+  /* Gallery Item Text - Mobile
+  // Gallery Item Text - Mobile
+  // 
+  // Dostosowuje rozmiar czcionki tekstu w elemencie galerii na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <div class="gallery-item-text">...</div>
+  //
+  // Styleguide 16.7.0 - Gallery Item Text
   */
   .gallery-item-text {
     font-size: 12px;
@@ -1273,14 +1329,15 @@ tbody tr:nth-child(odd) {
     position: relative;
   }
 
-  /**
-  * @name Hamburger Menu - Mobile
-  * @description Styl dla menu hamburgerowego na urządzeniach mobilnych. Ustawia menu w lewym górnym rogu i
-  *              wyświetla je jako rząd trzech linii.
-  * @example
-  * HTML: <div class="hamburger-menu">...</div>
-  *
-  * Styleguide 16.2.4 - Hamburger Menu
+  /* Hamburger Menu - Mobile
+  // Hamburger Menu - Mobile
+  //
+  // Styl dla menu hamburgerowego na urządzeniach mobilnych. Ustawia menu w lewym górnym rogu i wyświetla je jako rząd trzech linii.
+  //
+  // Example:
+  // HTML: <div class="hamburger-menu">...</div>
+  //
+  // Styleguide 16.8.0 - Hamburger Menu
   */
   .hamburger-menu {
     display: inline-block;
@@ -1302,14 +1359,15 @@ tbody tr:nth-child(odd) {
     background: white;
   }
 
-  /**
-  * @name Mobile Navigation
-  * @description Styl dla nawigacji mobilnej. Zawiera reguły dotyczące pozycjonowania, koloru tła,
-  *              przejścia, paddingu i indeksu warstw. Zmienia nawigację na menu typu off-canvas.
-  * @example
-  * HTML: <nav class="mobile-nav">...</nav>
-  *
-  * Styleguide 16.3.1 - Mobile Navigation
+  /* Mobile Navigation
+  // Mobile Navigation
+  // 
+  // Styl dla nawigacji mobilnej. Zawiera reguły dotyczące pozycjonowania, koloru tła, przejścia, paddingu i indeksu warstw. Zmienia nawigację na menu typu off-canvas.
+  //
+  // Example:
+  // HTML: <nav class="mobile-nav">...</nav>
+  //
+  // Styleguide 16.9.0 - Mobile Navigation
   */
   .mobile-nav {
     z-index: 999;
@@ -1346,13 +1404,15 @@ tbody tr:nth-child(odd) {
     padding-left: 5px;
   }
 
-  /**
-  * @name Header and Main - Mobile
-  * @description Dostosowuje padding dla nagłówka (header) i głównej treści (main) na urządzeniach mobilnych.
-  * @example
-  * HTML: <header>...</header>, <main>...</main>
-  *
-  * Styleguide 16.3.2 - Header and Main
+  /* Header and Main - Mobile
+  // Header and Main - Mobile
+  // 
+  // Dostosowuje padding dla nagłówka (header) i głównej treści (main) na urządzeniach mobilnych.
+  // 
+  // Example:
+  // HTML: <header>...</header>, <main>...</main>
+  //
+  // Styleguide 16.10.0 - Header and Main
   */
   header {
     padding: 30px;
@@ -1362,25 +1422,29 @@ tbody tr:nth-child(odd) {
     padding: 40px;
   }
 
-  /**
-  * @name Contact Us Page - Mobile
-  * @description Dostosowuje padding kontenera formularza kontaktowego na stronie 'Contact Us' na urządzeniach mobilnych.
-  * @example
-  * HTML: <div class="contact-form-container">...</div>
-  *
-  * Styleguide 16.3.3 - Contact Us Page
+  /* Contact Us Page - Mobile
+  // Contact Us Page - Mobile
+  // 
+  // Dostosowuje padding kontenera formularza kontaktowego na stronie 'Contact Us' na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <div class="contact-form-container">...</div>
+  //
+  // Styleguide 16.11.0 - Contact Us Page
   */
   .contact-form-container {
     padding: 20px 0;
   }
 
-  /**
-  * @name Popup - Mobile
-  * @description Dostosowuje margines i szerokość treści popup na urządzeniach mobilnych.
-  * @example
-  * HTML: <div class="popup-content">...</div>
-  *
-  * Styleguide 16.3.4 - Popup
+  /* Pop-up - Mobile
+  // Pop-up - Mobile
+  //
+  // Dostosowuje margines i szerokość treści popup na urządzeniach mobilnych.
+  //
+  // Example:
+  // HTML: <div class="popup-content">...</div>
+  //
+  // Styleguide 16.12.0 - Popup
   */
   .popup-content {
     margin: 15% 10%;
@@ -1391,30 +1455,34 @@ tbody tr:nth-child(odd) {
     padding-top: 80px;
   }
 
-  /**
-  * @name Icons in Mobile Navigation
-  * @description Styl dla ikon w nawigacji mobilnej. Ustawia wyświetlanie i margines.
-  * @example
-  * HTML: <nav class="mobile-nav .icon">...</nav>
-  *
-  * Styleguide 16.3.5 - Icons in Mobile Navigation
-   */
+  /* Icons in Mobile Navigation
+  // Icons in Mobile Navigation
+  //
+  // Styl dla ikon w nawigacji mobilnej. Ustawia wyświetlanie i margines.
+  //
+  // Example:
+  // HTML: <nav class="mobile-nav .icon">...</nav>
+  // 
+  // Styleguide 16.13.0 - Icons in Mobile Navigation
+  */
   .mobile-nav .icon {
     display: inline-block;
     margin: 10px;
   }
 
-  /**
-  * @name Car Listing Page - Mobile
-  * @description Dostosowuje szerokość pól wejściowych i przycisków na stronie listy samochodów na urządzeniach mobilnych.
-  * @example
-  * HTML: <div class="form-container input[type='text']">...</div>
-  *
-  * Styleguide 16.3.6 - Car Listing Page
+  /* Car Listing Page - Mobile
+  // Car Listing Page - Mobile
+  // 
+  // Dostosowuje szerokość pól wejściowych i przycisków na stronie listy samochodów na urządzeniach mobilnych.
+  // 
+  // Example:
+  HTML: <div class="form-container input[type='text']">...</div>
+  //
+  // Styleguide 16.14.0 - Car Listing Page
   */
   .form-container input[type="text"],
   .form-container input[type="number"],
-  #add-car, #load-sample-cars {
+  #add-car, #load-sample-cars, #filter-cars {
     width: calc(100% - 20px);
     box-sizing: border-box;
   }
@@ -1429,22 +1497,51 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/**
- * @media (min-width: 600px)
- * @description Styl dla urządzeń o minimalnej szerokości ekranu 600px. Zmienia układ członków zespołu
- *              na dwie kolumny, dostosowując ich szerokość i bazę flex.
- *
- * Styleguide 17.1.1 - Media Queries for Min-Width 600px
- */
+@media screen and (max-width: 700px) {
+  .car-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+
+  .remove-car {
+    top: 10px;
+    right: 10px;
+  }
+
+  .car-detail {
+    padding-left: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    align-items: center;
+    width: 100%;
+    margin: 2px 0;
+  }
+}
+
+/* @media (min-width: 600px)
+// @media (min-width: 600px)
+// 
+// Styl dla urządzeń o minimalnej szerokości ekranu 600px. Zmienia układ członków zespołu na dwie kolumny, dostosowując ich szerokość i bazę flex.
+//
+// Styleguide 17.0.0 - Media Queries for Min-Width 600px
+*/
+
 @media (min-width: 600px) {
-  /**
-  * @name Team Member - Min Width 600px
-  * @description Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 600px.
-  *              Ustawia dwa profile w rzędzie, z zachowaniem marginesów.
-  * @example
-  * HTML: <div class="team-member">...</div>
-  *
-  * Styleguide 17.1.2 - Team Member for Min Width 600px
+  /* Team Member - Min Width 600px
+  // Team Member - Min Width 600px
+  //
+  // Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 600px. Ustawia dwa profile w rzędzie, z zachowaniem marginesów.
+  //
+  // Example:
+  // HTML: <div class="team-member">...</div>
+  //
+  // Styleguide 17.1.0 - Team Member for Min Width 600px
   */
   .team-member {
     flex-basis: calc(50% - 2rem);
@@ -1452,22 +1549,23 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/**
- * @media (min-width: 900px)
- * @description Styl dla urządzeń o minimalnej szerokości ekranu 900px. Zmienia układ członków zespołu
- *              na trzy kolumny, dostosowując ich szerokość i bazę flex.
- *
- * Styleguide 17.2.1 - Media Queries for Min-Width 900px
- */
+/* @media (min-width: 900px)
+// @media (min-width: 900px)
+//
+// Styl dla urządzeń o minimalnej szerokości ekranu 900px. Zmienia układ członków zespołu na trzy kolumny, dostosowując ich szerokość i bazę flex.
+// 
+// Styleguide 17.2.0 - Media Queries for Min-Width 900px
+*/
 @media (min-width: 900px) {
-  /**
-  * @name Team Member - Min Width 900px
-  * @description Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 900px.
-  *              Ustawia trzy profile w rzędzie, z zachowaniem marginesów.
-  * @example
-  * HTML: <div class="team-member">...</div>
-  *
-  * Styleguide 17.2.2 - Team Member for Min Width 900px
+  /* Team Member - Min Width 900px
+  // Team Member - Min Width 900px
+  // 
+  // Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 900px. Ustawia trzy profile w rzędzie, z zachowaniem marginesów.
+  //
+  // Example:
+  // HTML: <div class="team-member">...</div>
+  //
+  // Styleguide 17.3.0 - Team Member for Min Width 900px
   */
   .team-member {
     flex-basis: calc(33.333% - 2rem);
@@ -1475,28 +1573,32 @@ tbody tr:nth-child(odd) {
   }
 }
 
-/**
- * @name Color Background
- * @description Styl dla elementów z klasą .color. Ustawia jednolite tło o kolorze #f7f7f7.
- *              Może być stosowany do różnych elementów wymagających tego tła.
- * @example
- * HTML: <div class="color">...</div>
- *
- * Styleguide 18.1.1 - Color Background
- */
+/* Color
+// Color Background
+//
+// Styl dla elementów z klasą .color. Ustawia jednolite tło o kolorze #f7f7f7. Może być stosowany do różnych elementów wymagających tego tła.
+//
+// Example:
+// HTML: <div class="color">...</div>
+//
+// Styleguide 18.0.0 - Color Background
+*/
+
 .color {
   background-color: #f7f7f7;
 }
 
-/**
- * @name Form Box
- * @description Styl dla kontenera formularza (form-box). Ustawia margines, tło, wyświetlanie Flexbox,
- *              kierunek kolumnowy, wyrównanie i centrowanie zawartości.
- * @example
- * HTML: <div class="form-box">...</div>
- *
- * Styleguide 18.1.2 - Form Box
- */
+/* Form Box
+// Form Box
+//
+// Styl dla kontenera formularza (form-box). Ustawia margines, tło, wyświetlanie Flexbox, kierunek kolumnowy, wyrównanie i centrowanie zawartości.
+//
+// Example:
+// HTML: <div class="form-box">...</div>
+//
+// Styleguide 18.1.0 - Form Box
+*/
+
 .form-box {
   margin: 0;
   background-color: #f7f7f7;
@@ -1506,15 +1608,16 @@ tbody tr:nth-child(odd) {
   justify-content: center;
 }
 
-/**
- * @name Form Container
- * @description Styl dla kontenera formularza. Ustawia szerokość, maksymalną szerokość, cień, padding,
- *              tło, zaokrąglenie rogów, margines, wyświetlanie Flexbox, kierunek kolumnowy i odstęp między elementami.
- * @example
- * HTML: <div class="form-container">...</div>
- *
- * Styleguide 18.1.3 - Form Container
- */
+/* Form Container
+// Form Container
+//
+// Styl dla kontenera formularza. Ustawia szerokość, maksymalną szerokość, cień, padding, tło, zaokrąglenie rogów, margines, wyświetlanie Flexbox, kierunek kolumnowy i odstęp między elementami.
+// 
+// Example:
+// HTML: <div class="form-container">...</div>
+// 
+// Styleguide 18.2.0 - Form Container
+*/
 .form-container {
   width: 100%;
   max-width: 600px;
@@ -1528,42 +1631,48 @@ tbody tr:nth-child(odd) {
   gap: 10px;
 }
 
-/**
- * @name Form Container Headings
- * @description Styl dla nagłówków w kontenerze formularza. Ustawia padding z lewej strony i z góry.
- * @example
- * HTML: <h1>...</h1> (wewnątrz .form-container)
- *
- * Styleguide 18.1.4 - Form Container Headings
- */
-.form-container h1 {
+/* Form Container Headings
+// Form Container Headings
+//
+// Styl dla nagłówków w kontenerze formularza. Ustawia padding z lewej strony i z góry.
+// 
+// Example:
+// HTML: <h1>...</h1> (wewnątrz .form-container)
+//
+// Styleguide 18.3.0 - Form Container Headings
+*/
+.form-container h1, h2, h3 {
   padding-left: 10px;
   padding-top: 10px;
 }
 
-/**
- * @name Form Container Paragraph
- * @description Styl dla paragrafów w kontenerze formularza. Ustawia padding z lewej strony.
- * @example
- * HTML: <p>...</p> (wewnątrz .form-container)
- *
- * Styleguide 18.1.5 - Form Container Paragraph
+/* Container Paragraph
+// Container Paragraph
+//
+// Styl dla paragrafów w kontenerze formularza. Ustawia padding z lewej strony.
+// Example:
+// HTML: <p>...</p> (wewnątrz .form-container)
+//
+// Styleguide 18.4.0 - Form Container Paragraph
  */
 .form-container p {
   padding-left: 10px;
 }
 
-/**
- * @name Form Input Fields
- * @description Styl dla pól wprowadzania danych (input) typu tekst i numer w kontenerze formularza.
- *              Ustawia padding, marginesy, obramowanie, zaokrąglenie rogów, rozmiar czcionki i rodzinę czcionek.
- * @example
- * HTML: <input type="text">, <input type="number">
- *
- * Styleguide 18.1.6 - Form Input Fields
- */
+/* Form Input Fields
+// Form Input Fields
+//
+// Styl dla pól wprowadzania danych (input) typu tekst i numer w kontenerze formularza. Ustawia padding, marginesy, obramowanie, zaokrąglenie rogów, rozmiar czcionki i rodzinę czcionek.
+//
+// Example:
+// HTML: <input type="text">, <input type="number">
+// 
+// Styleguide 18.5.0 - Form Input Fields
+*/
+
 .form-container input[type="text"],
-.form-container input[type="number"] {
+.form-container input[type="number"],
+.form-container select, .form-container input[type="checkbox"], .form-container input[type="radio"] {
   padding: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -1573,17 +1682,18 @@ tbody tr:nth-child(odd) {
   font-family: 'Poppins', sans-serif;
 }
 
-/**
- * @name Add and Load Sample Cars Buttons
- * @description Styl dla przycisków 'Dodaj samochód' i 'Dodaj przykładowe samochody'. Ustawia padding,
- *              kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor, przejście dla koloru tła
- *              i wyrównanie do środka. Zmienia kolor tła przy najechaniu.
- * @example
- * HTML: <button id="add-car">...</button>, <button id="load-sample-cars">...</button>
- *
- * Styleguide 19.1.1 - Add and Load Sample Cars Buttons
- */
-#add-car, #load-sample-cars {
+/* Add and Load Sample Cars Buttons
+// Add and Load Sample Cars Buttons
+//
+// Styl dla przycisków 'Dodaj samochód' i 'Dodaj przykładowe samochody'. Ustawia padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor, przejście dla koloru tła i wyrównanie do środka. Zmienia kolor tła przy najechaniu.
+//
+// Example:
+// HTML: <button id="add-car">...</button>, <button id="load-sample-cars">...</button>
+// 
+// Styleguide 19.0.0 - Add and Load Sample Cars Buttons
+*/
+
+#add-car, #load-sample-cars, #filter-cars {
   padding: 10px;
   background-color: #4CAF50;
   color: white;
@@ -1595,19 +1705,21 @@ tbody tr:nth-child(odd) {
   font-family: 'Poppins', sans-serif;
 }
 
-#load-sample-cars:hover, #add-car:hover {
+#load-sample-cars:hover, #add-car:hover, #filter-cars:hover {
   background-color: #45a049;
 }
 
-/**
- * @name Car List
- * @description Styl dla listy samochodów. Ustawia szerokość, maksymalną szerokość, styl listy,
- *              padding, margines i centrowanie.
- * @example
- * HTML: <ul id="car-list">...</ul>
- *
- * Styleguide 19.1.2 - Car List
- */
+/* Car List
+// Car List
+// 
+// Styl dla listy samochodów. Ustawia szerokość, maksymalną szerokość, styl listy, padding, margines i centrowanie.
+// 
+// Example:
+// HTML: <ul id="car-list">...</ul>
+// 
+// Styleguide 19.1.0 - Car List
+*/
+
 #car-list {
   width: 100%;
   max-width: 600px;
@@ -1616,15 +1728,17 @@ tbody tr:nth-child(odd) {
   margin: 0 auto;
 }
 
-/**
- * @name Car Item
- * @description Styl dla pojedynczego elementu listy samochodów. Ustawia tło, obramowanie, padding,
- *              wyświetlanie Flexbox, justowanie i wyrównanie elementów oraz cień.
- * @example
- * HTML: <li class="car-item">...</li>
- *
- * Styleguide 19.1.3 - Car Item
- */
+/* Car Item
+// Car Item
+//
+// Styl dla pojedynczego elementu listy samochodów. Ustawia tło, obramowanie, padding, wyświetlanie Flexbox, justowanie i wyrównanie elementów oraz cień.
+// 
+// Example:
+// HTML: <li class="car-item">...</li>
+//
+// Styleguide 19.2.0 - Car Item
+*/
+
 .car-item {
   background-color: white;
   border-bottom: 1px solid #ddd;
@@ -1633,18 +1747,20 @@ tbody tr:nth-child(odd) {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  border-radius: 8px;
 }
 
-/**
- * @name Remove Car Button
- * @description Styl dla przycisku usuwania samochodu. Ustawia kolor tła, kolor tekstu, padding,
- *              zaokrąglenie, rozmiar czcionki, wyrównanie tekstu, kursor, brak obramowania
- *              i zmianę koloru tekstu przy najechaniu.
- * @example
- * HTML: <button class="remove-car">...</button>
- *
- * Styleguide 19.1.4 - Remove Car Button
- */
+/* Remove Car Button
+// Remove Car Button
+//
+// Styl dla przycisku usuwania samochodu. Ustawia kolor tła, kolor tekstu, padding, zaokrąglenie, rozmiar czcionki, wyrównanie tekstu, kursor, brak obramowania i zmianę koloru tekstu przy najechaniu.
+//
+// Example:
+// HTML: <button class="remove-car">...</button>
+//
+// Styleguide 19.3.0 - Remove Car Button
+*/
 .remove-car {
   background-color: #ff4d4d;
   color: white;
@@ -1660,15 +1776,16 @@ tbody tr:nth-child(odd) {
   color: rgba(255, 255, 255, 0.586);
 }
 
-/**
- * @name Buttons Group
- * @description Styl dla grupy przycisków. Ustawia wyświetlanie Flexbox, szerokość, odstęp między przyciskami
- *              oraz padding.
- * @example
- * HTML: <div class="buttons-group">...</div>
- *
- * Styleguide 19.1.5 - Buttons Group
- */
+/* Buttons Group
+// Buttons Group
+//
+// Styl dla grupy przycisków. Ustawia wyświetlanie Flexbox, szerokość, odstęp między przyciskami oraz padding.
+//
+// Example:
+// HTML: <div class="buttons-group">...</div>
+//
+// Styleguide 19.4.0 - Buttons Group
+*/
 .buttons-group {
   display: flex;
   width: 100%;
@@ -1676,4 +1793,10 @@ tbody tr:nth-child(odd) {
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.car-detail {
+  display: inline-block;
+  margin-right: 20px;
+  min-width: 100px;
 }
