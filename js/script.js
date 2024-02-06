@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 document.addEventListener("DOMContentLoaded", function() {
   var hamburger = document.querySelector('.hamburger-menu');
-  var mobileNav = document.querySelector('.mobile-nav ul');
+  var mobileNav = document.querySelector('.navigation ul');
 
   hamburger.addEventListener('click', function() {
       mobileNav.classList.toggle('active');

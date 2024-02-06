@@ -27,232 +27,216 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @fileoverview Skrypt do zarządzania listą samochodów w aplikacji.
- * Umożliwia dodawanie, usuwanie oraz sortowanie samochodów według różnych kryteriów.
+ * Aplikacja Quiz - główny skrypt.
+ * Rejestruje obsługę zdarzeń dla elementów UI i zarządza logiką quizu.
  */
 
 /**
- * Dodaje obsługę kliknięcia na przycisk, który inicjuje dodawanie samochodu do listy,
- * a następnie sortuje listę według aktualnie wybranego kryterium.
- * @public
- * @example
- * document.getElementById('add-car').addEventListener('click', function () {
- *   addCarToList();
- *   sortCars();
- * });
- */
-document.getElementById('add-car').addEventListener('click', function () {
-  addCarToList();
-  sortCars();
-});
-
-/**
- * Dodaje samochód do listy. Pobiera dane samochodu z formularza,
- * sprawdza poprawność danych, a następnie dodaje samochód do listy.
+ * Inicjuje grę: ukrywa elementy startowe, wyświetla kontener z pytaniami i ładuje pierwsze pytanie.
+ * Restartuje wynik i indeks bieżącego pytania.
  * @function
  * @public
- * @throws {Error} Gdy dane samochodu są niekompletne lub niepoprawne.
+ * @example
+ * startButton.addEventListener('click', startGame);
+ * restartButton.addEventListener('click', startGame);
  */
-function addCarToList() {
-  const carBrand = document.getElementById('car-brand').value;
-  const carModel = document.getElementById('car-name').value.trim();
-  const carYear = document.getElementById('car-year').value;
-  const carPowerKW = document.getElementById('car-power-kw').value.trim();
-
-  if (carBrand === "" || carYear === "") {
-    alert('Proszę wybrać markę i rok produkcji samochodu.');
-    return;
-  }
-
-  if (!carModel || !carPowerKW || isNaN(carPowerKW) || Number(carPowerKW) &lt;= 0) {
-    alert('Podaj poprawny format nazwy smaochodu oraz dodatnią liczbę mocy.');
-    return;
-  }
-
-  const carList = document.getElementById('car-list');
-  const carItem = document.createElement('li');
-  carItem.className = 'car-item';
-  carItem.dataset.brand = carBrand;
-  carItem.dataset.model = carModel;
-  carItem.dataset.year = carYear;
-  carItem.dataset.power = kwToHp(carPowerKW);
-
-  carItem.innerHTML = `&lt;span class="car-detail">Marka: ${carBrand}&lt;/span>&lt;span class="car-detail">Model: ${carModel}&lt;/span>&lt;span class="car-detail">Rok: ${carYear}&lt;/span>&lt;span class="car-detail">Moc: ${carItem.dataset.power} KM&lt;/span>&lt;span class="remove-car" onclick="removeCar(this)">&amp;times;&lt;/span>`;
-
-  carList.appendChild(carItem);
+async function startGame() {
+  score = 0;
+  currentQuestionIndex = 0;
+  startButton.classList.add('hidden');
+  introductionElement.classList.add('hidden');
+  resultContainer.classList.add('hidden');
+  questionContainerElement.classList.remove('hidden');
+  await loadAndDisplayQuestions();
 }
 
 /**
- * Konwertuje moc z kW na KM (konie mechaniczne).
- * @function
- * @public
- * @param {number} kw - Moc w kilowatach.
- * @returns {number} Przeliczona moc w koniach mechanicznych.
- */
-function kwToHp(kw) {
-  return Math.round(kw * 1.34102);
-}
-
-/**
- * Usuwa wybrany samochód z listy i następnie sortuje listę.
- * @function
- * @public
- * @param {HTMLElement} element - Element HTML reprezentujący samochód, który ma zostać usunięty.
- * @example
- * removeCar(this); // Wywołanie z przycisku usunięcia w elemencie listy
- */
-function removeCar(element) {
-  element.parentElement.remove();
-  sortCars(); // Sortowanie po usunięciu samochodu
-}
-
-/**
- * Dodaje obsługę zdarzeń do wszystkich przycisków radiowych odpowiedzialnych za wybór kryteriów sortowania.
- * Po zmianie stanu któregokolwiek z przycisków radiowych, lista samochodów jest sortowana ponownie.
- * @example
- * document.querySelectorAll('input[name="filter-option"]').forEach(radio => {
- *     radio.addEventListener('change', sortCars);
- * });
- */
-document.querySelectorAll('input[name="filter-option"]').forEach(radio => {
-  radio.addEventListener('change', sortCars);
-});
-
-/**
- * Dodaje obsługę zdarzeń do wszystkich przycisków radiowych odpowiedzialnych za wybór kierunku sortowania.
- * Po zmianie wyboru, lista samochodów jest sortowana ponownie zgodnie z nowym kierunkiem.
- * @example
- * document.querySelectorAll('input[name="sort-order"]').forEach(radio => {
- *     radio.addEventListener('change', sortCars);
- * });
- */
-document.querySelectorAll('input[name="sort-order"]').forEach(radio => {
-  radio.addEventListener('change', sortCars);
-});
-
-/**
- * Sortuje samochody na liście według wybranych kryteriów i kierunku sortowania.
- * Umożliwia sortowanie według marki, roku produkcji, modelu oraz mocy samochodu.
- * Kierunek sortowania jest określany przez przyciski radiowe.
+ * Ładuje pytania z pliku JSON i wyświetla je losowo.
+ * Obsługuje wyjątki w przypadku błędów ładowania pytań.
  * @function
  * @public
  * @example
- * // Przykładowe wywołanie funkcji sortującej po zmianie stanu któregokolwiek z checkboxów lub przycisków radiowych
- * document.querySelectorAll('input[name="filter-option"]').forEach(checkbox => {
- *     checkbox.addEventListener('change', sortCars);
- * });
- * document.querySelectorAll('input[name="sort-order"]').forEach(radio => {
- *     radio.addEventListener('change', sortCars);
- * });
+ * await loadAndDisplayQuestions();
  */
-function sortCars() {
-  const carList = document.getElementById('car-list');
-  let cars = Array.from(carList.getElementsByTagName('li'));
-
-  const sortByBrand = document.getElementById('filter-by-brand').checked;
-  const sortByYear = document.getElementById('filter-by-year').checked;
-  const sortByModel = document.getElementById('filter-by-model').checked;
-  const sortByPower = document.getElementById('filter-by-power').checked;
-
-  const sortOrder = document.querySelector('input[name="sort-order"]:checked').value;
-  const isAscending = sortOrder === 'ascending';
-
-  const sortFunction = (a, b) => {
-    if (isAscending) {
-      return a.localeCompare(b);
-    } else {
-      return b.localeCompare(a);
-    }
-  };
-
-  if (sortByBrand) {
-    cars.sort((a, b) => sortFunction(a.dataset.brand, b.dataset.brand));
-  } else if (sortByYear) {
-    cars.sort((a, b) => isAscending ? a.dataset.year - b.dataset.year : b.dataset.year - a.dataset.year);
-  } else if (sortByModel) {
-    cars.sort((a, b) => sortFunction(a.dataset.model, b.dataset.model));
-  } else if (sortByPower) {
-    cars.sort((a, b) => isAscending ? a.dataset.power - b.dataset.power : b.dataset.power - a.dataset.power);
-  }
-
-  carList.innerHTML = '';
-  cars.forEach(car => carList.appendChild(car));
-}
-
-/**
- * Dodaje obsługę zdarzenia kliknięcia, które inicjuje proces ładowania danych samochodów z pliku JSON.
- * @example
- * document.getElementById('load-sample-cars').addEventListener('click', fetchLocalData);
- */
-
-document.getElementById('load-sample-cars').addEventListener('click', fetchLocalData);
-
-/**
- * Asynchronicznie pobiera dane o samochodach z pliku JSON i aktualizuje DOM.
- * @async
- * @function
- * @public
- * @throws {Error} Gdy nie uda się pobrać danych.
- * @example
- * fetchLocalData();
- */
-
-async function fetchLocalData() {
+async function loadAndDisplayQuestions() {
   try {
-    const response = await fetch('../json/cars.json');
-    const cars = await response.json();
-    updateDOMWithLocalData(cars);
+    const response = await fetch('json/questions.json');
+    const questions = await response.json();
+    currentQuestions = selectRandomQuestions(questions, 10);
+    displayQuestion(currentQuestions[currentQuestionIndex]);
   } catch (error) {
-    console.error('Error fetching local data:', error);
+    console.error("Failed to load questions:", error);
   }
 }
 
 /**
- * Aktualizuje DOM, dodając samochody z podanej tablicy do listy.
- * Każdy samochód jest przedstawiony jako element listy z odpowiednimi detalami.
+ * Wybiera losowe pytania z dostępnych, aby zapewnić różnorodność quizu.
  * @function
  * @public
- * @param {Object[]} cars - Tablica obiektów reprezentujących samochody.
- * @example
- * updateDOMWithLocalData(carsArray); // carsArray to tablica obiektów samochodów
+ * @param {Array} questions - Lista wszystkich dostępnych pytań.
+ * @param {number} numQuestions - Ilość pytań do wyświetlenia w quizie.
+ * @returns {Array} Lista wybranych pytań do wykorzystania w quizie.
  */
+function selectRandomQuestions(questions, numQuestions) {
+  let questionsCopy = questions.slice();
+  let selectedQuestions = [];
 
-function updateDOMWithLocalData(cars) {
-  const carList = document.getElementById('car-list');
+  for (let i = questionsCopy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // Losowy indeks od 0 do i
+    [questionsCopy[i], questionsCopy[j]] = [questionsCopy[j], questionsCopy[i]]; // Zamiana miejscami
+  }
 
-  cars.forEach(car => {
-    const carItem = document.createElement('li');
-    carItem.className = 'car-item';
-    carItem.dataset.brand = car.brand;
-    carItem.dataset.model = car.model;
-    carItem.dataset.year = car.year;
-    carItem.dataset.power = kwToHp(car.powerKW);
-    carItem.innerHTML = `&lt;span class="car-detail">Marka: ${car.brand}&lt;/span>&lt;span class="car-detail">Model: ${car.model}&lt;/span>&lt;span class="car-detail">Rok: ${car.year}&lt;/span>&lt;span class="car-detail">Moc: ${carItem.dataset.power} KM&lt;/span>&lt;span class="remove-car" onclick="removeCar(this)">&amp;times;&lt;/span>`;
-    carList.appendChild(carItem);
+  selectedQuestions = questionsCopy.slice(0, numQuestions);
+  return selectedQuestions;
+}
+
+/**
+ * Wyświetla pytanie i odpowiedzi na ekranie, umożliwiając użytkownikowi wybór.
+ * Resetuje stan przed wyświetleniem nowego pytania.
+ * @function
+ * @public
+ * @param {Object} question - Obiekt pytania zawierający treść pytania i odpowiedzi.
+ */
+function displayQuestion(question) {
+  resetState();
+  questionElement.innerText = question.question;
+  question.answers.forEach((answer, index) => {
+    const answerElement = document.createElement('div');
+    const radioInput = document.createElement('input');
+    radioInput.type = 'radio';
+    radioInput.id = 'answer' + index;
+    radioInput.name = 'answer';
+    radioInput.value = index;
+    radioInput.classList.add('answer-radio');
+
+    const label = document.createElement('label');
+    label.htmlFor = 'answer' + index;
+    label.innerText = answer;
+    label.classList.add('answer-label');
+
+    answerElement.appendChild(radioInput);
+    answerElement.appendChild(label);
+    answerButtonsElement.appendChild(answerElement);
   });
 
-  sortCars(); // Funkcja do sortowania listy
+  confirmAnswerBtn.classList.remove('hidden');
 }
 
 /**
- * Generuje opcje roku w elemencie select dla roku produkcji samochodu.
- * Opcje są generowane w zakresie od 1950 do 2024 roku.
+ * Resetuje stan UI odpowiedzi, ukrywając przycisk potwierdzenia i usuwając istniejące opcje odpowiedzi.
  * @function
  * @public
- * @example
- * generateYearOptions();
  */
-function generateYearOptions() {
-  const yearSelect = document.getElementById('car-year');
-  for (let year = 2024; year >= 1950; year--) {
-    let option = document.createElement('option');
-    option.value = year;
-    option.textContent = year;
-    yearSelect.appendChild(option);
+function resetState() {
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
+  confirmAnswerBtn.classList.add('hidden');
+}
+
+/**
+ * Sprawdza, która odpowiedź została wybrana i czy jest poprawna, a następnie przechodzi do następnego pytania lub wyświetla wynik.
+ * @function
+ * @public
+ */
+function selectAnswer() {
+  const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+  if (!selectedAnswer) {
+    alert("Proszę wybrać odpowiedź!");
+    return;
+  }
+  const answerIndex = Number(selectedAnswer.value);
+  const correctAnswerIndex = currentQuestions[currentQuestionIndex].correctAnswer;
+  if (answerIndex === correctAnswerIndex) {
+    score++;
+  }
+  if (currentQuestionIndex &lt; currentQuestions.length - 1) {
+    currentQuestionIndex++;
+    displayQuestion(currentQuestions[currentQuestionIndex]);
+  } else {
+    showResult();
   }
 }
 
-generateYearOptions();</code></pre>
+/**
+ * Wyświetla wynik quizu i oferuje możliwość restartu gry.
+ * @function
+ * @public
+ */
+function showResult() {
+  questionContainerElement.classList.add('hidden');
+  resultContainer.classList.remove('hidden');
+
+  const resultText = `Twój wynik: ${score}/${currentQuestions.length}`;
+  document.getElementById('result').innerText = resultText;
+
+}
+
+/**
+ * Przywraca stan początkowy aplikacji, umożliwiając rozpoczęcie nowej gry.
+ * @function
+ * @public
+ */
+function backToStart() {
+  questionContainerElement.classList.add('hidden');
+  resultContainer.classList.add('hidden');
+
+  resetQuizState();
+
+  introductionElement.classList.remove('hidden');
+  startButton.classList.remove('hidden');
+}
+
+/**
+ * Resetuje stan quizu do wartości początkowych.
+ * Funkcja ta jest wywoływana podczas restartowania quizu lub kiedy użytkownik chce zacząć od nowa po ukończeniu quizu.
+ * Resetuje wynik i indeks bieżącego pytania do zera.
+ * @function
+ * @public
+ */
+function resetQuizState() {
+  score = 0;
+  currentQuestionIndex = 0;
+}
+
+/**
+ * Inicjalizuje aplikację quizową, dodając nasłuchiwanie zdarzeń do elementów interfejsu użytkownika.
+ * Funkcja ta ustawia potrzebne nasłuchiwanie zdarzeń dla przycisków start, restart, potwierdź odpowiedź i powrót do startu.
+ * Jest wywoływana raz, gdy zawartość DOM jest w pełni załadowana, co zapewnia dostępność wszystkich elementów.
+ * @function
+ * @public
+ */
+function initQuiz() {
+  startButton.addEventListener('click', startGame);
+  restartButton.addEventListener('click', startGame);
+  confirmAnswerBtn.addEventListener('click', selectAnswer);
+  document.getElementById('back-to-start-btn').addEventListener('click', backToStart);
+}
+
+// Inicjalizacja globalnych zmiennych dla elementów UI oraz stanu quizu.
+let startButton, questionContainerElement, questionElement, answerButtonsElement, introductionElement, resultContainer,
+  restartButton, confirmAnswerBtn, currentQuestions, currentQuestionIndex, score;
+
+/**
+ * Przygotowuje aplikację quizową do działania po pełnym załadowaniu DOM.
+ * Funkcja ta przypisuje elementy DOM do globalnych zmiennych i wywołuje `initQuiz` w celu ustawienia nasłuchiwania zdarzeń.
+ * Zapewnia, że wszystkie manipulacje i rejestracje zdarzeń są wykonane po gotowości DOM.
+ * @listens document#DOMContentLoaded - Zdarzenie, które jest wyzwalane, gdy dokument HTML został całkowicie załadowany i przetworzony.
+ */
+document.addEventListener('DOMContentLoaded', () => {
+  startButton = document.getElementById('start-quiz-btn');
+  questionContainerElement = document.getElementById('question-container');
+  questionElement = document.getElementById('question');
+  answerButtonsElement = document.getElementById('answer-buttons');
+  introductionElement = document.getElementById('introduction');
+  resultContainer = document.getElementById('result-container');
+  restartButton = document.getElementById('restart-quiz-btn');
+  confirmAnswerBtn = document.getElementById('confirm-answer-btn');
+
+  initQuiz();
+});
+
+</code></pre>
         </article>
     </section>
 
@@ -262,13 +246,13 @@ generateYearOptions();</code></pre>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addCarToList">addCarToList</a></li><li><a href="global.html#changeSlide">changeSlide</a></li><li><a href="global.html#currentSlide">currentSlide</a></li><li><a href="global.html#fetchLocalData">fetchLocalData</a></li><li><a href="global.html#generateYearOptions">generateYearOptions</a></li><li><a href="global.html#kwToHp">kwToHp</a></li><li><a href="global.html#removeCar">removeCar</a></li><li><a href="global.html#showSlides">showSlides</a></li><li><a href="global.html#slideIndex">slideIndex</a></li><li><a href="global.html#sortCars">sortCars</a></li><li><a href="global.html#updateDOMWithLocalData">updateDOMWithLocalData</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#backToStart">backToStart</a></li><li><a href="global.html#changeSlide">changeSlide</a></li><li><a href="global.html#currentSlide">currentSlide</a></li><li><a href="global.html#displayQuestion">displayQuestion</a></li><li><a href="global.html#initQuiz">initQuiz</a></li><li><a href="global.html#loadAndDisplayQuestions">loadAndDisplayQuestions</a></li><li><a href="global.html#resetQuizState">resetQuizState</a></li><li><a href="global.html#resetState">resetState</a></li><li><a href="global.html#selectAnswer">selectAnswer</a></li><li><a href="global.html#selectRandomQuestions">selectRandomQuestions</a></li><li><a href="global.html#showResult">showResult</a></li><li><a href="global.html#showSlides">showSlides</a></li><li><a href="global.html#slideIndex">slideIndex</a></li><li><a href="global.html#startGame">startGame</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Jan 29 2024 23:48:41 GMT+0100 (czas środkowoeuropejski standardowy)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Feb 06 2024 21:28:44 GMT+0100 (czas środkowoeuropejski standardowy)
 </footer>
 
 <script> prettyPrint(); </script>

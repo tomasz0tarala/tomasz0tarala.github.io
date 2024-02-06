@@ -16,31 +16,29 @@
     <span></span>
     <span></span>
   </div>
-  <nav class="mobile-nav" id="navbar">
-    <div class="navbar-links">
-      <ul>
-        <li><a href="#">Strona Główna</a></li>
-        <li class="icon"><a href="#"><i class="fi fi-rr-home"></i></a></li>
-        <li><a href="aboutus.html">O Nas</a></li>
-        <li class="icon"><a href="aboutus.html"><i class="fi fi-rr-info"></i></a></li>
-        <li><a href="contactus.html">Skontauj się z Nami</a></li>
-        <li class="icon"><a href="contactus.html"><i class="fi fi-rr-envelope"></i></a></li>
-        <li><a href="gallery.html">Galeria</a></li>
-        <li class="icon"><a href="gallery.html"><i class="fi fi-rr-picture"></i></a></li>
-        <li><a href="comparepower.html">Porównaj Moc</a></li>
-        <li class="icon"><a href="comparepower.html"><i class="fi fi-rr-car-side"></i></a></li>
-      </ul>
-    </div>
-    <div class="navbar-logo">
-      <img src="img/logo-ostateczne.png" alt="Logo">
-    </div>
-  </nav>
+    <nav>
+      <div class="navigation">
+        <ul>
+          <li><a href="#">Strona Główna</a></li>
+          <li class="icon"><a href="#"><i class="fi fi-rr-home"></i></a></li>
+          <li><a href="aboutus.html">O Nas</a></li>
+          <li class="icon"><a href="aboutus.html"><i class="fi fi-rr-info"></i></a></li>
+          <li><a href="contactus.html">Skontauj się z Nami</a></li>
+          <li class="icon"><a href="contactus.html"><i class="fi fi-rr-envelope"></i></a></li>
+          <li><a href="gallery.html">Galeria</a></li>
+          <li class="icon"><a href="gallery.html"><i class="fi fi-rr-picture"></i></a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li class="icon"><a href="quiz.html"><i class="fi fi-rr-interrogation"></i></a></li>
+        </ul>
+        <div class="navbar-logo">
+          <img src="img/logo-ostateczne.png" alt="Logo">
+        </div>
+      </div>
+    </nav>
 </header>
 
-<main class="color">
-  <div class="padding">
-    <h1>Jesteś Fanem Motorsportu? Poznaj Fascynujący Świat Wyścigów</h1>
-  </div>
+<main class="color-styling">
+  <h1>Jesteś Fanem Motorsportu? Poznaj Fascynujący Świat Wyścigów</h1>
   <div class="box">
     <!-- Strona główna -->
     <section id="home">
@@ -365,11 +363,9 @@
   </section>
 
   <!-- Tabela -->
-  <div class="padding">
-    <h2>Najszybsze Okrążenia w Historii</h2>
-  </div>
+  <h2>Najszybsze Okrążenia w Historii</h2>
   <div class="box">
-    <section id="responsive-table">
+    <div class="responsive-table">
       <h3>Wstęp</h3>
       <p>
         Najszybsze okrążenia w historii wyścigów to przyciągające uwagę osiągnięcia, które stanowią świadectwo zarówno
@@ -426,12 +422,12 @@
         </tr>
         </tbody>
       </table>
-    </section>
+    </div>
   </div>
 </main>
 
 <!-- Stopka -->
-<footer>
+<footer class="footer-style">
   <div class="social-media">
     <a href="https://www.facebook.com/" target="_blank">
       <img src="img/facebook-icon.png" alt="Facebook">
@@ -459,7 +455,7 @@
       pozwoli Ci być zawsze o krok przed innymi. Zapisz się już teraz, aby nie przegapić żadnych nowości i dołączyć do
       grona entuzjastów, którzy dzielą Twoją pasję. To tylko jeden klik – zapisz się, aby każdy dzień był pełen
       motoryzacyjnych inspiracji!</p>
-    <form id="newsletter-form">
+    <form class="newsletter-form">
       <div class="form-grid">
         <label for="email"></label>
         <input type="email" id="email" name="email" placeholder="Twój adres email" required>

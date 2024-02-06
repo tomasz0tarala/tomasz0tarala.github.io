@@ -1,125 +1,127 @@
-/* Czcionka
-// Font-Face - Poppins
-//
-// Importowanie czcionki 'Poppins'. Używana głównie w projekcie jako podstawowa czcionka. 
-// Zawiera odnośnik do lokalnego pliku czcionki w formacie TTF.
-//
-// Example:
-// <p class="poppins">Przykładowy tekst</p>
-//
-// Styleguide 1.0.0 - Font-Face
+/*
+Font-Face - Poppins
+
+Importowanie czcionki 'Poppins'. Używana głównie w projekcie jako podstawowa czcionka.Zawiera odnośnik do lokalnego pliku czcionki w formacie TTF.
+
+Style guide: 1.0 - Font-Face
 */
 @font-face {
   font-family: 'Poppins';
   src: url(font/Poppins-Medium.ttf);
 }
 
-/* Ogólne
-// Globalne Ustawienia Box
-//
-// Ustawienie globalne box-sizing na border-box, które zmienia domyślne zachowanie box modelu w CSS. 
-// Dzięki temu szerokość i wysokość elementów zawiera padding i border.
-//
-// Styleguide 2.0.0 - Ustawienia Globalne
+/* 
+Globalne Ustawienia Box
+
+Ustawienie globalne box-sizing na border-box, które zmienia domyślne zachowanie box modelu w CSS.Dzięki temu szerokość i wysokość elementów zawiera padding i border. Ustawia Poppins jako domyślną czcionkę dla całej strony z zapasową sans-serif.
+
+Style guide: 1.1 - Ustawienia Globalne
 */
 * {
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Body i html
-// Podstawowe Style dla Body i HTML
-//
-// Resetuje domyślne marginesy i paddingi. Ustawia Poppins jako domyślną czcionkę dla całej strony z zapasową sans-serif.
-//
-// Example:
-// HTML: <body>...</body>
-//
-// Styleguide 2.1.0 - Resetowanie CSS
+/* 
+Podstawowe Style dla Body i HTML
+
+Resetuje domyślne marginesy i paddingi.
+
+Markup:
+<body>...</body>
+
+Style guide: 1.2 - Resetowanie CSS
 */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
 }
 
-/* Header
-// Nagłówek
-//
-// Styl dla elementu <header>. Ustawia tło, kolor tekstu, wyrównanie tekstu, padding i pozycjonowanie.
-//
-// Example:
-// HTML: <header>...</header>
-//
-// Styleguide 3.0.0 - Nagłówek
-*/
-header {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1em;
-  position: relative;
-  z-index: 10;
-}
 
-/* Nawiagacja
-// Nawigacja
-//
-// Styl dla elementu <nav>. Ustawia nawigację jako element stały na górze strony. 
-// Zawiera podstawowe właściwości stylu i pozycjonowania.
-//
-// Example:
-// HTML: <nav>...</nav>
-//
-// Styleguide 3.1.0 - Nawigacja
+/* 
+Klasa .navigation
+
+Styl dla nawigacji. Ustawia nawigację jako element stały na górze strony.Zawiera podstawowe właściwości stylu i pozycjonowania.
+
+Markup:
+<div class="navigation">
+  <ul>
+    <li><a href="#">Strona Główna</a></li>
+    <li class="icon"><a href="#"><i class="fi fi-rr-home"></i></a></li>
+    <li><a href="aboutus.html">O Nas</a></li>
+    <li class="icon"><a href="aboutus.html"><i class="fi fi-rr-info"></i></a></li>
+    <li><a href="contactus.html">Skontauj się z Nami</a></li>
+    <li class="icon"><a href="contactus.html"><i class="fi fi-rr-envelope"></i></a></li>
+    <li><a href="gallery.html">Galeria</a></li>
+    <li class="icon"><a href="gallery.html"><i class="fi fi-rr-picture"></i></a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li class="icon"><a href="quiz.html"><i class="fi fi-rr-interrogation"></i></a></li>
+  </ul>
+</div>
+
+Style guide: 2.0 
 */
-nav {
+.navigation {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 90px;
   box-sizing: border-box;
   padding: 10px 15px;
   background-color: #333;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul {
+.navigation  ul {
   list-style: none;
   padding: 0;
 }
 
-nav ul li {
+.navigation ul li {
   display: inline;
-  margin-right: 20px;
+  margin: 10px;
   padding: 10px;
 }
 
-nav ul li a {
+.navigation  ul li a {
   color: white;
   text-decoration: none;
 }
 
-nav ul li a:hover {
+.navigation  ul li a:hover {
   color: #ccc;
+}
+
+.navigation .icon {
+  display: none;
 }
 
 main {
   min-height: calc(100vh - 4em);
-  padding: 60px;
+  padding-top: 120px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;
 }
 
-/* Stopka
-// Stopka
-//
-// Styl dla elementu <footer>. Definiuje tło, kolor tekstu, wyrównanie tekstu, padding oraz szerokość.
-//
-// Example:
-// HTML: <footer>...</footer>
-//
-// Styleguide 3.2.0 - Stopka
+/* 
+Klasa .footer-style
+
+Styl dla elementu <footer>. Definiuje tło, kolor tekstu, wyrównanie tekstu, padding oraz szerokość.
+
+Markup:
+<footer class="footer-style">
+  <p>Copyright &copy; MotoBlog 2024 | <a href="privacypolicy.html">Polityka Prywatności</a></p>
+  <p>UIcons by <a href="https://www.flaticon.com/uicons">Flaticon</a></p>
+</footer>
+
+Style guide: 3.0 
 */
-footer {
+.footer-style {
   background-color: #333;
   color: white;
   text-align: center;
@@ -128,11 +130,16 @@ footer {
   box-sizing: border-box;
 }
 
-footer p {
+.footer-style a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer-style p {
   margin: 10px 0;
 }
 
-footer .social-media {
+.footer-style .social-media {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,29 +148,43 @@ footer .social-media {
   padding: 10px 0;
 }
 
-footer .social-media a {
+.footer-style .social-media a {
   display: block;
 }
 
-footer .social-media a img {
+.footer-style .social-media a img {
   max-width: 100%;
   height: auto;
 }
 
-a {
-  color: black;
-  text-decoration: none;
-}
+/* 
+Klasa .popup
 
-/* Pop-up
-// Pop-up
-//
-// Styl dla modalnego okna typu 'popup'. Okno jest domyślnie ukryte (display: none) i pojawia się w pełnym oknie przeglądarki z ciemnym, półprzezroczystym tłem. Zawiera ustawienia pozycjonowania, rozmiaru oraz tła.
-//
-// Example:
-// HTML: <div class="popup">...</div>
-//
-// Styleguide 4.0.0 - Popup
+Styl dla wyskakującego okna typu 'popup'. Okno jest domyślnie ukryte (display: none) i pojawia się w pełnym oknie przeglądarki z ciemnym, półprzezroczystym tłem. Zawiera ustawienia pozycjonowania, rozmiaru oraz tła.
+
+Markup:
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>Zapisz się na nasz newsletter!</h2>
+    <p>Dołącz do naszej pasjonującej społeczności miłośników motoryzacji! Zapisując się do naszego newslettera,
+      otrzymasz regularne aktualizacje pełne fascynujących treści, które każdy fan czterech kółek pokocha. Od
+      ekskluzywnych recenzji najnowszych modeli samochodów, przez zapowiedzi najgorętszych wydarzeń motoryzacyjnych, aż
+      po praktyczne porady i ciekawostki ze świata motoryzacji – nasz newsletter to Twoje źródło informacji, które
+      pozwoli Ci być zawsze o krok przed innymi. Zapisz się już teraz, aby nie przegapić żadnych nowości i dołączyć do
+      grona entuzjastów, którzy dzielą Twoją pasję. To tylko jeden klik – zapisz się, aby każdy dzień był pełen
+      motoryzacyjnych inspiracji!</p>
+    <form id="newsletter-form">
+      <div class="form-grid">
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Twój adres email" required>
+        <input type="submit" value="Zapisz się">
+      </div>
+    </form>
+  </div>
+</div>
+
+Style guide: 4.0 
 */
 .popup {
   display: none;
@@ -178,15 +199,32 @@ a {
   padding-top: auto;
 }
 
-/* Pop-up - Content
-// Pop-up Content
-//
-// Styl dla zawartości okna popup. Ustawia tło, marginesy, padding, obramowanie oraz szerokość i wysokość. Zawartość jest wyśrodkowana w oknie popup.
-//
-// Example:
-// HTML: <div class="popup-content">...</div>
-//
-// Styleguide 4.1.0 - Popup Content
+/* 
+Klasa .popup-content
+
+Styl dla zawartości okna popup. Ustawia tło, marginesy, padding, obramowanie oraz szerokość i wysokość. Zawartość jest wyśrodkowana w oknie popup.
+
+Markup:
+<div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>Zapisz się na nasz newsletter!</h2>
+    <p>Dołącz do naszej pasjonującej społeczności miłośników motoryzacji! Zapisując się do naszego newslettera,
+      otrzymasz regularne aktualizacje pełne fascynujących treści, które każdy fan czterech kółek pokocha. Od
+      ekskluzywnych recenzji najnowszych modeli samochodów, przez zapowiedzi najgorętszych wydarzeń motoryzacyjnych, aż
+      po praktyczne porady i ciekawostki ze świata motoryzacji – nasz newsletter to Twoje źródło informacji, które
+      pozwoli Ci być zawsze o krok przed innymi. Zapisz się już teraz, aby nie przegapić żadnych nowości i dołączyć do
+      grona entuzjastów, którzy dzielą Twoją pasję. To tylko jeden klik – zapisz się, aby każdy dzień był pełen
+      motoryzacyjnych inspiracji!</p>
+    <form id="newsletter-form">
+      <div class="form-grid">
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Twój adres email" required>
+        <input type="submit" value="Zapisz się">
+      </div>
+    </form>
+</div>
+
+Style guide: 4.1 
 */
 .popup-content {
   background-color: #fefefe;
@@ -197,15 +235,15 @@ a {
   height: auto;
 }
 
-/* Pop-up - Close Button
-// Close Button
-//
-// Styl dla przycisku zamykającego okno popup. Ustawia kolor, pozycjonowanie, rozmiar czcionki i wagi. Zawiera też styledla sanów :hover i :focus, zmieniając kolor tekstu i kursor na wskaźnik.
-//
-// Example:
-// HTML: <span class="close">&times;</span>
-//
-// Styleguide 4.2.0 - Close Button
+/* 
+Klasa .close
+
+Styl dla przycisku zamykającego okno popup. Ustawia kolor, pozycjonowanie, rozmiar czcionki i wagi. Zawiera też styledla sanów :hover i :focus, zmieniając kolor tekstu i kursor na wskaźnik.
+
+Markup:
+<span class="close">&times;</span>
+
+Style guide: 4.2 
 */
 .close {
   color: #aaa;
@@ -221,70 +259,81 @@ a {
   cursor: pointer;
 }
 
-/* Newsletter Form
-// Newsletter Form - Grid Layout
-//
-// Styl dla siatki formularza newslettera. Używa display: grid do stworzenia układu siatki. Zawiera definicję kolumn oraz odstępy między nimi.
-//
-// Example:
-// HTML: <div id="newsletter-form" class="form-grid">...</div>
-//
-// Styleguide 5.0.0 - Newsletter Form Grid
+/* 
+Klasa .newsletter-form .form-grid
+
+Styl dla siatki formularza newslettera. Używa display: grid do stworzenia układu siatki. Zawiera definicję kolumn oraz odstępy między nimi.
+
+Markup:
+  <form class="newsletter-form">
+    <div class="form-grid">
+      <label for="email"></label>
+      <input type="email" id="email" name="email" placeholder="Twój adres email" required>
+      <input type="submit" value="Zapisz się">
+    </div>
+  </form>
+
+Style guide: 5.0 
 */
-#newsletter-form .form-grid {
+.newsletter-form .form-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
 
-/* Newsletter Form - Input Fields
-// Newsletter Form - Input Fields
-//
-// Styl dla pól wprowadzania e-maila i przycisku submit w formularzu newslettera. Ustawia szerokość na 100%, padding, margines oraz czcionkę Poppins.
-//
-// Example:
-// HTML: <input type="email">, <input type="submit">
-//
-// Styleguide 5.1.0 - Input Fields
+/* 
+Klasa .newsletter-form input[type=email], .newsletter-form input[type=submit]
+
+Styl dla pól wprowadzania e-maila i przycisku submit w formularzu newslettera. Ustawia szerokość na 100%, padding, margines oraz czcionkę Poppins.
+
+Markup:
+<input type="email" id="email" name="email" placeholder="Twój adres email" required>
+<input type="submit" value="Zapisz się">
+
+Style guide: 5.1 
 */
-#newsletter-form input[type=email],
-#newsletter-form input[type=submit] {
+.newsletter-form input[type=email],
+.newsletter-form input[type=submit] {
   width: 100%;
   padding: 10px;
   margin: 0;
   font-family: 'Poppins', sans-serif;
 }
 
-/* Newsletter Form - Submit Button
-// Newsletter Form - Submit Button
-//
-// Styl dla przycisku submit w formularzu newslettera. Ustawia kolor tła, kolor tekstu, usuwa obramowanie i zmienia kursor na wskaźnik. Zawiera także styl dla stanu :hover, zmieniając odcień koloru tła.
-//
-// Example:
-// HTML: <input type="submit">
-//
-// Styleguide 5.2.0 - Submit Button
+/*
+Klasa .newsletter-form input[type=submit]
+
+Styl dla przycisku submit w formularzu newslettera. Ustawia kolor tła, kolor tekstu, usuwa obramowanie i zmienia kursor na wskaźnik. Zawiera także styl dla stanu :hover, zmieniając odcień koloru tła.
+
+Markup:
+<input type="submit" value="Przykładowy tekst">
+
+Style guide: 5.2 
 */
-#newsletter-form input[type=submit] {
+.newsletter-form input[type=submit] {
   background-color: #4CAF50;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-#newsletter-form input[type=submit]:hover {
+.newsletter-form input[type=submit]:hover {
   background-color: #45a049;
 }
 
-/* Hamburger Menu
-// Hamburger Menu
-//
-// Styl dla przycisku menu hamburgerowego. Domyślnie ukryty (display: none). Zmienia kursor na wskaźnik, aby wskazać interaktywność. Ustawia również margines. Zazwyczaj używany w responsywnym designie, widoczny tylko na urządzeniach mobilnych.
-//
-// Example:
-// HTML: <div class="hamburger-menu">...</div>
-//
-//Styleguide 6.0.0 - Hamburger Menu
+/* 
+Klasa .hamburger-menu
+
+Styl dla przycisku menu hamburgerowego. Domyślnie ukryty (display: none). Zmienia kursor na wskaźnik, aby wskazać interaktywność. Ustawia również margines. Zazwyczaj używany w responsywnym designie, widoczny tylko na urządzeniach mobilnych.
+
+Markup:
+<div class="hamburger-menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+Style guide: 6.0 
 */
 .hamburger-menu {
   display: none;
@@ -292,15 +341,19 @@ a {
   margin: 1em;
 }
 
-/* Hamburger Menu - Bar
-// Hamburger Menu - Bar
-//
-// Styl dla poszczególnych pasków w przycisku menu hamburgerowego. Ustawia szerokość, wysokość, margines dolny oraz kolor tła każdego paska.
-//
-// Example:
-// HTML: <span></span> (wewnątrz .hamburger-menu)
-// 
-// Styleguide 6.1.0 - Hamburger Bar
+/* 
+Klasa .hamburger-menu span
+
+Styl dla poszczególnych pasków w przycisku menu hamburgerowego. Ustawia szerokość, wysokość, margines dolny oraz kolor tła każdego paska.
+
+Markup:
+<div class="hamburger-menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+ 
+Style guide: 6.1 
 */
 .hamburger-menu span {
   display: block;
@@ -310,59 +363,31 @@ a {
   background-color: white;
 }
 
-.padding {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+/* 
+Klasa .navbar-logo
+ 
+Styl dla logo wewnątrz navbara. Ustawia wysokość na 100% paska nawigacji, aby logo było w pełni widoczne i dobrze wyśrodkowane.
 
-/* Navbar
-// Navbar
-//
-// Styl dla głównego paska nawigacji (#navbar). Ustawia pasek jako stały na górze strony, z szerokością 100%. Wykorzystuje flexbox do rozmieszczenia elementów, wyrównuje je do środka i rozkłada równomiernie. Ustawia również wysokość, tło, padding i inne właściwości.
-//
-// Example:
-// HTML: <div id="navbar">...</div>
-// 
-// Styleguide 7.0.0 - Navbar
-*/
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  background-color: #333;
-  z-index: 1000;
-}
+Markup:
+<div class="navbar-logo">
+  <img src="img/logo-ostateczne.png" alt="Logo">
+</div>
 
-/* Navbar Logo
-// Navbar Logo
-// 
-// Styl dla logo wewnątrz navbara. Ustawia wysokość na 100% paska nawigacji, aby logo było w pełni widoczne i dobrze wyśrodkowane.
-//
-// Example:
-// HTML: <div class="navbar-logo"><img src="logo.png"></div>
-//
-// Styleguide 7.1.0 - Navbar Logo
+Style guide: 7.0 
 */
 .navbar-logo {
   height: 100%;
 }
 
-/* Navbar Logo Image
-// Navbar Logo Image
-//
-// Styl dla obrazka logo w navbarze. Ustawia wysokość na 100% kontenera logo, a szerokość na auto, aby zachować proporcje obrazka.
-//
-// Example:
-// HTML: <img src="logo.png">
-//
-// Styleguide 7.2.0 - Navbar Logo Image
+/* 
+Klasy .navbar-logo img
+
+Styl dla obrazka logo w navbarze. Ustawia wysokość na 100% kontenera logo, a szerokość na auto, aby zachować proporcje obrazka.
+
+Markup:
+<img src="img/logo-ostateczne.png" alt="Logo">
+
+Style guide: 7.1 
 */
 .navbar-logo img {
   height: 100%;
@@ -379,15 +404,20 @@ a {
   height: auto;
 }
 
-/* Gallery
-// Gallery
-//
-// Styl dla kontenera galerii. Wykorzystuje grid do tworzenia responsywnego układu obrazów. Definiuje kolumny z dynamiczną szerokością, które dopasowują się do dostępnej przestrzeni, oraz ustawia odstępy między elementami i padding.
-//
-// Example:
-// HTML: <div class="gallery">...</div>
-//
-// Styleguide 8.0.0 - Gallery Container
+/* 
+Klasa .gallery
+
+Styl dla kontenera galerii. Wykorzystuje grid do tworzenia responsywnego układu obrazów. Definiuje kolumny z dynamiczną szerokością, które dopasowują się do dostępnej przestrzeni, oraz ustawia odstępy między elementami i padding.
+
+Markup:
+<div class="gallery">
+  <div class="gallery-item">
+    <img src="img/gallery-f1-race.png" alt="Wyścig F1">
+    <div class="gallery-item-text">Wyścig F1</div>
+  </div>
+</div>
+
+Style guide: 8.0 
 */
 .gallery {
   display: grid;
@@ -396,15 +426,18 @@ a {
   padding: 10px;
 }
 
-/* Gallery Item
-// Gallery Item
-//
-// Styl dla poszczególnych elementów galerii. Ustawia pozycję elementu, ukrywa nadmiar treści i dodaje cień dookoła. Pozwala na tworzenie spójnego i atrakcyjnego wyglądu dla każdego obrazu.
-//
-// Example:
-// HTML: <div class="gallery-item">...</div>
-//
-// Styleguide 8.1.0 - Gallery Item
+/* 
+Klasa .gallery-item
+
+Styl dla poszczególnych elementów galerii. Ustawia pozycję elementu, ukrywa nadmiar treści i dodaje cień dookoła. Pozwala na tworzenie spójnego i atrakcyjnego wyglądu dla każdego obrazu.
+
+Markup:
+<div class="gallery-item">
+  <img src="img/gallery-f1-race.png" alt="Wyścig F1">
+  <div class="gallery-item-text">Wyścig F1</div>
+</div>
+
+Style guide: 8.1 
 */
 .gallery-item {
   position: relative;
@@ -412,15 +445,15 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
 }
 
-/* Gallery Item Image
-// Gallery Item Image
-//
-// Styl dla obrazów wewnątrz elementów galerii. Ustawia szerokość na 100%, wysokość na auto oraz dodaje płynną transformację dla efektu powiększenia przy najechaniu.
-//
-// Example:
-// HTML: <img src="image.jpg">
-//
-// Styleguide 8.2.0 - Gallery Item Image
+/*
+Klasa .gallery-item img
+
+Styl dla obrazów wewnątrz elementów galerii. Ustawia szerokość na 100%, wysokość na auto oraz dodaje płynną transformację dla efektu powiększenia przy najechaniu.
+
+Markup:
+<img src="img/fans-meetup.png" alt="Testy">
+
+Style guide: 8.2 
 */
 .gallery-item img {
   width: 100%;
@@ -429,15 +462,15 @@ a {
   display: block;
 }
 
-/* Gallery Item Text
-// Gallery Item Text
-//
-// Styl dla tekstu wyświetlanego na obrazach w galerii. Ustawia pozycję absolutną tekstu, dodaje tło i stylizuje tekst. Zapewnia czytelność tekstu na zróżnicowanym tle obrazów.
-//
-// Example:
-// HTML: <div class="gallery-item-text">...</div>
-//
-// Styleguide 8.3.0 - Gallery Item Text
+/*
+Klasa .gallery-item-text
+
+Styl dla tekstu wyświetlanego na obrazach w galerii. Ustawia pozycję absolutną tekstu, dodaje tło i stylizuje tekst. Zapewnia czytelność tekstu na zróżnicowanym tle obrazów.
+
+Markup:
+<div class="gallery-item-text">Zdjęcia ze spotkania z fanami</div>
+
+Style guide: 8.3 
 */
 .gallery-item-text {
   position: absolute;
@@ -449,29 +482,37 @@ a {
   font-size: 14px;
 }
 
-/* Gallery Item Hover Effect
-// Gallery Item Hover Effect
-// 
-// Styl dla efektu najechania na element galerii. Powiększa obraz wewnątrz elementu galerii, tworząc efekt wizualnego wyróżnienia wybranego obrazu.
-//
-// Example:
-// HTML: <div class="gallery-item">...</div>:hover
-//
-// Styleguide 8.4.0 - Gallery Item Hover
+/*
+Klasa .gallery-item:hover img
+ 
+Styl dla efektu najechania na element galerii. Powiększa obraz wewnątrz elementu galerii, tworząc efekt wizualnego wyróżnienia wybranego obrazu.
+
+Markup:
+<div class="gallery-item">
+  <img src="img/fans-meetup.png" alt="Testy">
+  <div class="gallery-item-text">Zdjęcia ze spotkania z fanami</div>
+</div>
+
+Style guide: 8.4 
 */
 .gallery-item:hover img {
   transform: scale(1.05);
 }
 
-/* Image Row
-// Image Row
-//
-// Styl dla rzędu obrazów. Używa Flexbox do rozmieszczenia obrazów równomiernie. Obejmuje właściwości justowania i wyrównania, a także określa odstępy między elementami.
-//
-// Example:
-// HTML: <div class="image-row">...</div>
-//
-// Styleguide 9.0.0 - Image Row
+/*
+Klasa .image-row
+
+Styl dla rzędu obrazów. Używa Flexbox do rozmieszczenia obrazów równomiernie. Obejmuje właściwości justowania i wyrównania, a także określa odstępy między elementami.
+
+Markup:
+<div class="image-row">
+  <div class="image-container">
+    <img class="image-row-item" src="img/F1_race.png" alt="F1">
+    <div class="image-text">F1 Race</div>
+  </div>
+</div>
+
+Style guide: 9.0 
 */
 .image-row {
   display: flex;
@@ -480,30 +521,33 @@ a {
   gap: 10px;
 }
 
-/* Image Container
-// Image Container
-//
-// Styl dla kontenera obrazu w rzędzie obrazów. Ustawia pozycję elementu oraz szerokość. Jest podstawą do umieszczania obrazów i tekstu w obrębie kontenera.
-//
-// Example:
-// HTML: <div class="image-container">...</div>
-//
-// Styleguide 9.1.0 - Image Container
+/* 
+Klasa .image-container
+
+Styl dla kontenera obrazu w rzędzie obrazów. Ustawia pozycję elementu oraz szerokość. Jest podstawą do umieszczania obrazów i tekstu w obrębie kontenera.
+
+Markup:
+<div class="image-container">
+  <img class="image-row-item" src="img/F1_race.png" alt="F1">
+  <div class="image-text">F1 Race</div>
+</div>
+
+ Style guide: 9.1 
 */
 .image-container {
   position: relative;
   width: 100%;
 }
 
-/* Image Row Item
-// Image Row Item
-//
-// Styl dla poszczególnych obrazów w rzędzie obrazów. Ustawia szerokość, wysokość, dopasowanie obiektu i dodaje płynną transformację dla efektu powiększenia.
-//
-// Example:
-// HTML: <img class="image-row-item" src="image.jpg">
-//
-// Styleguide 9.2.0 - Image Row Item
+/* 
+Klasa .image-row-item
+
+Styl dla poszczególnych obrazów w rzędzie obrazów. Ustawia szerokość, wysokość, dopasowanie obiektu i dodaje płynną transformację dla efektu powiększenia.
+
+Markup:
+<img class="image-row-item" src="img/moto_gp.png" alt="MotoGP race">
+
+Style guide: 9.2 
 */
 .image-row-item {
   width: 100%;
@@ -516,15 +560,15 @@ a {
   transform: scale(1.05);
 }
 
-/* Image Text
-// Image Text
-// 
-// Styl dla tekstu wyświetlanego na obrazach w rzędzie obrazów. Ustawia pozycję absolutną tekstu, dodaje tło, stylizuje tekst oraz dodaje płynną zmianę przezroczystości przy najechaniu.
-//
-// Example:
-// HTML: <div class="image-text">...</div>
-//
-// Styleguide 9.3.0 - Image Text
+/* 
+Klasa .image-text
+ 
+Styl dla tekstu wyświetlanego na obrazach w rzędzie obrazów. Ustawia pozycję absolutną tekstu, dodaje tło, stylizuje tekst oraz dodaje płynną zmianę przezroczystości przy najechaniu.
+
+Markup:
+<div class="image-text">MotoGP Race</div>
+
+Style guide: 9.3 
 */
 .image-text {
   position: absolute;
@@ -541,15 +585,32 @@ a {
   opacity: 1;
 }
 
-/* Slider
-// Slider
-// 
-// Styl dla głównego kontenera slidera. Ustawia pozycję, maksymalną szerokość, automatyczne marginesy i ukrywa nadmiar treści. Jest podstawą dla prezentacji slajdów.
-//
-// Example:
-// HTML: <div class="slider">...</div>
-//
-// Styleguide 10.0.0 - Slider Container
+/*
+Klasa .slider
+ 
+Styl dla głównego kontenera slidera. Ustawia pozycję, maksymalną szerokość, automatyczne marginesy i ukrywa nadmiar treści. Jest podstawą dla prezentacji slajdów.
+
+Markup:
+<div class="slider">
+  <div class="slides">
+    <div class="slide" id="slide1">
+      <img src="img/fans1.png" alt="Festiwal">
+      <div class="slide-text">Festiwal motoryzacyjny</div>
+    </div>
+    <div class="slide" id="slide2">
+      <img src="img/fans2.png" alt="Fani">
+      <div class="slide-text">Fani</div>
+    </div>
+    <div class="slide" id="slide3">
+      <img src="img/fans3.png" alt="Zlot">
+      <div class="slide-text">Zlot motoryzacyjny</div>
+    </div>
+  </div>
+  <a class="prev"</a>
+  <a class="next"</a>
+</div>
+
+Style guide: 10.0 
 */
 .slider {
   position: relative;
@@ -558,44 +619,52 @@ a {
   overflow: hidden;
 }
 
-/* Slides
-// Slides
-//
-// Styl dla kontenera zawierającego slajdy. Używa Flexbox do liniowego rozmieszczenia slajdów.
-//
-// Example:
-// HTML: <div class="slides">...</div>
-//
-// Styleguide 10.1.0 - Slides Container
+/* 
+Klasa .slides
+
+Styl dla kontenera zawierającego slajdy. Używa Flexbox do liniowego rozmieszczenia slajdów.
+
+Markup:
+<div class="slides">
+  <div class="slide" id="slide1">
+    <img src="img/fans1.png" alt="Festiwal">
+    <div class="slide-text">Festiwal motoryzacyjny</div>
+  </div>
+</div>
+
+Style guide: 10.1 
 */
 .slides {
   display: flex;
 }
 
-/* Slide
-// Slide
-//
-// Styl dla pojedynczego slajdu wewnątrz slidera. Ustawia minimalną szerokość na 100% i dodaje płynną transformację dla animacji przejścia.
-//
-// Example:
-// HTML: <div class="slide">...</div>
-//
-// Styleguide 10.2.0 - Slide
+/* 
+Klasa .slide
+
+Styl dla pojedynczego slajdu wewnątrz slidera. Ustawia minimalną szerokość na 100% i dodaje płynną transformację dla animacji przejścia.
+
+Markup:
+<div class="slide" id="slide1">
+  <img src="img/fans1.png" alt="Festiwal">
+  <div class="slide-text">Festiwal motoryzacyjny</div>
+</div>
+
+Style guide: 10.2 
 */
 .slide {
   min-width: 100%;
   transition: ease 0.5s;
 }
 
-/* Slide Image
-// Slide Image
-// 
-// Styl dla obrazu w slajdzie. Ustawia szerokość na 100%, wysokość na auto i dodaje płynną transformację dla efektu powiększenia obrazu.
-//
-// Example:
-// HTML: <img src="image.jpg">
-//
-// Styleguide 10.3.0 - Slide Image
+/* 
+Klasa .slide img
+ 
+Styl dla obrazu w slajdzie. Ustawia szerokość na 100%, wysokość na auto i dodaje płynną transformację dla efektu powiększenia obrazu.
+
+Markup:
+<img src="img/fans1.png" alt="Festiwal">
+
+Style guide: 10.3 
 */
 .slide img {
   width: 100%;
@@ -608,15 +677,15 @@ a {
 }
 
 
-/* Slide Text
-// Slide Text
-//
-// Styl dla tekstu na slajdzie. Ustawia pozycję absolutną, dodaje tło i stylizuje tekst.
-//
-// Example:
-// HTML: <div class="slide-text">...</div>
-// 
-// Styleguide 10.4.0 - Slide Text
+/* 
+Klasa .slide-text
+
+Styl dla tekstu na slajdzie. Ustawia pozycję absolutną, dodaje tło i stylizuje tekst.
+
+Markup:
+<div class="slide-text">Kibice na Rajdzie Polski</div>
+ 
+Style guide: 10.4 
 */
 .slide-text {
   position: absolute;
@@ -627,15 +696,16 @@ a {
   padding: 5px;
 }
 
-/* Navigation Buttons
-// Navigation Buttons
-//
-// Styl dla przycisków nawigacji (poprzedni/następny). Ustawia pozycję, stylizuje wygląd i dodaje efekty przejścia. Zawiera także stan :hover dla lepszej widoczności.
-//
-// Example:
-// HTML: <div class="prev">...</div>, <div class="next">...</div>
-// 
-// Styleguide 10.5.0 - Navigation Buttons
+/* 
+Klasa .prev, .next
+
+Styl dla przycisków nawigacji (poprzedni/następny). Ustawia pozycję, stylizuje wygląd i dodaje efekty przejścia. Zawiera także stan :hover dla lepszej widoczności.
+
+Markup:
+<a class="prev"</a>
+<a class="next"</a>
+ 
+Style guide: 10.5 
 */
 .prev, .next {
   cursor: pointer;
@@ -661,29 +731,35 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Dots Container
-// Dots Container
-//
-// Styl dla kontenera z kropkami nawigacyjnymi. Ustawia wyrównanie tekstu na środek.
-//
-// Example:
-// HTML: <div class="dots-container">...</div>
-//
-// Styleguide 10.6.0 - Dots Container
+/* 
+Klasa .dots-container
+
+Styl dla kontenera z kropkami nawigacyjnymi. Ustawia wyrównanie tekstu na środek.
+
+Markup:
+<div class="dots-container">
+  <span class="dot" ></span>
+  <span class="dot" ></span>
+  <span class="dot" ></span>
+  <span class="dot" ></span>
+  <span class="dot" ></span>
+</div>
+
+Style guide: 10.6 
 */
 .dots-container {
   text-align: center;
 }
 
-/* Dot
-// Dot
-// 
-// Styl dla poszczególnych kropek nawigacyjnych. Ustawia kursor, wymiary, marginesy, kolor tła, zaokrąglenie oraz dodaje cień i płynną zmianę koloru tła. Zawiera także stan :hover i .active dla lepszej interakcji użytkownika.
-//
-// Example:
-// HTML: <span class="dot">...</span>
-//
-// Styleguide 10.7.0 - Dot
+/*
+Klasa .dot
+ 
+Styl dla poszczególnych kropek nawigacyjnych. Ustawia kursor, wymiary, marginesy, kolor tła, zaokrąglenie oraz dodaje cień i płynną zmianę koloru tła. Zawiera także stan :hover i .active dla lepszej interakcji użytkownika.
+
+Markup:
+<span class="dot"></span>
+
+Style guide: 10.7 
 */
 .dot {
   cursor: pointer;
@@ -701,15 +777,22 @@ a {
   background-color: #717171;
 }
 
-/* Accordion
-// Accordion
-// 
-// Styl główny dla komponentu akordeonu. Ustawia padding górny i dolny oraz szerokość. Jest to kontener główny, w którym będą umieszczone wszystkie elementy akordeonu.
-//
-// Example:
-// HTML: <div class="accordion">...</div>
-//
-// Styleguide 11.0.0 - Accordion Container
+/*
+Klasa .accordion
+ 
+Styl główny dla komponentu akordeonu. Ustawia padding górny i dolny oraz szerokość. Jest to kontener główny, w którym będą umieszczone wszystkie elementy akordeonu.
+
+Markup:
+<div class="accordion">
+  <div class="tab">
+    <button class="tab-label">Aktualności ze Świata Motorsportu</button>
+    <div class="tab-content">
+      <p>...</p>
+    </div>
+  </div>
+</div>
+
+Style guide: 11.0 
 */
 .accordion {
   padding-top: 90px;
@@ -717,29 +800,34 @@ a {
   width: 100%;
 }
 
-/* Tab
-// Tab
-//
-// Styl dla pojedynczego tabu w akordeonie. Ustawia margines dolny, oddzielając poszczególne taby od siebie.
-//
-// Example:
-// HTML: <div class="tab">...</div>
-//
-// Styleguide 11.1.0 - Tab
+/* 
+Klasa .tab
+
+Styl dla pojedynczego tabu w akordeonie. Ustawia margines dolny, oddzielając poszczególne taby od siebie.
+
+Markup:
+<div class="tab">
+  <button class="tab-label">Aktualności ze Świata Motorsportu</button>
+  <div class="tab-content">
+    <p>...</p>
+  </div>
+</div>
+
+Style guide: 11.1 
 */
 .tab {
   margin-bottom: 1px;
 }
 
-/* Tab Label
-// Tab Label
-//
-// Styl dla etykiety tabu w akordeonie. Jest klikalna (cursor: pointer) i ma wyróżnioną typografię. Zawiera także efekt :hover dla lepszej interakcji użytkownika.
-//
-// Example:
-// HTML: <label class="tab-label">...</label>
-//
-// Styleguide 11.2.0 - Tab Label
+/* 
+Klasa .tab-label
+
+Styl dla etykiety tabu w akordeonie. Jest klikalna (cursor: pointer) i ma wyróżnioną typografię. Zawiera także efekt :hover dla lepszej interakcji użytkownika.
+
+Markup:
+<button class="tab-label">Aktualności ze Świata Motorsportu</button>
+
+Style guide: 11.2 
 */
 .tab-label {
   display: block;
@@ -755,29 +843,29 @@ a {
 }
 
 
-/* Tab Content (Visible when Checked)
-// Tab Content (Visible when Checked)
-//
-// Styl dla treści tabu, która jest widoczna tylko gdy przypisany checkbox jest zaznaczony. Używa maksymalnej wysokości i przejścia dla płynnego rozwijania treści.
-//
-// Example:
-// HTML: <input type="checkbox" checked> <div class="tab-content">...</div>
-// 
-// Styleguide 11.3.0 - Tab Content
+/*
+Klasy .tab-content
+
+Styl dla treści tabu, która jest widoczna tylko gdy przypisany checkbox jest zaznaczony. Używa maksymalnej wysokości i przejścia dla płynnego rozwijania treści.
+
+Markup:
+<input type="checkbox" checked> <div class="tab-content">...</div>
+ 
+Style guide: 11.3 
 */
 .tab input:checked ~ .tab-content {
   max-height: 100vh;
 }
 
-/* Tab Checkbox
-// Tab Checkbox
-//
-// Styl dla ukrytego checkboxa sterującego widocznością treści tabu. Pozycjonowany absolutnie i niewidoczny, służy jako przełącznik dla zawartości tabu.
-//
-// Example:
-// HTML: <input type="checkbox">
-//
-// Styleguide 11.4.0 - Tab Checkbox
+/* 
+Klasa .tab input
+
+Styl dla ukrytego checkboxa sterującego widocznością treści tabu. Pozycjonowany absolutnie i niewidoczny, służy jako przełącznik dla zawartości tabu.
+
+Markup:
+<input type="checkbox">
+
+Style guide: 11.4 
 */
 .tab input {
   position: absolute;
@@ -785,15 +873,15 @@ a {
   z-index: -1;
 }
 
-/* Tab Content (Hidden)
-// Tab Content (Hidden)
-//
-// Styl dla domyślnie ukrytej treści tabu. Ustawia maksymalną wysokość na 0, aby schować treść, i dodaje efekt przejścia.
-//
-// Example:
-// HTML: <div class="tab-content">...</div>
-//
-// Styleguide 11.5.0 - Tab Content Hidden
+/* 
+Klasa .tab-content
+
+Styl dla domyślnie ukrytej treści tabu. Ustawia maksymalną wysokość na 0, aby schować treść, i dodaje efekt przejścia.
+
+Markup:
+<div class="tab-content">...</div>
+
+Style guide: 11.5 
 */
 .tab-content {
   max-height: 0;
@@ -805,15 +893,15 @@ a {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Tab Button
-// Tab Button
-//
-// Styl dla przycisku wewnątrz tabu. Ustawia szerokość, padding, tło, border oraz właściwości tekstowe. Zawiera także efekt :hover.
-//
-// Example:
-// HTML: <button>...</button>
-// 
-// Styleguide 11.6.0 - Tab Button
+/* 
+Klasa .tab button
+
+Styl dla przycisku wewnątrz tabu. Ustawia szerokość, padding, tło, border oraz właściwości tekstowe. Zawiera także efekt :hover.
+
+Markup:
+<button>...</button>
+ 
+Style guide: 11.6 
 */
 .tab button {
   width: 100%;
@@ -830,109 +918,265 @@ a {
   background: #ddd;
 }
 
-/* Tab Button Active
-// Responsive Table
-//
-// Styl główny dla kontenera responsywnej tabeli. Ustawia szerokość na 100% i pozwala na przewijanie poziome, gdy zawartość przekracza szerokość kontenera.
-//
-// Example:
-// HTML: <div id="responsive-table">...</div>
-//
-// Styleguide 12.0.0 - Responsive Table Container
+/* 
+Klasa .responsive-table
+
+Styl główny dla kontenera responsywnej tabeli. Ustawia szerokość na 100% i pozwala na przewijanie poziome, gdy zawartość przekracza szerokość kontenera.
+
+Markup:
+<div class="responsive-table">
+    <h3>Wstęp</h3>
+    <p>
+      Najszybsze okrążenia w historii wyścigów to przyciągające uwagę osiągnięcia, które stanowią świadectwo zarówno
+      umiejętności kierowców, jak i zaawansowania technicznego ich pojazdów. Kiedy kierowca i maszyna pracują w pełnej
+      harmonii, możliwe jest przekroczenie granic tego, co uważano za możliwe na danym torze. Rekordowe czasy okrążeń
+      są
+      odzwierciedleniem intensywnego przygotowania, precyzji i odwagi, jak również postępu w inżynierii i
+      aerodynamice.
+      Te momenty, kiedy wszystko się zgadza, przechodzą do historii sportów motorowych, inspirując zarówno fanów, jak
+      i
+      przyszłe pokolenia kierowców. Dlatego z ogromną ekscytacją przedstawiamy Wam tabelę najlepszych rezultatów,
+      która
+      nie tylko oddaje hołd najszybszym okrążeniom, ale również celebruje ducha rywalizacji i nieustannego dążenia do
+      perfekcji.</p>
+    <h4>Najlepsze Czasy Okrążeń</h4>
+    <table>
+      <thead>
+      <tr>
+        <th>Czas Okrążenia</th>
+        <th>Nazwa Toru</th>
+        <th>Kierowca</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td data-label="Czas Okrążenia">1:10.166</td>
+        <td data-label="Nazwa Toru">Circuit de Monaco</td>
+        <td data-label="Kierowca">Lewis Hamilton</td>
+      </tr>
+      <tr>
+        <td data-label="Czas Okrążenia">1:33.401</td>
+        <td data-label="Nazwa Toru">Silverstone Circuit</td>
+        <td data-label="Kierowca">Mark Webber</td>
+      </tr>
+      <tr>
+        <td data-label="Czas Okrążenia">1:30.983</td>
+        <td data-label="Nazwa Toru">Suzuka International Racing Course</td>
+        <td data-label="Kierowca">Lewis Hamilton</td>
+      </tr>
+      <tr>
+        <td data-label="Czas Okrążenia">1:10.166</td>
+        <td data-label="Nazwa Toru">Circuit de Monaco</td>
+        <td data-label="Kierowca">Lewis Hamilton</td>
+      </tr>
+      <tr>
+        <td data-label="Czas Okrążenia">1:33.401</td>
+        <td data-label="Nazwa Toru">Silverstone Circuit</td>
+        <td data-label="Kierowca">Mark Webber</td>
+      </tr>
+      <tr>
+        <td data-label="Czas Okrążenia">1:30.983</td>
+        <td data-label="Nazwa Toru">Suzuka International Racing Course</td>
+        <td data-label="Kierowca">Lewis Hamilton</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+Style guide: 12.0 
 */
-#responsive-table {
+.responsive-table {
   width: 100%;
   overflow-x: auto;
 }
 
-/* Responsive Table Header
-// Responsive Table Header
-//
-// Styl dla nagłówka tabeli w kontenerze responsywnej tabeli. Ustawia wyrównanie tekstu i margines dolny.
-//
-// Example:
-// HTML: <h4>...</h4> (wewnątrz #responsive-table)
-//
-// Styleguide 12.1.0 - Responsive Table Header
-*/
-#responsive-table h4 {
+.responsive-table h4 {
   text-align: center;
   margin-bottom: 1em;
 }
 
-/* Table
-// Table
-//
-// Styl dla tabeli. Ustawia szerokość na 100% i stosuje styl 'border-collapse' do złączenia linii obramowania komórek.
-// 
-// Example:
-// HTML: <table>...</table>
-//
-// Styleguide 12.2.0 - Table
-*/
-
-table {
+.responsive-table table {
   width: 100%;
   border-collapse: collapse;
 }
 
-/* Table Cells
-// Table Cells
-//
-// Styl dla komórek tabeli (th i td). Ustawia wyrównanie tekstu, padding i obramowanie.
-//
-// Example:
-// HTML: <th>...</th>, <td>...</td>
-//
-// Styleguide 12.3.0 - Table Cells
-*/
-
-th, td {
+.responsive-table th, td {
   text-align: left;
   padding: 8px;
   border: 1px solid #ddd;
 }
 
-/* Table Header Cells
-// Table Header Cells
-//
-// Styl dla komórek nagłówka tabeli (th). Ustawia kolor tła i tekstu, aby wyróżnić nagłówki.
-//
-// Example:
-// HTML: <th>...</th>
-//
-// Styleguide 12.4.0 - Table Header Cells
-*/
-th {
+.responsive-table th {
   background-color: #4CAF50;
   color: white;
 }
 
-/* Table Body Rows
-// Table Body Rows
-//
-// Styl dla wierszy w ciele tabeli. Ustawia naprzemienne kolory tła dla wierszy, aby ułatwić czytanie danych.
-//
-// Example:
-// HTML: <tr>...</tr> (w tbody)
-//
-// Styleguide 12.5.0 - Table Body Rows
-*/
-tbody tr:nth-child(odd) {
+.responsive-table tbody tr:nth-child(odd) {
   background-color: #f9f9f9;
 }
 
-/* Contact Form Container
-// Contact Form Container
-//
-// Styl dla kontenera formularza kontaktowego. Ustawia flexbox z kierunkiem kolumnowym, centruje zawartość, dopasowuje elementy i ustawia minimalną wysokość na 100vh. Dodaje również padding górny i dolny.
-// 
-// Example:
-// HTML: <div class="contact-form-container">...</div>
-// 
-// Styleguide 13.0.0 - Contact Form Container
+/*
+Klasa .contact-form-container
+
+Styl dla kontenera formularza kontaktowego. Ustawia szerokość, maksymalną szerokość, automatyczny margines, padding, cień, kolor tła oraz właściwości box-sizing.
+ 
+Markup:
+<div class="contact-form">
+  <div class="contact-form-container">
+    <form action="#" method="get">
+      <h1>Skontauj się z nami</h1>
+      <div class="input-group">
+        <label for="imie">Imię i nazwisko</label>
+        <input type="text" name="imie" id="imie" required placeholder="Twoje imię i nazwisko">
+      </div>
+      <div class="input-group">
+        <label for="email">Adres email</label>
+        <input type="email" name="email" id="email" placeholder="Twój adres email" required>
+      </div>
+      <div class="input-group">
+        <label for="data">Podaj datę</label>
+        <input type="date" name="data" id="data">
+      </div>
+      <div class="input-group">
+        <label for="telefon">Numer telefonu</label>
+        <input type="tel" name="telefon" id="telefon" pattern="+48-[0-9]{3}-[0-9]{3}-[0-9]{3}" required
+               placeholder="+48-XXX-XXX-XXX">
+      </div>
+      <div class="input-group">
+        <label for="kraj">Kraj</label>
+        <select name="kraj" id="kraj">
+          <option value="Polska">Polska</option>
+          <option value="Niemcy">Niemcy</option>
+          <option value="Czechy">Czechy</option>
+          <option value="Słowacja">Słowacja</option>
+          <option value="Ukraina">Ukraina</option>
+          <option value="Białoruś">Białoruś</option>
+          <option value="Litwa">Litwa</option>
+          <option value="Łotwa">Łotwa</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Rosja">Rosja</option>
+        </select>
+      </div>
+      <p>Temat twojej wiadomości</p>
+      <div class="checkbox-custom">
+        <input type="radio" id="noweTresci" name="group" value="noweTresci">
+        <label for="noweTresci">Propozycja nowych treści</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="radio" id="wspolpraca" name="group" value="wspolpraca">
+        <label for="wspolpraca">Współpraca reklamowa</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="radio" id="inny" name="group" value="inny">
+        <label for="inny">Inny</label>
+      </div>
+      <div class="input-group">
+        <label for="wiadomosc">Co chciałbyś nam przekazać</label>
+        <textarea name="wiadomosc" id="wiadomosc" placeholder="Twoja wiadomość ..."></textarea>
+      </div>
+      <div class="checkbox-custom">
+        <input type="checkbox" name="akceptacja" id="akceptacja" checked disabled>
+        <label for="akceptacja">Akceptuję regulamin oraz polityke prywatności.</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="checkbox" name="akceptacja1" id="akceptacja1" checked>
+        <label for="akceptacja1">Chcę otrzymywać dodatkowe informacje o MotoBlogu.</label>
+      </div>
+      <div class="input-group">
+        <button type="submit">Send message</button>
+      </div>
+    </form>
+  </div>
+</div>
+ 
+Style guide: 13.0 
 */
 .contact-form-container {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/*
+Klasa .contact-form
+
+Styl dla formularza kontaktowego. Ustawia flexbox z kierunkiem kolumnowym, centruje zawartość, dopasowuje elementy i ustawia minimalną wysokość na 100vh. Dodaje również padding górny i dolny.
+
+Markup:
+<div class="contact-form">
+    <form action="#" method="get">
+      <h1>Skontauj się z nami</h1>
+      <div class="input-group">
+        <label for="imie">Imię i nazwisko</label>
+        <input type="text" name="imie" id="imie" required placeholder="Twoje imię i nazwisko">
+      </div>
+      <div class="input-group">
+        <label for="email">Adres email</label>
+        <input type="email" name="email" id="email" placeholder="Twój adres email" required>
+      </div>
+      <div class="input-group">
+        <label for="data">Podaj datę</label>
+        <input type="date" name="data" id="data">
+      </div>
+      <div class="input-group">
+        <label for="telefon">Numer telefonu</label>
+        <input type="tel" name="telefon" id="telefon" pattern="+48-[0-9]{3}-[0-9]{3}-[0-9]{3}" required
+               placeholder="+48-XXX-XXX-XXX">
+      </div>
+      <div class="input-group">
+        <label for="kraj">Kraj</label>
+        <select name="kraj" id="kraj">
+          <option value="Polska">Polska</option>
+          <option value="Niemcy">Niemcy</option>
+          <option value="Czechy">Czechy</option>
+          <option value="Słowacja">Słowacja</option>
+          <option value="Ukraina">Ukraina</option>
+          <option value="Białoruś">Białoruś</option>
+          <option value="Litwa">Litwa</option>
+          <option value="Łotwa">Łotwa</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Rosja">Rosja</option>
+        </select>
+      </div>
+      <p>Temat twojej wiadomości</p>
+      <div class="checkbox-custom">
+        <input type="radio" id="noweTresci" name="group" value="noweTresci">
+        <label for="noweTresci">Propozycja nowych treści</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="radio" id="wspolpraca" name="group" value="wspolpraca">
+        <label for="wspolpraca">Współpraca reklamowa</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="radio" id="inny" name="group" value="inny">
+        <label for="inny">Inny</label>
+      </div>
+      <div class="input-group">
+        <label for="wiadomosc">Co chciałbyś nam przekazać</label>
+        <textarea name="wiadomosc" id="wiadomosc" placeholder="Twoja wiadomość ..."></textarea>
+      </div>
+      <div class="checkbox-custom">
+        <input type="checkbox" name="akceptacja" id="akceptacja" checked disabled>
+        <label for="akceptacja">Akceptuję regulamin oraz polityke prywatności.</label>
+      </div>
+      <div class="checkbox-custom">
+        <input type="checkbox" name="akceptacja1" id="akceptacja1" checked>
+        <label for="akceptacja1">Chcę otrzymywać dodatkowe informacje o MotoBlogu.</label>
+      </div>
+      <div class="input-group">
+        <button type="submit">Send message</button>
+      </div>
+    </form>
+  </div>
+
+Style guide: 13.1
+*/
+.contact-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -941,56 +1185,51 @@ tbody tr:nth-child(odd) {
   padding: 40px 0;
 }
 
-/* Contact Form
-// Contact Form
-//
-// Styl dla formularza kontaktowego. Ustawia szerokość, maksymalną szerokość, automatyczny margines, padding, cień, kolor tła oraz właściwości box-sizing.
-// 
-// Example:
-// HTML: <form id="contactForm">...</form>
-//
-// Styleguide 13.1.0 - Contact Form
-*/
-#contactForm {
-  width: 100%;
-  max-width: 550px;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+/* 
+IKlasa .input-group
 
-/* Input Group
-// Input Group
-//
-// Styl dla grupy elementów wejściowych w formularzu. Ustawia margines dolny.
-//
-// Example:
-// HTML: <div class="input-group">...</div>
-//
-// Styleguide 13.2.0 - Input Group
-*/
+Styl dla grupy elementów wejściowych w formularzu. Ustawia margines dolny.Styl dla elementów wejściowych w grupie (input, textarea, select). Ustawia szerokość, padding, margines górny, obramowanie, zaokrąglenie rogów oraz rodzinę czcionek. Ustawia margines dolny
 
-.input-group {
-  margin-bottom: 20px;
-}
+Markup:
+<div class="input-group">
+  <label for="imie">Imię i nazwisko</label>
+  <input type="text" name="imie" id="imie" required placeholder="Twoje imię i nazwisko">
+</div>
+<div class="input-group">
+  <label for="email">Adres email</label>
+  <input type="email" name="email" id="email" placeholder="Twój adres email" required>
+</div>
+<div class="input-group">
+  <label for="data">Podaj datę</label>
+  <input type="date" name="data" id="data">
+</div>
+<div class="input-group">
+  <label for="telefon">Numer telefonu</label>
+  <input type="tel" name="telefon" id="telefon" pattern="+48-[0-9]{3}-[0-9]{3}-[0-9]{3}" required placeholder="+48-XXX-XXX-XXX">
+</div>
+<div class="input-group">
+  <label for="kraj">Kraj</label>
+  <select name="kraj" id="kraj">
+    <option value="Polska">Polska</option>
+      <option value="Niemcy">Niemcy</option>
+      <option value="Czechy">Czechy</option>
+      <option value="Słowacja">Słowacja</option>
+      <option value="Ukraina">Ukraina</option>
+      <option value="Białoruś">Białoruś</option>
+      <option value="Litwa">Litwa</option>
+      <option value="Łotwa">Łotwa</option>
+      <option value="Estonia">Estonia</option>
+      <option value="Rosja">Rosja</option>
+  </select>
+</div>
 
-/* Input Group Elements
-// Input Group Elements
-//
-// Styl dla elementów wejściowych w grupie (input, textarea, select). Ustawia szerokość, padding, margines górny, obramowanie, zaokrąglenie rogów oraz rodzinę czcionek.
-//
-// Example:
-// HTML: <input>, <textarea>, <select>
-//
-// Styleguide 13.3.0 - Input Group Elements
+Style guide: 13.2 
 */
 
 .input-group input,
 .input-group textarea,
 .input-group select {
+  margin-bottom: 20px;
   width: 100%;
   padding: 10px;
   margin-top: 5px;
@@ -1004,15 +1243,18 @@ tbody tr:nth-child(odd) {
   height: 100px;
 }
 
-/* Checkbox Custom
-// Checkbox Custom
-//
-// Styl dla niestandardowego checkboxa w formularzu. Ustawia flexbox dla wyrównania elementów i określa margines dolny.
-// 
-// Example:
-// HTML: <div class="checkbox-custom">...</div>
-// 
-// Styleguide 13.4.0 - Checkbox Custom
+/*
+Klasa .checkbox-custom
+
+Styl dla niestandardowego checkboxa w formularzu. Ustawia flexbox dla wyrównania elementów i określa margines dolny.
+ 
+Markup:
+<div class="checkbox-custom">
+  <input type="radio" id="noweTresci" name="group" value="noweTresci">
+  <label for="noweTresci">Propozycja nowych treści</label>
+</div>
+ 
+ Style guide: 13.3 
 */
 
 .checkbox-custom {
@@ -1026,15 +1268,17 @@ tbody tr:nth-child(odd) {
   margin-right: 10px;
 }
 
-/* Submit Button
-// Submit Button
-//
-// Styl dla przycisku typu submit w formularzu. Ustawia szerokość, padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor oraz margines górny. Zawiera także efekt :hover.
-//
-// Example:
-// HTML: <button type="submit">...</button>
-//
-// Styleguide 13.5.0 - Submit Button
+/*  
+Klasa .checkbox-custom button
+
+Styl dla przycisku typu submit w formularzu. Ustawia szerokość, padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor oraz margines górny. Zawiera także efekt :hover.
+
+Markup:
+<div class="input-group">
+  <button type="submit">Send message</button>
+</div>
+
+ Style guide: 13.4 
 */
 
 .input-group button[type="submit"] {
@@ -1057,15 +1301,15 @@ tbody tr:nth-child(odd) {
   margin-bottom: 2rem;
 }
 
-/* Team
-// Team
-//
-// Styl dla sekcji zespołu. Używa Flexbox do rozmieszczenia profili członków zespołu. Stosuje 'flex-wrap' do zawijania elementów i centruje je.
-//
-// Example:
-HTML: <div class="team">...</div>
-//
-// Styleguide 14.0.0 - Team Section
+/* 
+Klasa .team
+
+Styl dla sekcji zespołu. Używa Flexbox do rozmieszczenia profili członków zespołu. Stosuje 'flex-wrap' do zawijania elementów i centruje je.
+
+Markup:
+<div class="team">...</div>
+
+Style guide: 14.0 
 */
 
 .team {
@@ -1074,15 +1318,23 @@ HTML: <div class="team">...</div>
   justify-content: center;
 }
 
-/* Team Member
-// Team Member
-//
-// Styl dla poszczególnego członka zespołu. Ustawia bazę i maksymalną szerokość, używa Flexbox z kierunkiem kolumnowym, centruje zawartość i dodaje cień oraz tło. Zawiera także padding i margines.
-//
-// Example:
-// HTML: <div class="team-member">...</div>
-//
-// Styleguide 14.1.0 - Team Member
+/* 
+Klasa .team-member
+
+Styl dla poszczególnego członka zespołu. Ustawia bazę i maksymalną szerokość, używa Flexbox z kierunkiem kolumnowym, centruje zawartość i dodaje cień oraz tło. Zawiera także padding i margines.
+
+Markup:
+<div class="team-member">
+  <img src="img/female-editor.png" alt="Wiktoria Nowak">
+  <h2>Wiktoria Nowak</h2>
+  <p>Wiktoria jest doświadczonym redaktorem Motobloga, znana ze swojej pasji do motoryzacji i szczegółowej wiedzy
+        technicznej. Ma długie, falowane blond włosy i często nosi okulary przeciwsłoneczne w kształcie awiatorów. Jej
+        styl ubierania jest elegancki, ale funkcjonalny, idealny do pracy zarówno w biurze, jak i na torze wyścigowym.
+        Zawsze uśmiechnięta, Wiktoria jest dynamiczna i pełna energii, co widać w jej entuzjastycznym podejściu do
+        każdego tematu motoryzacyjnego.</p>
+</div>
+
+Style guide: 14.1 
 */
 .team-member {
   flex-basis: 100%;
@@ -1096,15 +1348,23 @@ HTML: <div class="team">...</div>
   margin: 1rem;
 }
 
-/* Team Member Image
-// Team Member Image
-//
-// Styl dla zdjęcia członka zespołu. Ustawia szerokość, maksymalną szerokość, zaokrąglenie krawędzi i sposób dopasowania obrazu.
-//
-// Example:
-// HTML: <img> (wewnątrz .team-member)
-// 
-// Styleguide 14.2.0 - Team Member Image
+/* 
+Klasa .team-member img
+
+Styl dla zdjęcia członka zespołu. Ustawia szerokość, maksymalną szerokość, zaokrąglenie krawędzi i sposób dopasowania obrazu.
+
+Markup:
+<div class="team-member">
+  <img src="img/female-editor.png" alt="Wiktoria Nowak">
+  <h2>Wiktoria Nowak</h2>
+  <p>Wiktoria jest doświadczonym redaktorem Motobloga, znana ze swojej pasji do motoryzacji i szczegółowej wiedzy
+        technicznej. Ma długie, falowane blond włosy i często nosi okulary przeciwsłoneczne w kształcie awiatorów. Jej
+        styl ubierania jest elegancki, ale funkcjonalny, idealny do pracy zarówno w biurze, jak i na torze wyścigowym.
+        Zawsze uśmiechnięta, Wiktoria jest dynamiczna i pełna energii, co widać w jej entuzjastycznym podejściu do
+        każdego tematu motoryzacyjnego.</p>
+</div>
+ 
+Style guide: 14.2 
 */
 .team-member img {
   width: 100%;
@@ -1115,29 +1375,31 @@ HTML: <div class="team">...</div>
   object-fit: cover;
 }
 
-/* Team Member Name
-// Team Member Name
-// 
-// Styl dla nazwy członka zespołu. Ustawia margines.
-// 
-// Example:
-// HTML: <h2>...</h2> (wewnątrz .team-member)
-// 
-// Styleguide 14.3.0 - Team Member Name
+/* 
+Klasa .team-member h2
+ 
+Styl dla nazwy członka zespołu. Ustawia margines.
+ 
+Markup:
+<div class="team-member">
+  <h2>Wiktoria Nowak</h2>
+</div>
+ 
+Style guide: 14.3 
 */
 .team-member h2 {
   margin: 0.5rem 0;
 }
 
-/* Purpose Section
-// Purpose Section
-//
-// Styl dla sekcji celu, opisującej misję lub cele zespołu. Ustawia tło, padding, margines i cień.
-//
-// Example:
-// HTML: <div class="purpose">...</div>
-//
-// Styleguide 14.4.0 - Purpose Section
+/* 
+Klasa .purpose
+
+Styl dla sekcji celu, opisującej misję lub cele zespołu. Ustawia tło, padding, margines i cień.
+
+Markup:
+  <div class="purpose">...</div>
+
+Style guide: 14.4 
 */
 .purpose {
   background: #ddd;
@@ -1146,15 +1408,15 @@ HTML: <div class="team">...</div>
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Box
-// Box
-//
-// Styl dla ogólnego kontenera typu box. Może być użyty w różnych sekcjach. Ustawia tło, padding i cień.
-//
-// Example:
-// HTML: <div class="box">...</div>
-//
-// Styleguide 14.5.0 - Box
+/* 
+KLasa .box
+
+Styl dla ogólnego kontenera typu box. Może być użyty w różnych sekcjach. Ustawia tło, padding i cień.
+
+Markup:
+<div class="box">...</div>
+
+Style guide: 15.0 
 */
 .box {
   background-color: white;
@@ -1162,64 +1424,56 @@ HTML: <div class="team">...</div>
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Icon
-// Icon
-//
-// Styl dla ikony. Domyślnie ukrywa ikonę poprzez ustawienie 'display: none'.
-//
-// Example:
-// HTML: <div class="icon">...</div>
-//
-// Styleguide 15.0.0 - Icon
-*/
-.icon {
-  display: none;
-}
+/* 
+@media only screen and (max-width: 600px)
 
-/* Media Queries
-// @media only screen and (max-width: 600px)
-//
-// Styl dla urządzeń o maksymalnej szerokości ekranu 600px. W tym zapytaniu medialnym znajdują się różne reguły CSS służące do dostosowania wyglądu i układu elementów strony dla urządzeń mobilnych i mniejszych ekranów.
-//
-// Styleguide 16.0.0 - Media Queries for Max-Width 600px
+Styl dla urządzeń o maksymalnej szerokości ekranu 600px. W tym zapytaniu medialnym znajdują się różne reguły CSS służące do dostosowania wyglądu i układu elementów strony dla urządzeń mobilnych i mniejszych ekranów.
+
+Style guide: 16.0 
 */
 @media only screen and (max-width: 600px) {
 
-  /* Footer Social Media Links - Mobile
-  // Footer Social Media Links - Mobile
-  //
-  // Dostosowuje margines dolny linków mediów społecznościowych w stopce na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <footer .social-media a>...</footer>
-  //
-  // Styleguide 16.1.0 - Footer Social Media Links
+  /* 
+  Klasa .footer-style .social-media a
+  
+  Dostosowuje margines dolny linków mediów społecznościowych w stopce na urządzeniach mobilnych.
+  
+  Markup:
+  <footer>
+  <div class="social-media">
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="img/facebook-icon.png" alt="Facebook">
+    </a>
+  </div>
+  </footer>
+
+  Style guide: 16.1 
   */
-  footer .social-media a {
+  .footer-style .social-media a {
     margin-bottom: 5px;
   }
 
-  /* Responsive Table - Mobile
-  // Responsive Table - Mobile
-  //
-  // Dostosowuje tabelę dla ekranów o szerokości do 600px. Ukrywa wiersze nagłówka tabeli (thead), zmienia wyświetlanie wierszy ciała tabeli (tbody) na blokowe i dodaje margines oraz obramowanie.
-  //
-  // Example:
-  // HTML: <table>...</table>
-  //
-  // Styleguide 16.2.0 - Responsive Table
+  /* 
+  Klasa .responsive-table
+  
+  Dostosowuje tabelę dla ekranów o szerokości do 600px. Ukrywa wiersze nagłówka tabeli (thead), zmienia wyświetlanie wierszy ciała tabeli (tbody) na blokowe i dodaje margines oraz obramowanie.
+  
+  Markup:
+  <table>...</table>
+  
+  Style guide: 16.2 
   */
-  thead tr {
+  .responsive-table thead tr {
     display: none;
   }
 
-  tbody tr {
+  .responsive-table tbody tr {
     display: block;
     margin-bottom: 1em;
     border-bottom: 1px solid #ddd;
   }
 
-  td {
+  .responsive-table td {
     display: block;
     text-align: left;
     padding-top: 0.5em;
@@ -1227,51 +1481,61 @@ HTML: <div class="team">...</div>
     border-bottom: 1px dotted #ddd;
   }
 
-  /* Data labels - tabela */
-  td:before {
+  .responsive-table td:before {
     content: attr(data-label);
     display: block;
     margin-bottom: 0.25em;
     font-weight: bold;
   }
 
-  /* Navbar Logo - Mobile
-  // Navbar Logo - Mobile
-  //
-  // Ukrywa logo w nawigacji na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <.navbar-logo img>...</.navbar-logo>
-  //
-  // Styleguide 16.3.0 - Navbar Logo
+  /* 
+  Klasa .navbar-logo
+  
+  Ukrywa logo w nawigacji na urządzeniach mobilnych.
+  
+  Markup:
+  <div class="navbar-logo">
+    <img src="img/logo-ostateczne.png" alt="Logo">
+  </div>
+  
+  Style guide: 16.3
   */
   .navbar-logo img {
     display: none;
   }
 
-  /* Carousel Text - Mobile
-  // Carousel Text - Mobile
-  //
-  // Ukrywa tekst w slajdach karuzeli na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <.slide-text>...</.slide-text>
-  // 
-  // Styleguide 16.4.0 - Carousel Text
+  /* 
+  Klasa .slide-text
+  
+  Ukrywa tekst w slajdach karuzeli na urządzeniach mobilnych.
+  
+  Markup:
+  <div class="slide-text">Fani</div>
+   
+  Style guide: 16.4 
   */
   .slide-text {
     display: none;
   }
 
-  /* Image Row - Mobile
-  // Image Row - Mobile
-  // 
-  // Dostosowuje układ rzędu obrazów na urządzeniach mobilnych. Zmienia kierunek Flexbox na kolumnowy, co sprawia, że obrazy są wyświetlane jeden pod drugim.
-  //
-  // Example:
-  // HTML: <div class="image-row">...</div>
-  // 
-  // Styleguide 16.5.0 - Image Row
+  /* 
+  Klasa .image-row
+   
+  Dostosowuje układ rzędu obrazów na urządzeniach mobilnych. Zmienia kierunek Flexbox na kolumnowy, co sprawia, że obrazy są wyświetlane jeden pod drugim.
+  
+  Markup:
+  <div class="image-row">
+    <div class="image-container">
+      <img class="image-row-item" src="img/F1_race.png" alt="F1">
+      <div class="image-text">F1 Race</div>
+    </div>
+    <div class="image-container">
+      <img class="image-row-item" src="img/rally_race.png" alt="Rally race">
+      <div class="image-text">Rally Race</div>
+    </div>
+  </div>
+   
+  Style guide: 16.5 
   */
   .image-row {
     flex-direction: column;
@@ -1295,30 +1559,30 @@ HTML: <div class="team">...</div>
     opacity: 1;
   }
 
-  /* Tabs - Mobile
-  // Tabs - Mobile
-  // 
-  // Dostosowuje zakładki na urządzeniach mobilnych, zmieniając tło i dodając cień, by ułatwić rozróżnienie poszczególnych zakładek.
-  //
-  // Example:
-  // HTML: <div class="color .tab-label">...</div>
-  //
-  // Styleguide 16.6.0 - Tabs
+  /* 
+  Klasa .color .tab-label
+   
+  Dostosowuje zakładki na urządzeniach mobilnych, zmieniając tło i dodając cień, by ułatwić rozróżnienie poszczególnych zakładek.
+  
+  Markup:
+  <div class="color .tab-label">...</div>
+  
+  Style guide: 16.6 
   */
   .color .tab-label {
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Gallery Item Text - Mobile
-  // Gallery Item Text - Mobile
-  // 
-  // Dostosowuje rozmiar czcionki tekstu w elemencie galerii na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <div class="gallery-item-text">...</div>
-  //
-  // Styleguide 16.7.0 - Gallery Item Text
+  /* 
+  Klasa .gallery-item-text
+   
+  Dostosowuje rozmiar czcionki tekstu w elemencie galerii na urządzeniach mobilnych.
+  
+  Markup:
+  <div class="gallery-item-text">Przykładowy tekst</div>
+  
+  Style guide: 16.7 
   */
   .gallery-item-text {
     font-size: 12px;
@@ -1329,24 +1593,28 @@ HTML: <div class="team">...</div>
     position: relative;
   }
 
-  /* Hamburger Menu - Mobile
-  // Hamburger Menu - Mobile
-  //
-  // Styl dla menu hamburgerowego na urządzeniach mobilnych. Ustawia menu w lewym górnym rogu i wyświetla je jako rząd trzech linii.
-  //
-  // Example:
-  // HTML: <div class="hamburger-menu">...</div>
-  //
-  // Styleguide 16.8.0 - Hamburger Menu
+  /* 
+  Klasa .hamburger-menu
+  
+  Styl dla menu hamburgerowego na urządzeniach mobilnych. Ustawia menu w lewym górnym rogu i wyświetla je jako rząd trzech linii.
+  
+  Markup:
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
+  Style guide: 16.8 
   */
   .hamburger-menu {
     display: inline-block;
     position: fixed;
-    top: 1em;
+    top: 1.2em;
     left: 1em;
     z-index: 9999;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: auto;
     flex-direction: column;
     justify-content: space-around;
     cursor: pointer;
@@ -1359,92 +1627,122 @@ HTML: <div class="team">...</div>
     background: white;
   }
 
-  /* Mobile Navigation
-  // Mobile Navigation
-  // 
-  // Styl dla nawigacji mobilnej. Zawiera reguły dotyczące pozycjonowania, koloru tła, przejścia, paddingu i indeksu warstw. Zmienia nawigację na menu typu off-canvas.
-  //
-  // Example:
-  // HTML: <nav class="mobile-nav">...</nav>
-  //
-  // Styleguide 16.9.0 - Mobile Navigation
+  /* 
+  Klasa .navigation
+   
+  Styl dla nawigacji mobilnej. Zawiera reguły dotyczące pozycjonowania, koloru tła, przejścia, paddingu i indeksu warstw. Zmienia nawigację na menu typu off-canvas.
+  
+  Markup:
+  <div class="navigation">
+        <ul>
+          <li><a href="#">Strona Główna</a></li>
+          <li class="icon"><a href="#"><i class="fi fi-rr-home"></i></a></li>
+          <li><a href="aboutus.html">O Nas</a></li>
+          <li class="icon"><a href="aboutus.html"><i class="fi fi-rr-info"></i></a></li>
+          <li><a href="contactus.html">Skontauj się z Nami</a></li>
+          <li class="icon"><a href="contactus.html"><i class="fi fi-rr-envelope"></i></a></li>
+          <li><a href="gallery.html">Galeria</a></li>
+          <li class="icon"><a href="gallery.html"><i class="fi fi-rr-picture"></i></a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li class="icon"><a href="quiz.html"><i class="fi fi-rr-interrogation"></i></a></li>
+        </ul>
+        <div class="navbar-logo">
+          <img src="img/logo-ostateczne.png" alt="Logo">
+        </div>
+      </div>
+  
+  Style guide: 16.9 
   */
-  .mobile-nav {
+  .navigation {
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
-  .mobile-nav ul {
+  .navigation ul {
     position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
     bottom: 0;
     margin: 0;
     left: -100%;
     width: 100%;
     background-color: #333;
     transition: left 0.3s;
-    padding: 0.6em;
     z-index: 999;
   }
 
-  .mobile-nav ul.active {
+  .navigation ul.active {
     left: 0;
   }
 
-  .mobile-nav ul li {
+  .navigation ul li {
     display: none;
-    text-align: center;
     padding: 10px 0;
   }
 
-  .mobile-nav ul li a {
-    display: block;
+  .navigation ul li a {
     color: white;
     text-decoration: none;
     font-size: 2em;
-    padding-right: 5px;
-    padding-left: 5px;
   }
-
-  /* Header and Main - Mobile
-  // Header and Main - Mobile
-  // 
-  // Dostosowuje padding dla nagłówka (header) i głównej treści (main) na urządzeniach mobilnych.
-  // 
-  // Example:
-  // HTML: <header>...</header>, <main>...</main>
-  //
-  // Styleguide 16.10.0 - Header and Main
-  */
-  header {
-    padding: 30px;
+  
+  .navigation .icon {
+    display: inline-block;
   }
 
   main {
-    padding: 40px;
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
-  /* Contact Us Page - Mobile
-  // Contact Us Page - Mobile
-  // 
-  // Dostosowuje padding kontenera formularza kontaktowego na stronie 'Contact Us' na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <div class="contact-form-container">...</div>
-  //
-  // Styleguide 16.11.0 - Contact Us Page
+  /* 
+  Klasa .contact-form-container
+   
+  Dostosowuje padding kontenera formularza kontaktowego na stronie 'Contact Us' na urządzeniach mobilnych.
+  
+  Markup:
+  <div class="contact-form-container">...</div>
+  
+  Style guide: 16.10 
   */
   .contact-form-container {
     padding: 20px 0;
   }
 
-  /* Pop-up - Mobile
-  // Pop-up - Mobile
-  //
-  // Dostosowuje margines i szerokość treści popup na urządzeniach mobilnych.
-  //
-  // Example:
-  // HTML: <div class="popup-content">...</div>
-  //
-  // Styleguide 16.12.0 - Popup
+  /* 
+  KLasa .popup-content
+  
+  Dostosowuje margines i szerokość treści popup na urządzeniach mobilnych.
+  
+  Markup:
+  <div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>Zapisz się na nasz newsletter!</h2>
+    <p>Dołącz do naszej pasjonującej społeczności miłośników motoryzacji! Zapisując się do naszego newslettera,
+      otrzymasz regularne aktualizacje pełne fascynujących treści, które każdy fan czterech kółek pokocha. Od
+      ekskluzywnych recenzji najnowszych modeli samochodów, przez zapowiedzi najgorętszych wydarzeń motoryzacyjnych, aż
+      po praktyczne porady i ciekawostki ze świata motoryzacji – nasz newsletter to Twoje źródło informacji, które
+      pozwoli Ci być zawsze o krok przed innymi. Zapisz się już teraz, aby nie przegapić żadnych nowości i dołączyć do
+      grona entuzjastów, którzy dzielą Twoją pasję. To tylko jeden klik – zapisz się, aby każdy dzień był pełen
+      motoryzacyjnych inspiracji!</p>
+    <form id="newsletter-form">
+      <div class="form-grid">
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Twój adres email" required>
+        <input type="submit" value="Zapisz się">
+      </div>
+    </form>
+  </div>
+  </div>
+  
+  Style guide: 16.11 
   */
   .popup-content {
     margin: 15% 10%;
@@ -1455,93 +1753,34 @@ HTML: <div class="team">...</div>
     padding-top: 80px;
   }
 
-  /* Icons in Mobile Navigation
-  // Icons in Mobile Navigation
-  //
-  // Styl dla ikon w nawigacji mobilnej. Ustawia wyświetlanie i margines.
-  //
-  // Example:
-  // HTML: <nav class="mobile-nav .icon">...</nav>
-  // 
-  // Styleguide 16.13.0 - Icons in Mobile Navigation
-  */
-  .mobile-nav .icon {
-    display: inline-block;
-    margin: 10px;
-  }
-
-  /* Car Listing Page - Mobile
-  // Car Listing Page - Mobile
-  // 
-  // Dostosowuje szerokość pól wejściowych i przycisków na stronie listy samochodów na urządzeniach mobilnych.
-  // 
-  // Example:
-  HTML: <div class="form-container input[type='text']">...</div>
-  //
-  // Styleguide 16.14.0 - Car Listing Page
-  */
-  .form-container input[type="text"],
-  .form-container input[type="number"],
-  #add-car, #load-sample-cars, #filter-cars {
-    width: calc(100% - 20px);
-    box-sizing: border-box;
-  }
-
-  #add-car {
-    margin-top: 10px;
-  }
-
-  .buttons-group {
-    flex-direction: column;
-    padding-right: 10px;
-  }
 }
 
-@media screen and (max-width: 700px) {
-  .car-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    width: 100%;
-  }
+/* 
+ @media (min-width: 600px)
+ 
+ Styl dla urządzeń o minimalnej szerokości ekranu 600px. Zmienia układ członków zespołu na dwie kolumny, dostosowując ich szerokość i bazę flex.
 
-  .remove-car {
-    top: 10px;
-    right: 10px;
-  }
-
-  .car-detail {
-    padding-left: 30px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    align-items: center;
-    width: 100%;
-    margin: 2px 0;
-  }
-}
-
-/* @media (min-width: 600px)
-// @media (min-width: 600px)
-// 
-// Styl dla urządzeń o minimalnej szerokości ekranu 600px. Zmienia układ członków zespołu na dwie kolumny, dostosowując ich szerokość i bazę flex.
-//
-// Styleguide 17.0.0 - Media Queries for Min-Width 600px
+ Style guide: 17.0 
 */
 
 @media (min-width: 600px) {
-  /* Team Member - Min Width 600px
-  // Team Member - Min Width 600px
-  //
-  // Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 600px. Ustawia dwa profile w rzędzie, z zachowaniem marginesów.
-  //
-  // Example:
-  // HTML: <div class="team-member">...</div>
-  //
-  // Styleguide 17.1.0 - Team Member for Min Width 600px
+  /* 
+  Klasa .team-member
+  
+  Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 600px. Ustawia dwa profile w rzędzie, z zachowaniem marginesów.
+  
+  Markup:
+  <div class="team-member">
+    <img src="img/female-editor.png" alt="Wiktoria Nowak">
+    <h2>Wiktoria Nowak</h2>
+    <p>Wiktoria jest doświadczonym redaktorem Motobloga, znana ze swojej pasji do motoryzacji i szczegółowej wiedzy
+        technicznej. Ma długie, falowane blond włosy i często nosi okulary przeciwsłoneczne w kształcie awiatorów. Jej
+        styl ubierania jest elegancki, ale funkcjonalny, idealny do pracy zarówno w biurze, jak i na torze wyścigowym.
+        Zawsze uśmiechnięta, Wiktoria jest dynamiczna i pełna energii, co widać w jej entuzjastycznym podejściu do
+        każdego tematu motoryzacyjnego.</p>
+  </div>
+  
+  Style guide: 17.1
   */
   .team-member {
     flex-basis: calc(50% - 2rem);
@@ -1549,23 +1788,31 @@ HTML: <div class="team">...</div>
   }
 }
 
-/* @media (min-width: 900px)
-// @media (min-width: 900px)
-//
-// Styl dla urządzeń o minimalnej szerokości ekranu 900px. Zmienia układ członków zespołu na trzy kolumny, dostosowując ich szerokość i bazę flex.
-// 
-// Styleguide 17.2.0 - Media Queries for Min-Width 900px
+/* 
+@media (min-width: 900px)
+
+Styl dla urządzeń o minimalnej szerokości ekranu 900px. Zmienia układ członków zespołu na trzy kolumny, dostosowując ich szerokość i bazę flex.
+ 
+Style guide: 18.0 
 */
 @media (min-width: 900px) {
-  /* Team Member - Min Width 900px
-  // Team Member - Min Width 900px
-  // 
-  // Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 900px. Ustawia trzy profile w rzędzie, z zachowaniem marginesów.
-  //
-  // Example:
-  // HTML: <div class="team-member">...</div>
-  //
-  // Styleguide 17.3.0 - Team Member for Min Width 900px
+  /* 
+  Team Member - Min Width 900px
+   
+  Dostosowuje rozmiar poszczególnych profili członków zespołu na urządzeniach o szerokości ekranu co najmniej 900px. Ustawia trzy profile w rzędzie, z zachowaniem marginesów.
+  
+  Markup:
+  <div class="team-member">
+    <img src="img/female-editor.png" alt="Wiktoria Nowak">
+    <h2>Wiktoria Nowak</h2>
+    <p>Wiktoria jest doświadczonym redaktorem Motobloga, znana ze swojej pasji do motoryzacji i szczegółowej wiedzy
+        technicznej. Ma długie, falowane blond włosy i często nosi okulary przeciwsłoneczne w kształcie awiatorów. Jej
+        styl ubierania jest elegancki, ale funkcjonalny, idealny do pracy zarówno w biurze, jak i na torze wyścigowym.
+        Zawsze uśmiechnięta, Wiktoria jest dynamiczna i pełna energii, co widać w jej entuzjastycznym podejściu do
+        każdego tematu motoryzacyjnego.</p>
+  </div>
+  
+  Style guide: 18.1 
   */
   .team-member {
     flex-basis: calc(33.333% - 2rem);
@@ -1573,30 +1820,30 @@ HTML: <div class="team">...</div>
   }
 }
 
-/* Color
-// Color Background
-//
-// Styl dla elementów z klasą .color. Ustawia jednolite tło o kolorze #f7f7f7. Może być stosowany do różnych elementów wymagających tego tła.
-//
-// Example:
-// HTML: <div class="color">...</div>
-//
-// Styleguide 18.0.0 - Color Background
+/* 
+Color Background
+
+Styl dla elementów z klasą .color. Ustawia jednolite tło o kolorze #f7f7f7. Może być stosowany do różnych elementów wymagających tego tła.
+
+Markup:
+<div class="color">...</div>
+
+Style guide: Kolor
 */
 
 .color {
   background-color: #f7f7f7;
 }
 
-/* Form Box
-// Form Box
-//
-// Styl dla kontenera formularza (form-box). Ustawia margines, tło, wyświetlanie Flexbox, kierunek kolumnowy, wyrównanie i centrowanie zawartości.
-//
-// Example:
-// HTML: <div class="form-box">...</div>
-//
-// Styleguide 18.1.0 - Form Box
+/* 
+Form Box
+
+Styl dla kontenera formularza (form-box). Ustawia margines, tło, wyświetlanie Flexbox, kierunek kolumnowy, wyrównanie i centrowanie zawartości.
+
+Markup:
+<div class="form-box">...</div>
+
+Style guide: 19.0 - Quiz
 */
 
 .form-box {
@@ -1608,21 +1855,21 @@ HTML: <div class="team">...</div>
   justify-content: center;
 }
 
-/* Form Container
-// Form Container
-//
-// Styl dla kontenera formularza. Ustawia szerokość, maksymalną szerokość, cień, padding, tło, zaokrąglenie rogów, margines, wyświetlanie Flexbox, kierunek kolumnowy i odstęp między elementami.
-// 
-// Example:
-// HTML: <div class="form-container">...</div>
-// 
-// Styleguide 18.2.0 - Form Container
+/* 
+Form Container
+
+Styl dla kontenera formularza. Ustawia szerokość, maksymalną szerokość, cień, padding, tło, zaokrąglenie rogów, margines, wyświetlanie Flexbox, kierunek kolumnowy i odstęp między elementami.
+ 
+Markup:
+<div class="form-container">...</div>
+ 
+Style guide: 19.1 - Quiz
 */
 .form-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 900px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 40px;
   background-color: white;
   border-radius: 4px;
   margin: 20px auto;
@@ -1631,172 +1878,121 @@ HTML: <div class="team">...</div>
   gap: 10px;
 }
 
-/* Form Container Headings
-// Form Container Headings
-//
-// Styl dla nagłówków w kontenerze formularza. Ustawia padding z lewej strony i z góry.
-// 
-// Example:
-// HTML: <h1>...</h1> (wewnątrz .form-container)
-//
-// Styleguide 18.3.0 - Form Container Headings
+/* 
+Form Container Headings
+
+Styl dla nagłówków w kontenerze formularza. Ustawia padding z lewej strony i z góry oraz rozmiar czcionki.
+ 
+Markup:
+<div class="form-container">
+  <h2>Quiz Motoryzacyjny</h2>
+</div>
+
+Style guide: 19.2 - Quiz
 */
-.form-container h1, h2, h3 {
-  padding-left: 10px;
-  padding-top: 10px;
+.form-container h1, h2 {
+  padding-left: 5px;
+  font-size: 28px;
 }
 
-/* Container Paragraph
-// Container Paragraph
-//
-// Styl dla paragrafów w kontenerze formularza. Ustawia padding z lewej strony.
-// Example:
-// HTML: <p>...</p> (wewnątrz .form-container)
-//
-// Styleguide 18.4.0 - Form Container Paragraph
+/*
+Container Paragraph
+
+Styl dla paragrafów w kontenerze formularza. Ustawia padding z lewej strony i rozmiar czcionki.
+
+Markup:
+<div class="form-container">
+  <p>przykładowy tekst</p>
+</div>
+
+Style guide: 19.3 - Quiz
  */
 .form-container p {
-  padding-left: 10px;
+  padding-left: 5px;
+  font-size: 20px;
 }
 
-/* Form Input Fields
-// Form Input Fields
-//
-// Styl dla pól wprowadzania danych (input) typu tekst i numer w kontenerze formularza. Ustawia padding, marginesy, obramowanie, zaokrąglenie rogów, rozmiar czcionki i rodzinę czcionek.
-//
-// Example:
-// HTML: <input type="text">, <input type="number">
-// 
-// Styleguide 18.5.0 - Form Input Fields
-*/
+/* 
+Buttons Group
 
-.form-container input[type="text"],
-.form-container input[type="number"],
-.form-container select, .form-container input[type="checkbox"], .form-container input[type="radio"] {
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-}
+Styl dla grupy przycisków. Ustawia wyświetlanie Flexbox, szerokość, odstęp między przyciskami oraz padding.
 
-/* Add and Load Sample Cars Buttons
-// Add and Load Sample Cars Buttons
-//
-// Styl dla przycisków 'Dodaj samochód' i 'Dodaj przykładowe samochody'. Ustawia padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogów, kursor, przejście dla koloru tła i wyrównanie do środka. Zmienia kolor tła przy najechaniu.
-//
-// Example:
-// HTML: <button id="add-car">...</button>, <button id="load-sample-cars">...</button>
-// 
-// Styleguide 19.0.0 - Add and Load Sample Cars Buttons
-*/
+Markup:
+<div class="button-group">
+  <button id="restart-quiz-btn" class="quiz-btn">Zagraj ponownie</button>
+  <button id="back-to-start-btn" class="quiz-btn">Powrót do startu</button>
+</div>
 
-#add-car, #load-sample-cars, #filter-cars {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  align-self: center;
-  font-family: 'Poppins', sans-serif;
-}
-
-#load-sample-cars:hover, #add-car:hover, #filter-cars:hover {
-  background-color: #45a049;
-}
-
-/* Car List
-// Car List
-// 
-// Styl dla listy samochodów. Ustawia szerokość, maksymalną szerokość, styl listy, padding, margines i centrowanie.
-// 
-// Example:
-// HTML: <ul id="car-list">...</ul>
-// 
-// Styleguide 19.1.0 - Car List
-*/
-
-#car-list {
-  width: 100%;
-  max-width: 600px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto;
-}
-
-/* Car Item
-// Car Item
-//
-// Styl dla pojedynczego elementu listy samochodów. Ustawia tło, obramowanie, padding, wyświetlanie Flexbox, justowanie i wyrównanie elementów oraz cień.
-// 
-// Example:
-// HTML: <li class="car-item">...</li>
-//
-// Styleguide 19.2.0 - Car Item
-*/
-
-.car-item {
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  border-radius: 8px;
-}
-
-/* Remove Car Button
-// Remove Car Button
-//
-// Styl dla przycisku usuwania samochodu. Ustawia kolor tła, kolor tekstu, padding, zaokrąglenie, rozmiar czcionki, wyrównanie tekstu, kursor, brak obramowania i zmianę koloru tekstu przy najechaniu.
-//
-// Example:
-// HTML: <button class="remove-car">...</button>
-//
-// Styleguide 19.3.0 - Remove Car Button
-*/
-.remove-car {
-  background-color: #ff4d4d;
-  color: white;
-  padding: 3px 6px;
-  border-radius: 50%;
-  font-size: 16px;
-  line-height: 16px;
-  cursor: pointer;
-  border: none;
-}
-
-.remove-car:hover {
-  color: rgba(255, 255, 255, 0.586);
-}
-
-/* Buttons Group
-// Buttons Group
-//
-// Styl dla grupy przycisków. Ustawia wyświetlanie Flexbox, szerokość, odstęp między przyciskami oraz padding.
-//
-// Example:
-// HTML: <div class="buttons-group">...</div>
-//
-// Styleguide 19.4.0 - Buttons Group
+Style guide: 19.4 - Buttons Group
 */
 .buttons-group {
   display: flex;
   width: 100%;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.car-detail {
-  display: inline-block;
-  margin-right: 20px;
-  min-width: 100px;
+.hidden {
+  display: none;
+}
+
+/* 
+Correct Display
+
+Styl dla poprawnie wyświetlanego elementu. Ustawia padding, font-weight oraz font-size.
+
+Markup:
+<div class="correct-display">Przykładowy tekst</div>
+
+Style guide: 19.5 - Correct Display
+*/
+.correct-display {
+  padding: 5px;
+  padding-bottom: 15px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* 
+Quiz Buttons
+
+Styl dla przycisków w quizie. Określa marginesy, padding, kolor tła, kolor tekstu, brak obramowania, zaokrąglenie rogu, kursor wskaźnika, przejście koloru tła, wyśrodkowanie oraz rodzaj czcionki. Przyciski są zaprojektowane do użycia w quizie, zwiększając interaktywność użytkownika.
+
+Markup:
+<button class="quiz-btn">Potwierdź odpowiedź</button>
+<button id="confirm-answer-btn">Potwierdź odpowiedź</button>
+
+Style guide: 19.6 - Quiz Buttons
+*/
+.quiz-btn, #confirm-answer-btn {
+  margin-left: 5px;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+  width: 200px;
+}
+
+/* 
+Answer Label
+
+Styl dla etykiet odpowiedzi. Określa margines dolny i rozmiar czcionki. Etykiety są zaprojektowane do wyświetlania opcji odpowiedzi w quizie, ułatwiając użytkownikowi czytelność.
+
+Markup:
+<label class="answer-label">Opcja odpowiedzi</label>
+
+Style guide: 19.7 - Answer Label
+*/
+.answer-label {
+  margin-bottom: 10px;
+  font-size: 20px;
 }
