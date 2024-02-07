@@ -785,10 +785,10 @@ Style guide: 2.0
   Styl kontenera formularza kontaktowego definiuje szerokość, maksymalną szerokość, automatyczny margines, padding, cień, kolor tła oraz właściwości box-sizing, tworząc solidną bazę dla formularza. Styl dla samego formularza wykorzystuje flexbox z orientacją kolumnową do centrowania zawartości, dopasowuje elementy i ustawia minimalną wysokość na 100vh, z dodatkowym paddingiem górnym i dolnym dla lepszego rozmieszczenia. Styl dla grupy elementów wejściowych określa margines dolny, zapewniając odpowiednie odstępy między grupami. Elementy wejściowe w grupie (input, textarea, select) mają ustawioną szerokość, padding, margines górny, obramowanie, zaokrąglenie rogów oraz rodzaj czcionki, z dodatkowym marginesem dolnym, co przyczynia się do ich czytelności i estetyki. Styl dla niestandardowego checkboxa wykorzystuje flexbox do wyrównania i określa margines dolny. Przycisk typu submit w formularzu ma zdefiniowaną szerokość, padding, kolor tła, kolor tekstu, jest bez obramowania, z zaokrągleniem rogów i ustawionym kursorem wskazującym, oraz marginesem górnym, z efektem :hover, co zwiększa interaktywność i użyteczność formularza.
    
   Markup:
-  <div class="contact-form">
-    <div class="contact-form-container">
+  <div class="contact-form-container">
+    <div class="contact-form">
       <form action="#" method="get">
-        <h1>Skontauj się z nami</h1>
+        <h1>Skontaktuj się z nami</h1>
         <div class="input-group">
           <label for="imie">Imię i nazwisko</label>
           <input type="text" name="imie" id="imie" required placeholder="Twoje imię i nazwisko">
@@ -859,7 +859,6 @@ Style guide: 2.0
     width: 100%;
     max-width: 550px;
     margin: 0 auto;
-    padding: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: white;
     box-sizing: border-box;
@@ -872,7 +871,7 @@ Style guide: 2.0
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px 0;
+    padding: 40px;
   }
 
   .input-group input,

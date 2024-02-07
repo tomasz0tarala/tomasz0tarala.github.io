@@ -470,35 +470,28 @@
   
   
   .contact-form-container {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .contact-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 40px 0;
-    background-color: white;
+    padding: 40px;
   }
-  
-  
-  .contactForm {
-    max-width: 550px;
-    margin: 0 auto;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #f7f7f7;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  
-  
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
   
   .input-group input,
   .input-group textarea,
   .input-group select {
+    margin-bottom: 20px;
     width: 100%;
     padding: 10px;
     margin-top: 5px;
