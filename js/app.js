@@ -63,11 +63,17 @@ function selectRandomQuestions(questions, numQuestions) {
 }
 
 /**
- * Wyświetla pytanie i odpowiedzi na ekranie, umożliwiając użytkownikowi wybór.
- * Resetuje stan przed wyświetleniem nowego pytania.
+ * Wyświetla pytanie i odpowiedzi na ekranie, umożliwiając użytkownikowi dokonanie wyboru.
+ * Resetuje stan UI przed wyświetleniem nowego pytania, w tym ukrywa przycisk potwierdzenia odpowiedzi
+ * oraz kontenery z informacjami zwrotnymi o poprawności odpowiedzi i poprawną odpowiedzią, jeśli były wcześniej wyświetlone.
+ * Każda odpowiedź jest prezentowana jako radio button z etykietą, umożliwiając jednoznaczny wybór.
+ * 
  * @function
  * @public
- * @param {Object} question - Obiekt pytania zawierający treść pytania i odpowiedzi.
+ * @param {Object} question - Obiekt pytania, zawierający treść pytania i tablicę możliwych odpowiedzi.
+ * Każda odpowiedź w tej tablicy jest reprezentowana przez ciąg znaków.
+ * Funkcja tworzy dla każdej odpowiedzi element input typu radio oraz etykietę (label) z tekstem odpowiedzi.
+ * Po przygotowaniu wszystkich odpowiedzi, funkcja ukrywa niepotrzebne elementy UI i wyświetla aktualne pytanie.
  */
 function displayQuestion(question) {
   resetState();
@@ -92,7 +98,12 @@ function displayQuestion(question) {
   });
 
   confirmAnswerBtn.classList.remove('hidden');
+  
+  // Ukrywanie kontenerów z feedbackiem i poprawną odpowiedzią
+  document.getElementById('feedback-container').classList.add('hidden');
+  document.getElementById('correct-answer-container').classList.add('hidden');
 }
+
 
 /**
  * Resetuje stan UI odpowiedzi, ukrywając przycisk potwierdzenia i usuwając istniejące opcje odpowiedzi.
@@ -107,7 +118,12 @@ function resetState() {
 }
 
 /**
- * Sprawdza, która odpowiedź została wybrana i czy jest poprawna, a następnie przechodzi do następnego pytania lub wyświetla wynik.
+ * Sprawdza, która odpowiedź została wybrana przez użytkownika, i ocenia, czy jest poprawna.
+ * W zależności od poprawności odpowiedzi, wyświetla stosowny komunikat w kontenerze informacji zwrotnej.
+ * Jeśli odpowiedź jest niepoprawna, pokazuje także poprawną odpowiedź w dedykowanym kontenerze.
+ * Następnie ukrywa przycisk potwierdzenia odpowiedzi i pokazuje przycisk, który pozwala przejść do następnego pytania,
+ * umożliwiając użytkownikowi kontrolę nad tempem quizu. Po wybraniu odpowiedzi i wyświetleniu odpowiednich komunikatów,
+ * funkcja przygotowuje interfejs do przejścia do kolejnego pytania lub, jeśli to ostatnie pytanie, do wyświetlenia wyników quizu.
  * @function
  * @public
  */
@@ -119,29 +135,77 @@ function selectAnswer() {
   }
   const answerIndex = Number(selectedAnswer.value);
   const correctAnswerIndex = currentQuestions[currentQuestionIndex].correctAnswer;
+  const correctAnswerText = currentQuestions[currentQuestionIndex].answers[correctAnswerIndex];
+
+  document.getElementById('feedback-container').classList.remove('hidden');
+  document.getElementById('correct-answer-container').classList.add('hidden');
+  confirmAnswerBtn.classList.add('hidden'); // Ukrywa przycisk potwierdzenia odpowiedzi
+  document.getElementById('next-question-btn').classList.remove('hidden'); // Pokazuje przycisk "Przejdź do następnego pytania"
+
   if (answerIndex === correctAnswerIndex) {
+    document.getElementById('feedback-header').innerText = "Dobra robota!";
+    document.getElementById('feedback-text').innerText = "Twoja odpowiedź jest poprawna.";
     score++;
+  } else {
+    document.getElementById('feedback-header').innerText = "Niestety, to nie jest poprawna odpowiedź.";
+    document.getElementById('feedback-text').innerText = "Spróbuj jeszcze raz!";
+    document.getElementById('correct-answer-container').classList.remove('hidden');
+    document.getElementById('correct-answer').innerText = correctAnswerText;
   }
+}
+
+/**
+ * Przechodzi do następnego pytania quizu lub wyświetla wyniki, jeśli to było ostatnie pytanie.
+ * Funkcja ta zarządza indeksem bieżącego pytania, inkrementując go, aby przejść do następnego pytania w tablicy `currentQuestions`.
+ * Jeżeli użytkownik znajduje się przy ostatnim pytaniu, funkcja wywoła `showResult` do prezentacji końcowego wyniku quizu.
+ * Dodatkowo, funkcja ta resetuje interfejs użytkownika do stanu początkowego dla nowego pytania, ukrywając przycisk
+ * "Przejdź do następnego pytania" oraz kontenery z informacjami zwrotnymi o poprawności odpowiedzi i poprawną odpowiedzią,
+ * co zapewnia, że użytkownik otrzymuje czysty stan UI przy każdym nowym pytaniu.
+ * @function
+ * @public
+ */
+function goToNextQuestion() {
   if (currentQuestionIndex < currentQuestions.length - 1) {
     currentQuestionIndex++;
     displayQuestion(currentQuestions[currentQuestionIndex]);
   } else {
     showResult();
   }
+
+  document.getElementById('next-question-btn').classList.add('hidden'); 
+  document.getElementById('feedback-container').classList.add('hidden');
+  document.getElementById('correct-answer-container').classList.add('hidden');
 }
 
 /**
- * Wyświetla wynik quizu i oferuje możliwość restartu gry.
+ * Wyświetla wynik quizu, dynamicznie dostosowując komunikat do liczby zdobytych punktów.
+ * Funkcja ta ukrywa kontener z pytaniami i pokazuje kontener wyników, prezentując użytkownikowi informacje
+ * o liczbie poprawnie udzielonych odpowiedzi w kontekście całkowitej liczby pytań. Komunikat wynikowy jest
+ * dostosowany do polskiej gramatyki liczby pojedynczej i mnogiej, zapewniając poprawną formę językową
+ * w zależności od uzyskanego wyniku.
+ * 
+ * Dla wyniku 0 oraz liczb większych niż 4 i mniejszych niż 11 stosowana jest forma mnoga "pytań".
+ * Dla wyniku 1 używana jest forma pojedyncza "pytanie".
+ * Dla wyników od 2 do 4 stosowana jest forma mnoga "pytania".
+ * 
+ * Funkcja oferuje również możliwość restartu gry, umożliwiając użytkownikowi ponowne rozpoczęcie quizu
+ * bez konieczności odświeżania strony.
  * @function
  * @public
  */
 function showResult() {
   questionContainerElement.classList.add('hidden');
   resultContainer.classList.remove('hidden');
-
-  const resultText = `Twój wynik: ${score}/${currentQuestions.length}`;
-  document.getElementById('result').innerText = resultText;
-
+  if(score === 0 || (score > 4 && score < 11)){
+    const resultText = `Odpowiedziłaeś prawidłowo na ${score} pytań spośród ${currentQuestions.length}.`;
+    document.getElementById('result').innerText = resultText;
+  }else if(score === 1){
+    const resultText = `Odpowiedziałeś prawidłowo na ${score} pytanie spośród ${currentQuestions.length}.`;
+    document.getElementById('result').innerText = resultText;
+  }else{
+    const resultText = `Odpowiedziałeś prawidłowo na ${score} pytania spośród ${currentQuestions.length}.`;
+    document.getElementById('result').innerText = resultText;
+  }
 }
 
 /**
@@ -172,9 +236,14 @@ function resetQuizState() {
 }
 
 /**
- * Inicjalizuje aplikację quizową, dodając nasłuchiwanie zdarzeń do elementów interfejsu użytkownika.
- * Funkcja ta ustawia potrzebne nasłuchiwanie zdarzeń dla przycisków start, restart, potwierdź odpowiedź i powrót do startu.
- * Jest wywoływana raz, gdy zawartość DOM jest w pełni załadowana, co zapewnia dostępność wszystkich elementów.
+ * Inicjalizuje aplikację quizową, ustawiając nasłuchiwanie zdarzeń dla kluczowych elementów interfejsu użytkownika.
+ * Funkcja ta przygotowuje przyciski do interakcji z użytkownikiem, włączając przyciski start, restart, potwierdzenia odpowiedzi,
+ * powrotu do ekranu startowego oraz przejścia do następnego pytania. Poprzez dodanie odpowiednich nasłuchiwaczy zdarzeń,
+ * aplikacja staje się interaktywna, pozwalając użytkownikowi na rozpoczęcie quizu, wybór odpowiedzi, przejście między pytaniami,
+ * oraz zobaczenie wyników po ukończeniu wszystkich pytań.
+ * Jest wywoływana automatycznie po załadowaniu całego drzewa DOM strony, co zapewnia, że wszystkie elementy interfejsu są
+ * dostępne i gotowe do interakcji. Dzięki temu, użytkownik może bezproblemowo nawigować przez różne etapy quizu,
+ * od startu po wyświetlenie wyników końcowych.
  * @function
  * @public
  */
@@ -183,6 +252,7 @@ function initQuiz() {
   restartButton.addEventListener('click', startGame);
   confirmAnswerBtn.addEventListener('click', selectAnswer);
   document.getElementById('back-to-start-btn').addEventListener('click', backToStart);
+  document.getElementById('next-question-btn').addEventListener('click', goToNextQuestion);
 }
 
 // Inicjalizacja globalnych zmiennych dla elementów UI oraz stanu quizu.

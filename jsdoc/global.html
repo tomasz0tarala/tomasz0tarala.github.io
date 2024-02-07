@@ -227,7 +227,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line152">line 152</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line216">line 216</a>
     </li></ul></dd>
     
 
@@ -545,7 +545,7 @@
 
 
 <div class="description">
-    Wyświetla pytanie i odpowiedzi na ekranie, umożliwiając użytkownikowi wybór.Resetuje stan przed wyświetleniem nowego pytania.
+    Wyświetla pytanie i odpowiedzi na ekranie, umożliwiając użytkownikowi dokonanie wyboru.Resetuje stan UI przed wyświetleniem nowego pytania, w tym ukrywa przycisk potwierdzenia odpowiedzioraz kontenery z informacjami zwrotnymi o poprawności odpowiedzi i poprawną odpowiedzią, jeśli były wcześniej wyświetlone.Każda odpowiedź jest prezentowana jako radio button z etykietą, umożliwiając jednoznaczny wybór.
 </div>
 
 
@@ -597,7 +597,7 @@
 
             
 
-            <td class="description last">Obiekt pytania zawierający treść pytania i odpowiedzi.</td>
+            <td class="description last">Obiekt pytania, zawierający treść pytania i tablicę możliwych odpowiedzi.Każda odpowiedź w tej tablicy jest reprezentowana przez ciąg znaków.Funkcja tworzy dla każdej odpowiedzi element input typu radio oraz etykietę (label) z tekstem odpowiedzi.Po przygotowaniu wszystkich odpowiedzi, funkcja ukrywa niepotrzebne elementy UI i wyświetla aktualne pytanie.</td>
         </tr>
 
     
@@ -638,7 +638,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line72">line 72</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line78">line 78</a>
     </li></ul></dd>
     
 
@@ -674,7 +674,7 @@
     
 
     
-    <h4 class="name" id="initQuiz"><span class="type-signature"></span>initQuiz<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="goToNextQuestion"><span class="type-signature"></span>goToNextQuestion<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -682,7 +682,7 @@
 
 
 <div class="description">
-    Inicjalizuje aplikację quizową, dodając nasłuchiwanie zdarzeń do elementów interfejsu użytkownika.Funkcja ta ustawia potrzebne nasłuchiwanie zdarzeń dla przycisków start, restart, potwierdź odpowiedź i powrót do startu.Jest wywoływana raz, gdy zawartość DOM jest w pełni załadowana, co zapewnia dostępność wszystkich elementów.
+    Przechodzi do następnego pytania quizu lub wyświetla wyniki, jeśli to było ostatnie pytanie.Funkcja ta zarządza indeksem bieżącego pytania, inkrementując go, aby przejść do następnego pytania w tablicy `currentQuestions`.Jeżeli użytkownik znajduje się przy ostatnim pytaniu, funkcja wywoła `showResult` do prezentacji końcowego wyniku quizu.Dodatkowo, funkcja ta resetuje interfejs użytkownika do stanu początkowego dla nowego pytania, ukrywając przycisk"Przejdź do następnego pytania" oraz kontenery z informacjami zwrotnymi o poprawności odpowiedzi i poprawną odpowiedzią,co zapewnia, że użytkownik otrzymuje czysty stan UI przy każdym nowym pytaniu.
 </div>
 
 
@@ -726,7 +726,95 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line181">line 181</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line167">line 167</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="initQuiz"><span class="type-signature"></span>initQuiz<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Inicjalizuje aplikację quizową, ustawiając nasłuchiwanie zdarzeń dla kluczowych elementów interfejsu użytkownika.Funkcja ta przygotowuje przyciski do interakcji z użytkownikiem, włączając przyciski start, restart, potwierdzenia odpowiedzi,powrotu do ekranu startowego oraz przejścia do następnego pytania. Poprzez dodanie odpowiednich nasłuchiwaczy zdarzeń,aplikacja staje się interaktywna, pozwalając użytkownikowi na rozpoczęcie quizu, wybór odpowiedzi, przejście między pytaniami,oraz zobaczenie wyników po ukończeniu wszystkich pytań.Jest wywoływana automatycznie po załadowaniu całego drzewa DOM strony, co zapewnia, że wszystkie elementy interfejsu sądostępne i gotowe do interakcji. Dzięki temu, użytkownik może bezproblemowo nawigować przez różne etapy quizu,od startu po wyświetlenie wyników końcowych.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line250">line 250</a>
     </li></ul></dd>
     
 
@@ -907,7 +995,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line169">line 169</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line233">line 233</a>
     </li></ul></dd>
     
 
@@ -995,7 +1083,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line102">line 102</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line113">line 113</a>
     </li></ul></dd>
     
 
@@ -1039,7 +1127,7 @@
 
 
 <div class="description">
-    Sprawdza, która odpowiedź została wybrana i czy jest poprawna, a następnie przechodzi do następnego pytania lub wyświetla wynik.
+    Sprawdza, która odpowiedź została wybrana przez użytkownika, i ocenia, czy jest poprawna.W zależności od poprawności odpowiedzi, wyświetla stosowny komunikat w kontenerze informacji zwrotnej.Jeśli odpowiedź jest niepoprawna, pokazuje także poprawną odpowiedź w dedykowanym kontenerze.Następnie ukrywa przycisk potwierdzenia odpowiedzi i pokazuje przycisk, który pozwala przejść do następnego pytania,umożliwiając użytkownikowi kontrolę nad tempem quizu. Po wybraniu odpowiedzi i wyświetleniu odpowiednich komunikatów,funkcja przygotowuje interfejs do przejścia do kolejnego pytania lub, jeśli to ostatnie pytanie, do wyświetlenia wyników quizu.
 </div>
 
 
@@ -1083,7 +1171,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line114">line 114</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line130">line 130</a>
     </li></ul></dd>
     
 
@@ -1309,7 +1397,7 @@
 
 
 <div class="description">
-    Wyświetla wynik quizu i oferuje możliwość restartu gry.
+    Wyświetla wynik quizu, dynamicznie dostosowując komunikat do liczby zdobytych punktów.Funkcja ta ukrywa kontener z pytaniami i pokazuje kontener wyników, prezentując użytkownikowi informacjeo liczbie poprawnie udzielonych odpowiedzi w kontekście całkowitej liczby pytań. Komunikat wynikowy jestdostosowany do polskiej gramatyki liczby pojedynczej i mnogiej, zapewniając poprawną formę językowąw zależności od uzyskanego wyniku.Dla wyniku 0 oraz liczb większych niż 4 i mniejszych niż 11 stosowana jest forma mnoga "pytań".Dla wyniku 1 używana jest forma pojedyncza "pytanie".Dla wyników od 2 do 4 stosowana jest forma mnoga "pytania".Funkcja oferuje również możliwość restartu gry, umożliwiając użytkownikowi ponowne rozpoczęcie quizubez konieczności odświeżania strony.
 </div>
 
 
@@ -1353,7 +1441,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line138">line 138</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line196">line 196</a>
     </li></ul></dd>
     
 
@@ -1629,13 +1717,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#backToStart">backToStart</a></li><li><a href="global.html#changeSlide">changeSlide</a></li><li><a href="global.html#currentSlide">currentSlide</a></li><li><a href="global.html#displayQuestion">displayQuestion</a></li><li><a href="global.html#initQuiz">initQuiz</a></li><li><a href="global.html#loadAndDisplayQuestions">loadAndDisplayQuestions</a></li><li><a href="global.html#resetQuizState">resetQuizState</a></li><li><a href="global.html#resetState">resetState</a></li><li><a href="global.html#selectAnswer">selectAnswer</a></li><li><a href="global.html#selectRandomQuestions">selectRandomQuestions</a></li><li><a href="global.html#showResult">showResult</a></li><li><a href="global.html#showSlides">showSlides</a></li><li><a href="global.html#slideIndex">slideIndex</a></li><li><a href="global.html#startGame">startGame</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#backToStart">backToStart</a></li><li><a href="global.html#changeSlide">changeSlide</a></li><li><a href="global.html#currentSlide">currentSlide</a></li><li><a href="global.html#displayQuestion">displayQuestion</a></li><li><a href="global.html#goToNextQuestion">goToNextQuestion</a></li><li><a href="global.html#initQuiz">initQuiz</a></li><li><a href="global.html#loadAndDisplayQuestions">loadAndDisplayQuestions</a></li><li><a href="global.html#resetQuizState">resetQuizState</a></li><li><a href="global.html#resetState">resetState</a></li><li><a href="global.html#selectAnswer">selectAnswer</a></li><li><a href="global.html#selectRandomQuestions">selectRandomQuestions</a></li><li><a href="global.html#showResult">showResult</a></li><li><a href="global.html#showSlides">showSlides</a></li><li><a href="global.html#slideIndex">slideIndex</a></li><li><a href="global.html#startGame">startGame</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Feb 06 2024 21:28:44 GMT+0100 (czas środkowoeuropejski standardowy)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Feb 07 2024 13:06:58 GMT+0100 (czas środkowoeuropejski standardowy)
 </footer>
 
 <script> prettyPrint(); </script>

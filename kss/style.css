@@ -1330,7 +1330,7 @@ Style guide: 2.0
   
   Style guide: 21.0
   */
-  .quiz-btn, #confirm-answer-btn {
+  .quiz-btn, #confirm-answer-btn, #next-question-btn {
     margin-left: 5px;
     margin-top: 15px;
     padding: 10px;

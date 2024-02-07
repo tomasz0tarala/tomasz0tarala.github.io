@@ -25,7 +25,7 @@
         "correctAnswer": 1
     },
     {
-        "question": "Który zespół zdobył najwięcej mistrzostw świata konstruktorów?",
+        "question": "Który zespół Formuły 1 zdobył najwięcej tytułów mistrza świata konstruktorów?",
         "answers": ["Mercedes", "McLaren", "Ferrari", "Red Bull"],
         "correctAnswer": 2
     },
@@ -47,7 +47,7 @@
     {
         "question": "Który z obecnych kierowców F1 jest najstarszy?",
         "answers": ["Oscar Piastri", "Sergio Perez", "Fernardo Alonso", "George Russell"],
-        "correctAnswer": 0
+        "correctAnswer": 2
     },
     {
         "question": "Który z kierowców posida najwięcej podiów w historii F1?",
@@ -91,7 +91,7 @@
     },
     {
         "question": "Jaka była najmniejsza różnica czasowa między 1. a 3. miejscem podczas kwalifikacji do Grand Prix Europy w 1997 roku?",
-        "answers": ["0.001 sekundy", "0.0001 sekundy", "0.01 sekundy", "0.1 sekundy"],
+        "answers": ["0.001 sekundy", "0.000 sekundy", "0.01 sekundy", "0.1 sekundy"],
         "correctAnswer": 1
     },
     {
@@ -221,7 +221,7 @@
     },
     {
         "question": "Ile tytułów mistrza świata w F1 zdobył Fernardo Alonso?",
-        "answers": ["6", "7", "4", "3"],
+        "answers": ["6", "7", "4", "2"],
         "correctAnswer": 3
     },
     {
@@ -347,7 +347,7 @@
     {
         "question": "Który z kierowców wygral najwięcej razy w historii wyscig Le Mans?",
         "answers": ["Fernardo Alonso", "Robert Kubica", "Tom Kristensen", "Kazuki Nakajima"],
-        "correctAnswer": 3
+        "correctAnswer": 2
     },
     {
         "question": "Jaki kraj jest największym producentem samochodów na świecie?",
